@@ -1,0 +1,951 @@
+,additions,contributor,contributor_email,contributor_followers,contributor_followings,contributor_id,contributor_private_repos,contributor_public_repos,contributor_type,deletions,pr_assignees_count,pr_body,pr_changed_files,pr_closed_at,pr_comments_count,pr_commits_count,pr_created_at,pr_html_url,pr_id,pr_labels,pr_labels_count,pr_number,pr_review_comments,pr_review_comments_count,pr_state,pr_title,pr_url
+0,48.0,Eugene,,61.0,19.0,141402.0,,66.0,User,51.0,0.0,"I realized that default URI from Java doesn't handle all the cases well, so I think I makes sense to use more robust one from commons http-client.
+
+Please let me know if that works well for you too :)
+",3.0,2014-03-13 14:24:27,7.0,3.0,2013-12-23 04:40:42,https://github.com/apache/any23/pull/1,11045226.0,[],0.0,1.0,[],0.0,closed,Fix URL encoding issues,https://api.github.com/repos/apache/any23/pulls/1
+1,364.0,Lev Khomich,levkhomich@gmail.com,31.0,6.0,478590.0,,15.0,User,545.0,0.0,"RDFa11ExtractorTest.testExplicitDatatypeDeclaration is not so clean because assertContains doesn't work as expected, so I changed test to check literal content and datatype separately. Namespace declarations is optional here, but there is no way to check that (only exact matching).
+",20.0,2014-05-09 02:40:04,2.0,8.0,2014-03-01 15:30:35,https://github.com/apache/any23/pull/2,13083622.0,[],0.0,2.0,[],0.0,closed,"ANY23-137: merge with master, fix RDFa related tests",https://api.github.com/repos/apache/any23/pulls/2
+2,48.0,Eugene,,61.0,19.0,141402.0,,66.0,User,51.0,0.0,,3.0,2014-05-09 03:04:06,2.0,3.0,2014-03-13 14:26:05,https://github.com/apache/any23/pull/3,13523575.0,[],0.0,3.0,[],0.0,closed,fix url encoding problem,https://api.github.com/repos/apache/any23/pulls/3
+3,1266.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,2.0,0.0,"Hi Folks
+Please see PR for issue ANY23-177 
+https://issues.apache.org/jira/browse/ANY23-177
+I would like to determine if we can add test(s) to verify JSON-LD triples extraction from HTML.
+Can we embed JSON-LD in HTML? I tried adding some trivial markup to a wikipedia entry and adding it as a test case however I was getting parse exceptions.
+",10.0,2014-04-03 23:39:42,12.0,3.0,2014-03-25 19:32:01,https://github.com/apache/any23/pull/4,13971982.0,[],0.0,4.0,"[{'comment_id': 11276412, 'comment_body': ""It doesn't support this case right now.\n\nIf you want to implement that support here I don't mind, as we already have the dependencies on the HTML parsers here, but if you want to submit a pull request to jsonld-java I can review it and merge it there for 0.4.\n\nI don't have a timeline for 0.4 yet, but it will be in the range of weeks rather than days or months at this stage.\n"", 'comment_created': datetime.datetime(2014, 4, 3, 22, 37, 30), 'commenter': 'ansell', 'type': 'User'}]",1.0,closed,Any23 177,https://api.github.com/repos/apache/any23/pulls/4
+4,48.0,Eugene,,61.0,19.0,141402.0,,66.0,User,51.0,0.0,,3.0,2014-05-29 20:07:24,4.0,3.0,2014-05-09 03:07:42,https://github.com/apache/any23/pull/5,15684900.0,[],0.0,5.0,[],0.0,closed,fix url encoding problem,https://api.github.com/repos/apache/any23/pulls/5
+5,10.0,Stephane Corlosquet,scorlosquet@gmail.com,53.0,14.0,77741.0,,62.0,User,10.0,0.0,"Not sure where that funky namespace came from (http://xmlns.org/foaf/01/), but it's not the official FOAF namespace which is http://xmlns.com/foaf/0.1/.
+",7.0,2014-05-12 01:37:18,1.0,1.0,2014-05-11 12:15:14,https://github.com/apache/any23/pull/6,15742214.0,[],0.0,6.0,[],0.0,closed,Fix FOAF namespace,https://api.github.com/repos/apache/any23/pulls/6
+6,20.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,417.0,0.0,"This issue relates to 
+https://issues.apache.org/jira/browse/ANY23-221
+- It is a full improvement on what is described on the issue above however I have found a problem where auto-detect will not work for this instance. I therefore need to look further into this to ensure that auto-detection works as expected as oppose to having to explicitly select JSON-LD as the input format.
+- This issue also upgrades the jsonld-java-sesame library as we were getting class cast acception between converion from String to Map.
+- Finally the issue removes a duplicate form.html which I added a while back but which is no longer required I don't think.
+",5.0,2014-07-17 03:19:19,4.0,1.0,2014-07-17 03:11:34,https://github.com/apache/any23/pull/7,18507738.0,[],0.0,7.0,[],0.0,closed,ANY23-221 Enable JSON-LD as an input format for the WebService at any23.org,https://api.github.com/repos/apache/any23/pulls/7
+7,0.0,Stephane Corlosquet,scorlosquet@gmail.com,53.0,14.0,77741.0,,62.0,User,9.0,0.0,"https://issues.apache.org/jira/browse/ANY23-229
+",1.0,2014-08-05 23:39:53,3.0,1.0,2014-08-01 03:24:18,https://github.com/apache/any23/pull/8,19191624.0,[],0.0,8.0,[],0.0,closed,ANY23-229: don't return a 501 error if no triples are extracted,https://api.github.com/repos/apache/any23/pulls/8
+8,7.0,,,1.0,0.0,2923405.0,,4.0,User,7.0,0.0,"Fix generation of BNode name for microdata when 'itemid' is given with an empty value.
+This results in using the MD5 of ""0"" in the name of BNodes: 'nodecfcd208495d565ef66e7dff9f98764da'
+An example of where this is a problem is https://www.youtube.com/channel/UCQNIKO3SwRcYnoiuSqKYbOA
+'<div id=""watch-container"" itemid="""" itemscope itemtype=""http://schema.org/YoutubeChannelV2"">'
+
+Also added a check to ToolRunnerTest for no tools.
+",2.0,2014-10-16 05:26:31,1.0,1.0,2014-09-12 10:54:25,https://github.com/apache/any23/pull/9,21145634.0,[],0.0,9.0,[],0.0,closed,Fix generation of BNode name for microdata when 'itemid' is given without a value.,https://api.github.com/repos/apache/any23/pulls/9
+9,3.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,"Trivial patch which addresses a recent mailing list item
+http://www.mail-archive.com/user%40any23.apache.org/msg00166.html
+",1.0,2015-01-23 06:14:34,0.0,1.0,2015-01-23 04:40:15,https://github.com/apache/any23/pull/10,27900956.0,[],0.0,10.0,[],0.0,closed,ANY23-131 Nested Microdata are not extracted,https://api.github.com/repos/apache/any23/pulls/10
+10,9.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,5.0,0.0,"Pull request bundled with ANY23-131
+I am getting better results here with more triples being extracted hence bumping the expected OG triples from 9 --> 12 in  core/src/test/java/org/apache/any23/Any23Test#testExtractionParameters
+",4.0,2015-01-23 06:14:34,0.0,2.0,2015-01-23 06:12:12,https://github.com/apache/any23/pull/11,27903369.0,[],0.0,11.0,[],0.0,closed,ANY23-246 Add Open Graph Protocol and Facebook prefixes to popular.prefixes,https://api.github.com/repos/apache/any23/pulls/11
+11,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,"Trivial upgrade of sesame deps
+",1.0,2015-02-10 16:38:06,1.0,1.0,2015-02-05 16:05:18,https://github.com/apache/any23/pull/12,28736397.0,[],0.0,12.0,[],0.0,closed,ANY23-248 NTriplesWriter on hadoop : issue with MIME type/Upgrade sesame dependencies to 2.7.14,https://api.github.com/repos/apache/any23/pulls/12
+12,10.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,8.0,0.0,"Hi Folks,
+Please see PR for master branch which addresses ANY23-250
+",4.0,2015-03-04 01:42:40,1.0,1.0,2015-02-27 18:44:55,https://github.com/apache/any23/pull/13,30190217.0,[],0.0,13.0,[],0.0,closed,ANY23-250 Upgrade to Tika 1.7,https://api.github.com/repos/apache/any23/pulls/13
+13,0.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,,1.0,2015-03-11 18:29:42,0.0,1.0,2015-03-11 18:28:46,https://github.com/apache/any23/pull/14,30971435.0,[],0.0,14.0,[],0.0,closed,ANY23-255 apache-any23-quads dependency should not be <scope> test in core pom.xml,https://api.github.com/repos/apache/any23/pulls/14
+14,5.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,0.0,0.0,"Hi @michelemostarda, please check out the results which I now get when I run the following
+
+lmcgibbn@LMC-032857 /usr/local/any23/core/target/appassembler(master) $ ./bin/any23 rover -l output.log -o output.txt -s ""http://people.apache.org/~lewismc/example-jsonld.jsonld""
+SLF4J: Failed to load class ""org.slf4j.impl.StaticLoggerBinder"".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+---
+## Apache Any23 :: rover
+
+> Summary:
+>    -total calls: 2
+>    -total triples: 5
+>    -total runtime: 12 ms!
+>    -tripls/ms: 0
+>    -ms/calls: 6
+> Extractor: consolidation-extractor
+>    -total calls: 1
+>    -total triples: 0
+>    -total runtime: 0 ms!
+>    -ms/calls: 0
+> Extractor: rdf-jsonld
+>    -total calls: 1
+>    -total triples: 5
+>    -total runtime: 12 ms!
+>    -tripls/ms: 0
+>    -ms/calls: 12
+
+---
+
+Apache Any23 SUCCESS
+Total time: 2s
+Finished at: Wed Mar 11 11:57:42 PDT 2015
+## Final Memory: 75M/480M
+",1.0,2015-03-11 19:43:02,1.0,1.0,2015-03-11 19:00:21,https://github.com/apache/any23/pull/15,30974408.0,[],0.0,15.0,[],0.0,closed,ANY23-253 JSON-LD cannot be processed by Rover,https://api.github.com/repos/apache/any23/pulls/15
+15,492.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,2.0,0.0,"Initial patch for this support. 
+It is not working correctly @ansell can you have a look into the parsing of JSONLD textual content?
+I've provided a '//' comment to where I can see the correct parser being selected. It seems to not parse and extract the JSONLD so I know I am doing something wrong.
+Thank you very much @ansell if you can have a wee look.
+",9.0,2015-03-21 05:07:19,4.0,1.0,2015-03-20 16:13:05,https://github.com/apache/any23/pull/16,31627790.0,[],0.0,16.0,[],0.0,closed,ANY23-226 Extract JSON-LD embedded in HTML,https://api.github.com/repos/apache/any23/pulls/16
+16,334.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,39.0,0.0,"Hi Folks,
+PR which fixes this issue locally. I am getting clean builds now again after introducing this new MissingItemscopeAttributeValueRule class.
+",14.0,2016-04-02 19:52:32,11.0,1.0,2015-03-30 16:43:28,https://github.com/apache/any23/pull/17,32244491.0,[],0.0,17.0,"[{'comment_id': 27437088, 'comment_body': 'How is this class recognised or instantiated? META-INF/services/ or another method?\n', 'comment_created': datetime.datetime(2015, 3, 30, 22, 13, 26), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 27442017, 'comment_body': 'I looked for it being registered during a single document extraction. It was my understanding that validation and fixes are registered and active as part of the extraction parameters agenda? If a vanilla SingleDocumentExtration is invoked... as per the Any23Test then by default the Fixes and Validations are activated.\n', 'comment_created': datetime.datetime(2015, 3, 30, 23, 31, 29), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 27442717, 'comment_body': 'It may be done using a classpath scan. I will look into it further.\n', 'comment_created': datetime.datetime(2015, 3, 30, 23, 45, 10), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 27444885, 'comment_body': 'Ack\n\nOn Monday, March 30, 2015, Peter Ansell notifications@github.com wrote:\n\n> In\n> core/src/main/java/org/apache/any23/validator/rule/MissingItemscopeAttributeValueRule.java\n> https://github.com/apache/any23/pull/17#discussion_r27442717:\n> \n> > +/**\n> > - \\* This fixes missing attribute values for the \'itemscope\' attribute,\n> > - \\* which was be associated with <div> nodes.\n> > - \\* Typically when such a snippet of XHTML is fed through the\n> > - \\* {@link org.apache.any23.extractor.rdfa.RDFa11Extractor}, and\n> > - \\* subsequently to Sesame\'s {@link org.semarglproject.sesame.rdf.rdfa.SesameRDFaParser},\n> > - \\* it will result in the following behavior.\n> > - \\* <pre>\n> > - \\* {@code\n> > - \\* [Fatal Error] :23:15: Attribute name ""itemscope"" associated with an element type ""div"" must be followed by the \' = \' character.\n> > - \\* }\n> > - \\* </pre>\n> > - \\* This Fix is an effort to mitigate against that happening.\n> > - *\n> > - */\n> >   +public class MissingItemscopeAttributeValueRule implements Fix {\n> \n> It may be done using a classpath scan. I will look into it further.\n> \n> —\n> Reply to this email directly or view it on GitHub\n> https://github.com/apache/any23/pull/17/files#r27442717.\n\n## \n\n_Lewis_\n', 'comment_created': datetime.datetime(2015, 3, 31, 0, 32, 25), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 27444925, 'comment_body': 'Everything I\'ve uploaded to the patch is what I have coded. There is no\nother black magic on my end to get this invoked.\n\nOn Monday, March 30, 2015, Lewis John Mcgibbney lewis.mcgibbney@gmail.com\nwrote:\n\n> Ack\n> \n> On Monday, March 30, 2015, Peter Ansell <notifications@github.com\n> <javascript:_e(%7B%7D,\'cvml\',\'notifications@github.com\');>> wrote:\n> \n> > In\n> > core/src/main/java/org/apache/any23/validator/rule/MissingItemscopeAttributeValueRule.java\n> > https://github.com/apache/any23/pull/17#discussion_r27442717:\n> > \n> > > +/**\n> > > - \\* This fixes missing attribute values for the \'itemscope\' attribute,\n> > > - \\* which was be associated with <div> nodes.\n> > > - \\* Typically when such a snippet of XHTML is fed through the\n> > > - \\* {@link org.apache.any23.extractor.rdfa.RDFa11Extractor}, and\n> > > - \\* subsequently to Sesame\'s {@link org.semarglproject.sesame.rdf.rdfa.SesameRDFaParser},\n> > > - \\* it will result in the following behavior.\n> > > - \\* <pre>\n> > > - \\* {@code\n> > > - \\* [Fatal Error] :23:15: Attribute name ""itemscope"" associated with an element type ""div"" must be followed by the \' = \' character.\n> > > - \\* }\n> > > - \\* </pre>\n> > > - \\* This Fix is an effort to mitigate against that happening.\n> > > - *\n> > > - */\n> > >   +public class MissingItemscopeAttributeValueRule implements Fix {\n> > \n> > It may be done using a classpath scan. I will look into it further.\n> > \n> > —\n> > Reply to this email directly or view it on GitHub\n> > https://github.com/apache/any23/pull/17/files#r27442717.\n> \n> ## \n> \n> _Lewis_\n\n## \n\n_Lewis_\n', 'comment_created': datetime.datetime(2015, 3, 31, 0, 33, 10), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 27446443, 'comment_body': ""There is a hardcoded set in DefaultValidator.loadDefaultRules, but I can't find any place that is doing classpath scanning there.\n\nI also do not understand the relationship between Rule and Fix. In the DefaultValidator, there are either Rule, or Rule+Fix, not just a Fix like you have here.\n\nI will look into it further when I get a chance.\n"", 'comment_created': datetime.datetime(2015, 3, 31, 1, 12, 19), 'commenter': 'ansell', 'type': 'User'}]",6.0,closed,ANY23-247 FIX Attribute name itemscope associated with an element type html must be followed by the ' = ' character.,https://api.github.com/repos/apache/any23/pulls/17
+17,3633.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,2.0,0.0,"I am initiating this PR on behalf of @nisalanirmana so we can think about closing off the GSoC work for the summer. This PR _should_ represent Microformats2 support for Apache Any23 whilst retaining compatibility for original Microformats support. 
+We can discuss more on the review of the code.
+",52.0,2015-09-10 07:50:53,6.0,10.0,2015-08-25 20:49:09,https://github.com/apache/any23/pull/18,43334777.0,[],0.0,18.0,"[{'comment_id': 37917661, 'comment_body': 'ALv2.0 license header required\n', 'comment_created': datetime.datetime(2015, 8, 25, 20, 50, 13), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 37917681, 'comment_body': 'ALv2.0 license header required\n', 'comment_created': datetime.datetime(2015, 8, 25, 20, 50, 20), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 37917869, 'comment_body': 'what doe the comment //1920 represent?\n', 'comment_created': datetime.datetime(2015, 8, 25, 20, 51, 48), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 37917900, 'comment_body': 'what doe the comment //4992 represent?\n', 'comment_created': datetime.datetime(2015, 8, 25, 20, 52, 1), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 38061380, 'comment_body': 'Added :)\n', 'comment_created': datetime.datetime(2015, 8, 27, 4, 34, 59), 'commenter': 'nisalanirmana', 'type': 'User'}, {'comment_id': 38061391, 'comment_body': 'Added :)\n', 'comment_created': datetime.datetime(2015, 8, 27, 4, 35, 18), 'commenter': 'nisalanirmana', 'type': 'User'}, {'comment_id': 38061468, 'comment_body': 'Thank you\n', 'comment_created': datetime.datetime(2015, 8, 27, 4, 37, 40), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 38061472, 'comment_body': 'Thank you\n', 'comment_created': datetime.datetime(2015, 8, 27, 4, 37, 46), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 38061610, 'comment_body': 'I have now removed the comment. I was not sure about reason behind this test failure at that time, so added a comment for the future reference, later understood that this is due to changes related to added vocabularies by me.\n', 'comment_created': datetime.datetime(2015, 8, 27, 4, 41, 26), 'commenter': 'nisalanirmana', 'type': 'User'}, {'comment_id': 38061633, 'comment_body': 'I have now removed the comment. I was not sure about reason behind this test failure at that time, so added a comment for the future reference, later understood that this is due to changes related to added vocabularies by me.\n', 'comment_created': datetime.datetime(2015, 8, 27, 4, 42, 1), 'commenter': 'nisalanirmana', 'type': 'User'}]",10.0,closed,ANY23-207 Implement Microformats2,https://api.github.com/repos/apache/any23/pulls/18
+18,93.0,,,0.0,0.0,941976.0,,0.0,User,17.0,0.0,"When multiple HTML documents are parsed concurrently in different threads, the MicrodataParser will sometimes throw very weird Exceptions or deliver broken values of date properties. I tracked it to a static SimpleDateFormat field in ItemPropValue. SimpleDateFormat is not thread-safe and should never be used like this. 
+
+I wrote a unit test that tries to parse the same document in 10 concurrent threads about 100 times each. Then it gets a value of the ""birthday"" property. In all thousand cases the value should be the same. On my machine this test fails each time with various errors. With the fix - the test passes each time. 
+
+The test uses a cyclic barrier and ensures that only in-memory data is used, so that I/O overhead and thread creation overhead do not interfere with the actual processing under test.
+",3.0,2015-10-29 22:39:05,1.0,2.0,2015-10-29 14:25:30,https://github.com/apache/any23/pull/19,49145937.0,[],0.0,19.0,"[{'comment_id': 43451101, 'comment_body': 'I have typically done these tests using two separate CountDownLatch objects. Ie, a starting latch/barrier with value 1, and another latch with the number of threads as its value.\n', 'comment_created': datetime.datetime(2015, 10, 29, 22, 8, 43), 'commenter': 'ansell', 'type': 'User'}]",1.0,closed,Fix for a ThreadSafety issue in ItemPropValue,https://api.github.com/repos/apache/any23/pulls/19
+19,150.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,10.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-277
+It also adds some configuration to .gitignore for the any23-site as well as Eclipse files.
+Would like to commit EoB today if possible. 
+",8.0,2016-02-20 05:14:41,0.0,1.0,2016-02-19 19:10:12,https://github.com/apache/any23/pull/20,59992961.0,[],0.0,20.0,[],0.0,closed,ANY23-277 Any23 master branch will not build to to build due to lacking maven-assembly-plugin,https://api.github.com/repos/apache/any23/pulls/20
+20,21.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,21.0,0.0,"This issues addresses https://issues.apache.org/jira/browse/ANY23-274
+",11.0,2016-02-20 05:16:40,0.0,1.0,2016-02-19 19:19:53,https://github.com/apache/any23/pull/21,59994281.0,[],0.0,21.0,[],0.0,closed,ANY23-274 Change any23.microdata.ns.default configuration value to http://schema.org,https://api.github.com/repos/apache/any23/pulls/21
+21,21.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,21.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-278
+",1.0,2016-02-20 05:12:42,0.0,1.0,2016-02-19 19:23:06,https://github.com/apache/any23/pull/22,59994707.0,[],0.0,22.0,[],0.0,closed,ANY23-278 Upgrade all Maven plugin versions in parent pom.xml,https://api.github.com/repos/apache/any23/pulls/22
+22,1.0,Robert,,6.0,0.0,2556488.0,,5.0,User,1.0,0.0,,1.0,2016-03-26 09:30:32,4.0,1.0,2016-03-14 09:44:34,https://github.com/apache/any23/pull/23,62721043.0,[],0.0,23.0,[],0.0,closed,fixed Extractor Description,https://api.github.com/repos/apache/any23/pulls/23
+23,2140.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1603.0,0.0,"Hi Folks,
+This is an initial crack at addressing https://issues.apache.org/jira/browse/ANY23-280
+Essentially, the main API difference is the complete removal of `public interface ContentExtractor extends Extractor<InputStream>` from the Extractor interface in the api module.
+This patch has a long way to go with numerous failing tests however I wanted to post it for feedback.
+Although Any23 still builds with -DskipTests, without that flag the failing tests are as follows
+
+```
+Results :
+
+Failed tests:
+  Any23Test.testDemoCodeSnippet1:201
+  Any23Test.testN3Detection1:92->assertDetection:661
+  Any23Test.testN3Detection2:97->assertDetection:661
+  Any23Test.testTTLDetection:87->assertDetection:661
+  RoverTest.testRunMultiURLs:104->runWithMultiSourcesAndVerify:134 Unexpected number of statements.
+Tests in error:
+  Any23Test.testProgrammaticExtraction:279 » NullPointer
+CSVExtractorTest.testExtractionCommaSeparated:49->AbstractExtractorTestCase.dumpModelToRDFXML:714 » Runtime
+CSVExtractorTest.testExtractionEmptyValue:112->AbstractExtractorTestCase.dumpModelToRDFXML:714 » Runtime
+CSVExtractorTest.testExtractionSemicolonSeparated:64->AbstractExtractorTestCase.dumpModelToRDFXML:714 » Runtime
+CSVExtractorTest.testExtractionTabSeparated:79->AbstractExtractorTestCase.dumpModelToRDFXML:714 » Runtime
+CSVExtractorTest.testTypeManagement:94->AbstractExtractorTestCase.dumpModelToRDFXML:714 » Runtime
+RDFa11ExtractorTest>AbstractRDFaExtractorTestCase.testDrupalTestPage:124->AbstractExtractorTestCase.assertExtract:217->AbstractExtractorTestCase.assertExtract:200->AbstractExtractorTestCase.extract:185 » NullPointer
+RDFaExtractorTest>AbstractRDFaExtractorTestCase.testDrupalTestPage:124->AbstractExtractorTestCase.assertExtract:217->AbstractExtractorTestCase.assertExtract:200->AbstractExtractorTestCase.extract:185 » NullPointer
+Tests run: 403, Failures: 5, Errors: 8, Skipped: 11
+```
+
+You will see that some of the tests concern https://issues.apache.org/jira/browse/ANY23-267 as well.
+",92.0,2017-12-27 20:08:16,6.0,8.0,2016-04-06 19:50:15,https://github.com/apache/any23/pull/24,65525240.0,[],0.0,24.0,"[{'comment_id': 67792344, 'comment_body': 'This import seems to be unused\n', 'comment_created': datetime.datetime(2016, 6, 21, 0, 48, 39), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 134738201, 'comment_body': '@lewismc Why do you remove `ContentExtractor`? I assume that In case if content is neither html nor xml type that developer should create new extractor extending `Exctractor<Input>` directly. Am I right? ', 'comment_created': datetime.datetime(2017, 8, 23, 12, 34, 26), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 134831365, 'comment_body': '@jgrzebyta yes this is correct... we do not always wish to assume that the input is structured in XML or a subset thereof... syntax-strict extractors are prone to breakage. Our aim in Any23 should be to provide flexibility in the extraction logic rather than a strict, fragile extraction logic.', 'comment_created': datetime.datetime(2017, 8, 23, 18, 20, 16), 'commenter': 'lewismc', 'type': 'User'}]",3.0,closed,Initial move towards addressing ANY23-280 Refactor ContentExtractor to improve extraction flexibility,https://api.github.com/repos/apache/any23/pulls/24
+24,68.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,"This PR addresses a few things
+- Packages log4j configuration with core appassembler
+- adds 4 missing license headers
+- changes core log4j verbosity from DEBUG to INFO
+",7.0,2016-06-16 05:56:52,0.0,1.0,2016-06-16 05:55:31,https://github.com/apache/any23/pull/25,74025828.0,[],0.0,25.0,[],0.0,closed,ANY23-293 Package log4j configuration with core appassembler,https://api.github.com/repos/apache/any23/pulls/25
+25,4.0,Willliam L. Anderson,,8.0,13.0,364630.0,,17.0,User,4.0,0.0,"Documentation updates:
+1. supported-formats.apt page: now has working links to N-QUADS documentation; and better information about when current N-QUADS spec will be supported.
+2. site/index.apt file was missing a set of matching ""{"",""}"" in two places.
+",2.0,2016-06-23 17:46:18,1.0,1.0,2016-06-21 14:58:16,https://github.com/apache/any23/pull/26,74627622.0,[],0.0,26.0,[],0.0,closed,ANY23-235 NQuads links broken on Supported Formats Page,https://api.github.com/repos/apache/any23/pulls/26
+26,3902.0,Peter Ansell,,135.0,204.0,82365.0,,107.0,User,4687.0,0.0,"Conversion to RDF4J isn't backwards compatible, so bumping to version 2.0 to reflect that.
+",290.0,2017-01-13 22:25:54,13.0,11.0,2016-08-02 01:23:11,https://github.com/apache/any23/pull/27,79663049.0,[],0.0,27.0,"[{'comment_id': 78869831, 'comment_body': '@lewismc This is the place where semargl has temporarily been removed as a dependency while I worked on the rest of the code. It will be enabled again after the next semargl release is done.\n', 'comment_created': datetime.datetime(2016, 9, 15, 0, 25, 49), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 78871042, 'comment_body': 'Do you have any idea when this will be released?\n', 'comment_created': datetime.datetime(2016, 9, 15, 0, 37, 47), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 78871662, 'comment_body': 'Lev added me as a committer to Semargl, but he is still the release manager for now so when he gets to it is the current answer for when it will be released. \n', 'comment_created': datetime.datetime(2016, 9, 15, 0, 44, 37), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 78872935, 'comment_body': ""Sounds gtm.\nI suppose this PR can wait until then. I'm going to return to #24 in the meantime.\n"", 'comment_created': datetime.datetime(2016, 9, 15, 0, 59, 54), 'commenter': 'lewismc', 'type': 'User'}]",4.0,closed,"ANY23-276 : Work on conversion to RDF4J, including bump to version 2.0",https://api.github.com/repos/apache/any23/pulls/27
+27,9.0,Willliam L. Anderson,,8.0,13.0,364630.0,,17.0,User,0.0,0.0,Added developer information,1.0,2016-11-26 20:50:58,2.0,1.0,2016-11-06 17:41:57,https://github.com/apache/any23/pull/28,92495640.0,[],0.0,28.0,[],0.0,closed,Update pom.xml,https://api.github.com/repos/apache/any23/pulls/28
+28,2.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,2.0,0.0,This issue addresses https://issues.apache.org/jira/browse/ANY23-296,1.0,2016-11-23 02:32:44,0.0,1.0,2016-11-23 02:32:13,https://github.com/apache/any23/pull/29,94936091.0,[],0.0,29.0,[],0.0,closed,ANY23-296 Tar complains about groupid value being too big,https://api.github.com/repos/apache/any23/pulls/29
+29,365.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,275.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-297
+@ansell can you please check how this affects your open pull request? Do you have any objections to merging this into master branch? Thanks",59.0,2016-11-29 22:41:06,4.0,1.0,2016-11-25 21:34:53,https://github.com/apache/any23/pull/30,95348952.0,[],0.0,30.0,[],0.0,closed,ANY23-297 Any23 doesn't build under JDK1.8,https://api.github.com/repos/apache/any23/pulls/30
+30,1.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,0.0,0.0,"Fix ANY23-300
+
+- Add `**/nb*.xml` pattern into .gitignore to ignore NetBeans configuration files
+
+
+Signed-off-by: Jacek Grzebyta <grzebyta.dev@gmail.com>",1.0,2017-01-10 15:07:49,1.0,1.0,2017-01-05 10:07:34,https://github.com/apache/any23/pull/31,100263213.0,[],0.0,31.0,[],0.0,closed,ANY23-300: Ignore NetBeans configuration files,https://api.github.com/repos/apache/any23/pulls/31
+31,2494.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,287.0,0.0,"Issue described in task ANY23-299. 
+
+That patch add support for YAML->RDF.
+
+- update tika version
+- update mimetypes.xml file
+- add extractor factory and extractor of YAML files",20.0,2017-01-14 02:17:45,7.0,14.0,2017-01-05 14:56:30,https://github.com/apache/any23/pull/32,100303368.0,[],0.0,32.0,"[{'comment_id': 95041854, 'comment_body': 'It may be more useful to iteratively move along all of the spaces in the input string and capitalise, rather than just the first and second words.', 'comment_created': datetime.datetime(2017, 1, 6, 23, 59, 17), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 95171722, 'comment_body': '@ansell That capitalizes all words except the first one.', 'comment_created': datetime.datetime(2017, 1, 9, 15, 5, 23), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 95259126, 'comment_body': 'The tests only test for two-word combinations. Need more unit tests for this method with longer word combinations.', 'comment_created': datetime.datetime(2017, 1, 9, 22, 16, 4), 'commenter': 'ansell', 'type': 'User'}]",3.0,closed,Any23-299: Add support for YAML files,https://api.github.com/repos/apache/any23/pulls/32
+32,1727.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,96.0,0.0,This issue is a first pass at addressing https://issues.apache.org/jira/browse/ANY23-304. There is more work to be done on the new extractor. The new dependency which has been introduced has a significant impact on the size of Any23 as there are loads of new transitive dependencies. @Yongyao this is for context.,17.0,2017-02-24 01:27:47,1.0,1.0,2017-02-16 07:21:51,https://github.com/apache/any23/pull/33,106468313.0,[],0.0,33.0,"[{'comment_id': 101638032, 'comment_body': 'Is this signalling an intention to change the scope of this class to include non-static methods?', 'comment_created': datetime.datetime(2017, 2, 16, 22, 2, 10), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 101641510, 'comment_body': 'Presuming this is stub code right now that will eventually send results to the ExtractorResult.', 'comment_created': datetime.datetime(2017, 2, 16, 22, 19, 53), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 101650632, 'comment_body': 'Possibly, I will see how the remainder of the implementation goes.', 'comment_created': datetime.datetime(2017, 2, 16, 23, 10, 5), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 101650651, 'comment_body': 'Yes, correct.', 'comment_created': datetime.datetime(2017, 2, 16, 23, 10, 12), 'commenter': 'lewismc', 'type': 'User'}]",4.0,closed,ANY23-304 Add extractor for OpenIE 1st pass,https://api.github.com/repos/apache/any23/pulls/33
+33,1453.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,297.0,0.0,"Hi Folks,
+This issue is a rework of #33 which takes on board @ansell 's comments to add the new extractor as a separate module as oppose to inside of core. 
+There are a number of classes which are cleaned up for JDK1.8 compliance.
+In addition, this new functionality augments the default configuration by introducing a threshold for OpenIE extractions of 0.5. Anything below this value is not converted into triples.
+I run a test extraction on a reasonably testing Webpage from the [PO.DAAC](http://podaac.jpl.nasa.gov/aquarius) but right now i am not asserting anything.
+As far as I can see this is working pretty well but some community review would go a long way.",48.0,2017-08-23 20:27:09,15.0,14.0,2017-02-24 01:32:40,https://github.com/apache/any23/pull/34,107750491.0,[],0.0,34.0,"[{'comment_id': 103806159, 'comment_body': 'The Double.parseDouble here should be done once and stored in a local variable', 'comment_created': datetime.datetime(2017, 3, 1, 22, 28), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 103806389, 'comment_body': 'I am not very familiar with Scala, but does this bring an Iterator-like element into memory completely instead of processing it in a streaming fashion (just trying to understand why the OOM are occurring).', 'comment_created': datetime.datetime(2017, 3, 1, 22, 29, 8), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 103806632, 'comment_body': 'Writing to a file instead of ByteArrayOutputStream may alleviate some of the memory pressures.', 'comment_created': datetime.datetime(2017, 3, 1, 22, 30, 12), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 103829816, 'comment_body': '@ansell yes having debugged the code pretty extensively by now, it read the entire sequence into memory. You can see the [Scala Docs here](http://www.scala-lang.org/api/2.11.8/#scala.collection.JavaConversions$), for a bit of additional context, they state\r\n\r\n> Implicitly converts a Scala Seq to a Java List. The returned Java List is backed by the provided Scala Seq and any side-effects of using it via the Java interface will be visible via the Scala interface and vice versa. If the Scala Seq was previously obtained from an implicit or explicit call of asSeq(java.util.List) then the original Java List will be returned. \r\n\r\nThis being said, I haven;t noticed the size of ```instance.extr().arg2s()``` being overly large so far.\r\n\r\nMy feeling is that OOM\'s are stemming from loading the model(s), however I may be wrong. Over on the [openie README](https://github.com/allenai/openie-standalone#memory-requirements) it states ""...openie requires substantial memory."".', 'comment_created': datetime.datetime(2017, 3, 2, 1, 4, 54), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 103831681, 'comment_body': ""@ansell can you please elaborate? Its my understanding that we require the ```ByteArrayOutputStream``` as it acts as a parameter for each ```TripleHandler``` implementation e.g. ```RDFXMLWriter(baos)```.\r\nI would be happy to stream the extractions as an attempt to mitigate against OOM, however this would be after the extraction right? Not before, therefore I'm not sure how much memory we would be saving.\r\n\r\nIf you could clarify it would be appreciated. Thanks.\r\n"", 'comment_created': datetime.datetime(2017, 3, 2, 1, 19, 30), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 103832125, 'comment_body': 'ByteArrayOutputStream will hold all of the results in memory. It may be useful to create a temporary file and reference it as a FileOutputStream, which will have a fixed memory buffer before writing to disk. Just trying to work through the possible avenues where memory requirements can be managed. It may be useful to work through in a debugger to identity the large memory requirement and where that can be lowered, as hopefully the CLI can still be used on small machines after this pull request. Does the model load on every call to the CLI?', 'comment_created': datetime.datetime(2017, 3, 2, 1, 23, 19), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 103832543, 'comment_body': 'OK I get you and yes this makes pefect sense.\r\n\r\n> Does the model load on every call to the CLI?\r\n\r\n... yes... which I realize is far from ideal. The issue with this as well is that it will load on every document AFAIK so this is a major limitation of the approach as it currently sits.', 'comment_created': datetime.datetime(2017, 3, 2, 1, 27, 10), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 103836818, 'comment_body': 'I addressed this @ansell ', 'comment_created': datetime.datetime(2017, 3, 2, 2, 3, 50), 'commenter': 'lewismc', 'type': 'User'}]",8.0,closed,ANY23-304 Add extractor for OpenIE,https://api.github.com/repos/apache/any23/pulls/34
+34,5.0,Jonathan Santilli,,3.0,0.0,1774227.0,,15.0,User,5.0,0.0,"Before this commit, the doc was pointing to the `core` project, which does not contain the Any23 command line interface",1.0,2017-03-29 04:42:19,2.0,1.0,2017-03-21 07:31:43,https://github.com/apache/any23/pull/35,111717746.0,[],0.0,35.0,[],0.0,closed,Update CLI proper documentation,https://api.github.com/repos/apache/any23/pulls/35
+35,24.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,0.0,0.0,"- Fix ANY23-305 :: Configure appender for log4j
+- Fix ANY23-301 :: Stream loggs into STDERR
+
+- add external file at conf/log4.properties
+
+
+Signed-off-by:Jacek Grzebyta <grzebyta.dev@gmail.com>",1.0,2017-03-27 19:10:17,1.0,1.0,2017-03-27 18:33:46,https://github.com/apache/any23/pull/36,112809605.0,[],0.0,36.0,[],0.0,closed,"ANY23-305 , ANY23-301 Configure appender for logs",https://api.github.com/repos/apache/any23/pulls/36
+36,23.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,23.0,0.0,This issue addresses https://issues.apache.org/jira/browse/ANY23-282,5.0,2017-07-26 20:57:16,6.0,5.0,2017-04-11 22:29:32,https://github.com/apache/any23/pull/37,115428830.0,[],0.0,37.0,[],0.0,closed,ANY23-282 Replacement for all Sindice namespaces and URI's,https://api.github.com/repos/apache/any23/pulls/37
+37,357.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,22.0,0.0,"- Fix **ANY23-308**
+  - Add unit test
+  - Upadate `TikaMIMETypeDetector` class
+  - Bring two utility classes into one module `apache-any23-utils`",15.0,2017-07-11 11:20:30,21.0,2.0,2017-06-13 20:08:04,https://github.com/apache/any23/pull/38,125450014.0,[],0.0,38.0,[],0.0,closed,ANY23-308 Adding option '-d' support for yaml file,https://api.github.com/repos/apache/any23/pulls/38
+38,32.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,0.0,0.0,"The aims of that feature is:
+
+- [ ] Automatic test
+- [ ] Create binaries and web page 
+- [ ] Deploy binaries and web page to server(s)
+- [ ] Validate links and access to the binaries
+",1.0,2017-06-30 09:29:21,2.0,2.0,2017-06-29 16:40:51,https://github.com/apache/any23/pull/39,128197111.0,[],0.0,39.0,"[{'comment_id': 124853371, 'comment_body': 'Can you please include an Apache license header?', 'comment_created': datetime.datetime(2017, 6, 29, 16, 45, 55), 'commenter': 'lewismc', 'type': 'User'}]",1.0,closed,ANY23-306 Add Travic Cl build/test support ,https://api.github.com/repos/apache/any23/pulls/39
+39,7.0,Willliam L. Anderson,,8.0,13.0,364630.0,,17.0,User,7.0,0.0,"FIX ANY23-309 (spelling error)
+FIX ANY23-306 (correct URLs for ""WAR package with dependencies"")
+",1.0,2017-07-14 16:09:07,10.0,4.0,2017-07-04 16:16:32,https://github.com/apache/any23/pull/40,128833252.0,[],0.0,40.0,[],0.0,closed,Downloads page updates,https://api.github.com/repos/apache/any23/pulls/40
+40,488.0,Peter Ansell,,135.0,204.0,82365.0,,107.0,User,2.0,0.0,"Adds OWL parsing support through OWLAPI via RDF4J Rio for Manchester Syntax and Functional Syntax.
+
+Signed-off-by: Peter Ansell <p_ansell@yahoo.com>",15.0,2017-07-11 01:46:44,4.0,1.0,2017-07-10 03:00:51,https://github.com/apache/any23/pull/41,129593212.0,[],0.0,41.0,[],0.0,closed,ANY23-257 : Add OWL parser support to Any23 via OWLAPI and RDF4J,https://api.github.com/repos/apache/any23/pulls/41
+41,164.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,17.0,0.0,"Continuation of #38:
+
+- Fix **ANY23-308**
+  - Add unit test
+  - Upadate `TikaMIMETypeDetector` class
+  - Bring two utility classes into one module `apache-any23-utils`",11.0,2017-07-13 05:51:32,4.0,4.0,2017-07-11 11:26:24,https://github.com/apache/any23/pull/42,129884003.0,[],0.0,42.0,"[{'comment_id': 126826866, 'comment_body': ""I am not familiar with YAML, but is CSV (RFC 4180 Section 2 and all other variations) a strict subset of YAML or is it incidental that this test file works with the YAML parser? If it is only incidental we shouldn't be testing it here."", 'comment_created': datetime.datetime(2017, 7, 11, 22, 42, 34), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 126827890, 'comment_body': ""If this must be called last, it should be done in a try-finally block. If this must be done at the end, it isn't clear why it is also being done inside of the loop."", 'comment_created': datetime.datetime(2017, 7, 11, 22, 49, 47), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 126829331, 'comment_body': 'The original InputStream will be modified without the ability to roll it back in this case. Simply try to call is.mark and if that fails, they need to change their calling code to provide a markable InputStream and try again.', 'comment_created': datetime.datetime(2017, 7, 11, 22, 59, 25), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 126829476, 'comment_body': ""A variable isn't a great idea in the default false case, as you can simply return true whenever you decide it is try (and rely on try-finally to cleanup), and then return false at the end of the method."", 'comment_created': datetime.datetime(2017, 7, 11, 23, 0, 19), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 126829615, 'comment_body': 'breaking at the end of a while(true) loop with no calls to ""continue"" shows the code needs to be changed. There doesn\'t seem to be anything iterative about the algorithm, so not clear why you are doing it this way.', 'comment_created': datetime.datetime(2017, 7, 11, 23, 1, 29), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 126829654, 'comment_body': 'This should return false rather than silently aborting', 'comment_created': datetime.datetime(2017, 7, 11, 23, 1, 46), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 126829870, 'comment_body': 'This loop is not being used. Replace it with try-finally and replace the ""result =..."" cases with ""return ..."".', 'comment_created': datetime.datetime(2017, 7, 11, 23, 3, 10), 'commenter': 'ansell', 'type': 'User'}, {'comment_id': 127007051, 'comment_body': 'That is false positive. It is just proof that for text-based formats additional recognising should be done from `meta`. I will delete that.', 'comment_created': datetime.datetime(2017, 7, 12, 16, 38, 54), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 127026645, 'comment_body': 'I have checked in the source and `markSupported()` method olny contains `return true` or `return false`.', 'comment_created': datetime.datetime(2017, 7, 12, 17, 56, 50), 'commenter': 'jgrzebyta', 'type': 'User'}]",9.0,closed,ANY23-308 [NEW] Adding option -d support for yaml files,https://api.github.com/repos/apache/any23/pulls/42
+42,138.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,17.0,0.0,"Fix ANY23-311
+
+Yaml parser produced overly complicated rdf graph so I have done in the PR:
+
+- if yaml document contains a map than the document become the map
+- if String is a valid IRI than convert to IRI
+- add additional unit test for parsing tree
+",6.0,2017-09-13 10:55:35,3.0,5.0,2017-07-13 17:13:25,https://github.com/apache/any23/pull/43,130422507.0,[],0.0,43.0,[],0.0,closed,ANY23-311 Simplify rdf graph structure,https://api.github.com/repos/apache/any23/pulls/43
+43,150.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,17.0,0.0,"- Add a basic unit test for `Rover`
+- Piped correct logger in `Rover`
+- Switch on logging content size
+- use `StringUtils#join` for merging parses with ""comma-space"" delimiter",5.0,2017-07-26 20:42:16,0.0,6.0,2017-07-14 15:39:52,https://github.com/apache/any23/pull/44,130616575.0,[],0.0,44.0,"[{'comment_id': 129171485, 'comment_body': '@jgrzebyta is the intention here to print the number of triples extracted? If so then this is not current behavior with Rover. It could be default behaviour if we switched it to use counting triple handler... just a thought.', 'comment_created': datetime.datetime(2017, 7, 24, 22, 30, 9), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 129450153, 'comment_body': 'Hi,\r\n\r\nYes that is the intention. That behaviour was implemented in the `LoggingTripleHandler` and was displayed but I have just added header for that. For example in last `[ yaml:531 ]` in the logging file only. That information was not displayed in *strerr* output.\r\n\r\nIt is managed generally by the `CompositeTripleHandler` which wraps `ReportingTripleHandler` in the first instance+ `LoggingTripleHandler` if `-l` option is given.\r\n\r\nI have added additional unit test to `SimpleRoverTest` without option `-l` to see what happened internally.', 'comment_created': datetime.datetime(2017, 7, 25, 23, 21, 42), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 129690299, 'comment_body': 'Hi @jgrzebyta I get it, thank you for clarifying', 'comment_created': datetime.datetime(2017, 7, 26, 20, 41, 23), 'commenter': 'lewismc', 'type': 'User'}]",3.0,closed,ANY23-310 Solved problems with wrong loggers,https://api.github.com/repos/apache/any23/pulls/44
+44,556.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,150.0,0.0,"- Simplify graph
+- In case if a triple is not completed (missing object) than it is not created (previous time RDF:NIL was added as object). Still predicates characteristic (`[] rdf:type rdf:predicate ; rdfs:label ?name`) is added to final graph.
+- Make subgraph blank nodes based.",10.0,2017-12-07 12:28:15,5.0,16.0,2017-10-23 14:02:29,https://github.com/apache/any23/pull/45,148140027.0,[],0.0,45.0,"[{'comment_id': 151035471, 'comment_body': 'No need to include Copyright in any new files. These quickly become out-of-date from year to year. We just put a generic license header and then in NOTICE include the Copyright year. Can you please remove the Copyright? Thanks @jgrzebyta ', 'comment_created': datetime.datetime(2017, 11, 15, 5, 17, 22), 'commenter': 'lewismc', 'type': 'User'}]",1.0,closed,Any23-312 simplify yaml parsing outcome,https://api.github.com/repos/apache/any23/pulls/45
+45,3.0,The Alchemist,kap4020@gmail.com,22.0,3.0,812287.0,,345.0,User,0.0,0.0,"Bulleted list is not rendered at http://any23.apache.org/
+
+I think this fixes it",1.0,2017-11-15 04:58:35,1.0,1.0,2017-10-26 20:36:35,https://github.com/apache/any23/pull/46,149039138.0,[],0.0,46.0,[],0.0,closed,Formatting was off,https://api.github.com/repos/apache/any23/pulls/46
+46,1.0,Ian Duffy,,173.0,638.0,1243435.0,,176.0,User,1.0,0.0,"<sometag content=""something"" /> should be considered, regardless if `content` is not a valid
+attribute of `sometag`.
+
+The specification for microdata[1] details that an elements content attribute should be considered
+before text content.
+
+Any23 doesn't currently do this, it only considers `content` for `meta` tags which is the only
+HTML tag which is suppose to have a `content` but not all sites follow HTML specifications.
+
+Updating the microdata parser to be able to get `content` from any element should it exist.
+
+[1] https://www.w3.org/TR/microdata/#values
+
+Signed-off-by: Ian Duffy <ian.duffy@zalando.ie>",1.0,2017-11-15 05:06:02,3.0,1.0,2017-11-08 14:05:51,https://github.com/apache/any23/pull/47,151390977.0,[],0.0,47.0,[],0.0,closed,Support attribute content on all fields.,https://api.github.com/repos/apache/any23/pulls/47
+47,71.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,50.0,0.0,"- replaces Map.Entry by dedicated small getters bean.
+- other small changes
+Signed-off-by:Jacek Grzebyta <grzebyta.dev@gmail.com>",4.0,2017-12-14 12:19:49,0.0,1.0,2017-12-12 17:02:21,https://github.com/apache/any23/pull/48,157884651.0,[],0.0,48.0,[],0.0,closed,ANY23-312 Solved issues in javadoc description ,https://api.github.com/repos/apache/any23/pulls/48
+48,115.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,82.0,0.0,"This issue primarily addresses https://issues.apache.org/jira/browse/ANY23-314
+Additional changes are trivial code cleanups.",7.0,2017-12-19 12:46:09,2.0,1.0,2017-12-12 21:55:25,https://github.com/apache/any23/pull/49,157949527.0,[],0.0,49.0,[],0.0,closed,ANY23-314 Service fails to return extraction in case of extraction error,https://api.github.com/repos/apache/any23/pulls/49
+49,594.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,30.0,0.0,This PR addresses https://issues.apache.org/jira/browse/ANY23-298,11.0,2017-12-19 12:45:30,1.0,2.0,2017-12-13 18:32:23,https://github.com/apache/any23/pull/50,158170622.0,[],0.0,50.0,[],0.0,closed,ANY23-298 Revisit the OGP.java vocabulary and update it,https://api.github.com/repos/apache/any23/pulls/50
+50,15.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,20.0,0.0,"Add handler for `null` values. Parser encodes all `null` values as RDF IRI `http://yaml.org/spec/1.2/spec.html#Null`.
+
+- create RDF value for null values: yaml:Null
+- update null-aware unit test
+- modify example for unit test: 'null' value is an item of a list",6.0,2018-01-02 19:04:16,0.0,3.0,2017-12-26 00:44:03,https://github.com/apache/any23/pull/51,160072292.0,[],0.0,51.0,"[{'comment_id': 158862497, 'comment_body': '@jgrzebyta I would just remove this code.', 'comment_created': datetime.datetime(2017, 12, 27, 20, 9, 17), 'commenter': 'lewismc', 'type': 'User'}]",1.0,closed,Solved ANY23-316,https://api.github.com/repos/apache/any23/pulls/51
+51,249.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,146.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-318
+It also includes several improvements which will help others when debugging code. Furthermore I've corrected > Java7 code conventions whenever possible.
+Apologies that this ended up a larger patch than described in the JIRA issue description however I feel it adequately addresses the issue at hand.",21.0,2017-12-30 17:09:16,0.0,3.0,2017-12-27 20:07:56,https://github.com/apache/any23/pull/52,160296898.0,[],0.0,52.0,[],0.0,closed,ANY23-318 ExtractionException handling in BaseRDFExtractor.java kills entire extraction,https://api.github.com/repos/apache/any23/pulls/52
+52,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,12.0,0.0,This issue re-enables the 'online' tests as essentially the jsonld tests require fetching of Web content anyways.,3.0,2017-12-30 17:10:36,0.0,1.0,2017-12-30 01:55:07,https://github.com/apache/any23/pull/53,160575335.0,[],0.0,53.0,[],0.0,closed,ANY23-140 - Revise Any23 tests to remove fetching of web content,https://api.github.com/repos/apache/any23/pulls/53
+53,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,,1.0,2017-12-30 13:35:36,0.0,1.0,2017-12-30 02:13:00,https://github.com/apache/any23/pull/54,160575726.0,[],0.0,54.0,[],0.0,closed,ANY23-319 Upgrade jsonld-java dependency to 0.11.1,https://api.github.com/repos/apache/any23/pulls/54
+54,2468.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,2519.0,0.0,"Hi Folks, this PR addresses both https://issues.apache.org/jira/projects/ANY23/issues/ANY23-320 and https://issues.apache.org/jira/projects/ANY23/issues/ANY23-131
+
+Additionally, as usual this patch contains a significant volume of formatting and code convention improvements I encountered whilst attempting to fix the bugs associated with the above JIRA issues.
+
+It would be greatly appreciated if folks could pull this PR and test it out.
+Thanks",44.0,2018-01-08 13:14:27,0.0,2.0,2018-01-01 02:59:44,https://github.com/apache/any23/pull/55,160635631.0,[],0.0,55.0,[],0.0,closed,ANY23-320 Address @Ignore tests in Any23 and ANY23-131 Nested Microdata are not extracted,https://api.github.com/repos/apache/any23/pulls/55
+55,533.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,189.0,0.0,"This issue is a large step towards addressing https://issues.apache.org/jira/browse/ANY23-321
+I am however not able to currently register the OpenIEExtractor within the ExtractorGroup/Factory when undertaking an extractor. I've debugged this down to the code in the URLClassLoader.addURL of [Any23PluginManager](https://github.com/apache/any23/blob/master/api/src/main/java/org/apache/any23/plugin/Any23PluginManager.java#L453). The OpenIE JAR's are dynamically loaded however the Extractor implementation does not seem to be registered when the extraction is executed.
+
+@ansell if you are able to pull this code and debug it would be greatly appreciated. I have specific lines for debugging if this would be helpful. Thank you in advance for any assistance here.
+
+P.S. you will also see that I've been making attempts to update the [plugin documentation](http://any23.apache.org/any23-plugins.html). 
+
+P.P.S I actually remember encountering a similar issue previously when attempting to register a plugin via the command line... I think dynamic ClassLoading is broken in Any23 right now. I am keen to fix it so any help here is appreciated folks.",39.0,2018-02-28 04:43:22,24.0,18.0,2018-01-03 00:13:27,https://github.com/apache/any23/pull/56,160828776.0,[],0.0,56.0,[],0.0,closed,ANY23-321 Add openie toggle functionality to service,https://api.github.com/repos/apache/any23/pulls/56
+56,1.0,Frankie Robertson,,31.0,149.0,299380.0,,198.0,User,1.0,0.0,The any23-repository-external repository will currently cause setups forbidding fetching packages over plain HTTP to error. Notably this includes Leiningen. Luckily we can just use the HTTPS url instead.,1.0,2018-01-08 13:13:08,1.0,1.0,2018-01-08 07:12:53,https://github.com/apache/any23/pull/57,161570389.0,[],0.0,57.0,[],0.0,closed,Fix HTTP repository link: change to HTTPS,https://api.github.com/repos/apache/any23/pulls/57
+57,374.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,78.0,0.0,"This should also indirectly fix ANY23-317, ANY23-273, ANY23-267, and ANY23-326.
+
+I also added a ""any23.tagsoup.legacy"" flag in default-configuration.properties to allow switching back to the NekoHTML version.
+
+I ran the full suite of tests against this fork using ""mvn clean install"", and all tests are passing.
+
+Please let me know if there's anything more I can do to improve this pull request!",9.0,2018-01-24 06:11:58,7.0,2.0,2018-01-21 23:03:19,https://github.com/apache/any23/pull/58,164200288.0,[],0.0,58.0,"[{'comment_id': 163327423, 'comment_body': 'Please add license header', 'comment_created': datetime.datetime(2018, 1, 23, 18, 3, 43), 'commenter': 'lewismc', 'type': 'User'}]",1.0,closed,ANY23-324 Changed default html parser from NekoHTML to Jsoup. ,https://api.github.com/repos/apache/any23/pulls/58
+58,151.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,72.0,0.0,"This PR should fix ANY23-326, ANY23-317, ANY23-273, ANY23-267, ANY23-271, ANY23-227, ANY23-268, and ANY23-266.
+
+These all have to do with the RDFa implementation failing to parse HTML.
+
+My previous PR (#58) attempted to fix these issues by changing the default parser from NekoHTML to Jsoup. But alas, it turns out the RDFa implementation is using a completely different html parser under the hood, and it's the RDFa parser that's too strict, not ours, so changing ours from NekoHTML to Jsoup had no effect (although it did come with a nice 20% speed increase, so there's that). It seems that, for rio parsers, the input stream is parsed with Jsoup *only to get the document language* and then parsed **again** under the hood with who knows what.
+
+Now, I simply check the RDF format to see if we're putting out XHTML. If we are, I first XHTML-ify the stream with Jsoup before sending it on to the rio RDF parser.
+
+mvn clean install -> all tests passed.",5.0,2018-01-25 04:50:13,1.0,1.0,2018-01-24 12:48:30,https://github.com/apache/any23/pull/59,164839545.0,[],0.0,59.0,"[{'comment_id': 163678949, 'comment_body': 'Can you please make explicit imports rather than wildcard.', 'comment_created': datetime.datetime(2018, 1, 24, 21, 11, 55), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 163679147, 'comment_body': 'What happens when the file suffix is just .html?', 'comment_created': datetime.datetime(2018, 1, 24, 21, 12, 37), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 163679410, 'comment_body': 'Sure, sorry, that was something that IntelliJ did. I have no idea why. Will fix.', 'comment_created': datetime.datetime(2018, 1, 24, 21, 13, 33), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 163680710, 'comment_body': '`RDFFormat.hasFileExtension()` checks to see if the argument is contained in a list of acceptable file extensions. All of the RDF formats defined in the RDFFormat class which have file extension ""html"" also have file extension ""xhtml"". (And there is exactly one of them: the RDFA format--which is the one that is giving us problems.)', 'comment_created': datetime.datetime(2018, 1, 24, 21, 18, 29), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 163680939, 'comment_body': 'ack, please ignore', 'comment_created': datetime.datetime(2018, 1, 24, 21, 19, 8), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 163683520, 'comment_body': ""@lewismc I can also do the check via pattern matching on MIME types instead of file extensions, if you'd prefer. This way was just the easiest & quickest, and either way we'd get the same results."", 'comment_created': datetime.datetime(2018, 1, 24, 21, 28, 29), 'commenter': 'HansBrende', 'type': 'User'}]",6.0,closed,ANY23-326 fixed rdfa issue with unclosed input & meta tags,https://api.github.com/repos/apache/any23/pulls/59
+59,99.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,1.0,0.0,"Pretty self explanatory. Simply changed one xpath expression. Also added relevant tests.
+
+mvn clean install -> all tests pass.",4.0,2018-01-25 04:57:34,14.0,1.0,2018-01-25 02:03:25,https://github.com/apache/any23/pull/60,165012020.0,[],0.0,60.0,[],0.0,closed,ANY23-291 Allow JSONLD scripts to be located anywhere in document,https://api.github.com/repos/apache/any23/pulls/60
+60,1104.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,4.0,0.0,"Added tests to ensure that all of these issues were fixed by PR #59, and so that we don't regress on a subsequent PR.",6.0,2018-01-25 05:42:35,0.0,1.0,2018-01-25 05:37:18,https://github.com/apache/any23/pull/61,165033482.0,[],0.0,61.0,[],0.0,closed,"ANY23-227,ANY23-268,ANY23-317,ANY23-271,ANY23-273,ANY23-326,ANY23-267",https://api.github.com/repos/apache/any23/pulls/61
+61,2.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,No need to see a stack trace every time `isAbsoluteIRI` returns `false`.,1.0,2018-02-03 14:53:52,1.0,1.0,2018-01-29 05:40:37,https://github.com/apache/any23/pull/62,165619898.0,[],0.0,62.0,"[{'comment_id': 164340771, 'comment_body': 'On an unrelated note, why are we testing this on `href.trim()` instead of just `href`? \r\n`RDFUtils.iri(href)` does *not* call `href.trim()`!', 'comment_created': datetime.datetime(2018, 1, 29, 5, 53, 18), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 164365746, 'comment_body': 'So please could you change it as well?', 'comment_created': datetime.datetime(2018, 1, 29, 8, 57, 1), 'commenter': 'jgrzebyta', 'type': 'User'}]",2.0,closed,ANY23-327 Change log level to debug for RDFUtils.isAbsoluteIRI(),https://api.github.com/repos/apache/any23/pulls/62
+62,43.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,43.0,0.0,"I upgraded the commons-csv dependency from `1.0-SNAPSHOT-rev1148315` to `1.5`.
+
+On running `mvn clean install`, all tests pass.
+
+A couple of minor code changes I made along the way:
+1. Deleted dead code in `if (delimiter.length() != 1 || delimiter.equals(""""))`
+2. Added a null-check in `CSVExtractor.processHeader()`
+3. Deleted `NULL_CHAR = ' '` from `CSVReaderBuilder`. Not sure why that was being used as a comment marker--guessing it was meant to disable comments during strategy testing, which the default `CSVFormat` does already.
+4. Deleted non-standard use of the character `'` for encapsulation. Not sure why that was being used as such. Both `CSVFormat.DEFAULT` and the defunct `CSVStrategy.DEFAULT_STRATEGY`, as well as the RFC 4180 standard use `""` as the encapsulation character.",3.0,2018-02-09 16:43:54,0.0,1.0,2018-02-09 06:13:57,https://github.com/apache/any23/pull/63,168161382.0,[],0.0,63.0,[],0.0,closed,ANY23-264 Upgrade to use public commons-csv instead of custom SNAPSHOT,https://api.github.com/repos/apache/any23/pulls/63
+63,1.0,David Ferrero,,1.0,2.0,4383317.0,,8.0,User,1.0,0.0,fix build by updating version to 2.2-SNAPSHOT to master pom.xml,1.0,2018-02-14 17:26:57,6.0,1.0,2018-02-11 06:39:27,https://github.com/apache/any23/pull/64,168439460.0,[],0.0,64.0,[],0.0,closed,ANY23-329 fixed pom.xml version to 2.2-SNAPSHOT,https://api.github.com/repos/apache/any23/pulls/64
+64,177.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,"I stripped single-line and multi-line comments from json-ld content, as well as CDATA markers.
+
+Also added a test case.
+
+`mvn clean install` -> All tests pass.",4.0,2018-02-23 17:00:35,5.0,1.0,2018-02-11 18:23:16,https://github.com/apache/any23/pull/65,168466431.0,[],0.0,65.0,[],0.0,closed,ANY23-328 Strip comments from json-ld to make parsing more lenient,https://api.github.com/repos/apache/any23/pulls/65
+65,10.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,7.0,0.0,"This is my bad for not catching this when I first implemented json comment stripping, but resolved now. Sorry folks!",3.0,2018-03-28 19:50:45,0.0,1.0,2018-03-28 19:42:53,https://github.com/apache/any23/pull/66,178142833.0,[],0.0,66.0,[],0.0,closed,ANY23-338 fixed problem with json comment stripping,https://api.github.com/repos/apache/any23/pulls/66
+66,27.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,11.0,0.0,"I fixed the itemscope hashcode collision problem documented in ANY23-339, as well as loosening the restriction on subject resources to allow absolute URIs as subjects. 
+
+mvn clean test --> all tests pass
+
+@lewismc Any comments before I merge this?",2.0,2018-03-30 18:16:37,1.0,1.0,2018-03-30 17:14:34,https://github.com/apache/any23/pull/67,178598481.0,[],0.0,67.0,[],0.0,closed,"ANY23-339 fixes itemscope hashcode collision problem, allows absolute URIs as subjects",https://api.github.com/repos/apache/any23/pulls/67
+67,3802.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,9.0,0.0,"This should resolve the remaining problems with the Nutch test cases.
+
+mvn clean test --> all tests pass.
+
+@lewismc any comments?",3.0,2018-04-02 17:07:10,1.0,1.0,2018-03-30 20:15:38,https://github.com/apache/any23/pull/68,178627717.0,[],0.0,68.0,[],0.0,closed,ANY23-340 Removes doctypes to allow extraction of additional rdfa 1.1 triples,https://api.github.com/repos/apache/any23/pulls/68
+68,114.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,0.0,0.0,"This is a hacky patch for Any23 that does exactly the same thing my [JSONLD-JAVA pull request](https://github.com/jsonld-java/jsonld-java/pull/228) does.
+
+With this patch in place, the amortized extraction time for the site https://www.guthriegreen.com dropped from 30 seconds to 0.3 seconds, a difference of **two orders of magnitude**!!! 😱😮😵
+
+This patch should be removed as soon as we can upgrade to JSONLD-JAVA version 0.12.0.
+
+mvn clean test -> all tests pass.
+
+@lewismc @ansell Any comments before I merge this? ",2.0,2018-04-02 17:22:47,1.0,1.0,2018-04-02 08:38:57,https://github.com/apache/any23/pull/69,178798325.0,[],0.0,69.0,[],0.0,closed,ANY23-336 Hacky patch to tide us over until jsonldjava 0.12.0 release,https://api.github.com/repos/apache/any23/pulls/69
+69,5.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,3.0,0.0,"I also had to add `BasicParserSettings.VERIFY_RELATIVE_URIS` as a non-fatal error, due to differences in the ways that version 2.2.4 and 2.3.0 calculated whether a URI is *opaque*:
+
+2.2.4 called any URI with a null path opaque (which could never happen)
+
+2.3.0 called a URI opaque if it had a non-null scheme and its path did not begin with ""/""
+
+Without classifying the above error as non-fatal, errors occurred in the turtle parser test. Since the document IRI did not end with ""/"", it was classified as ""opaque"" by version 2.3.0, hence attempting to resolve a relative IRI against it resulted in an error.
+
+May be related to: https://github.com/eclipse/rdf4j/issues/1025
+
+mvn clean test -> all tests pass",2.0,2018-04-03 11:49:32,0.0,1.0,2018-04-03 11:27:46,https://github.com/apache/any23/pull/70,179068959.0,[],0.0,70.0,[],0.0,closed,ANY23-323 Update Eclipse RDF4J version to 2.3.0,https://api.github.com/repos/apache/any23/pulls/70
+70,95.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,83.0,0.0,"This is my first stab at removing the decade-out-of-date `commons-httpclient` dependency.
+
+All tests are passing, but I want another set of eyes on this.
+
+@lewismc any comments?",9.0,2018-04-04 21:42:34,0.0,1.0,2018-04-03 18:37:13,https://github.com/apache/any23/pull/71,179184074.0,[],0.0,71.0,"[{'comment_id': 178925133, 'comment_body': 'Can the Exception be more specific?', 'comment_created': datetime.datetime(2018, 4, 3, 18, 46, 6), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 178926732, 'comment_body': '@lewismc Oops, yeah, I added that exception in there just to get the stacktrace for debugging purposes, but forgot to take it out again!', 'comment_created': datetime.datetime(2018, 4, 3, 18, 51, 47), 'commenter': 'HansBrende', 'type': 'User'}]",2.0,closed,ANY23-341 Remove dependency on defunct commons-httpclient,https://api.github.com/repos/apache/any23/pulls/71
+71,53.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,47.0,0.0,"This *pretty major* issue has been open for **seven years**... lol...
+
+mvn clean test -> all tests pass (after rewriting the tests to stop testing for the wrong behavior).",5.0,2018-04-05 19:16:09,2.0,1.0,2018-04-05 06:26:13,https://github.com/apache/any23/pull/72,179582717.0,[],0.0,72.0,[],0.0,closed,ANY23-16 fix microdata property URIs,https://api.github.com/repos/apache/any23/pulls/72
+72,10.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,88.0,0.0,mvn clean test -> all tests pass,3.0,2018-04-12 21:06:24,0.0,1.0,2018-04-12 21:01:15,https://github.com/apache/any23/pull/73,181324504.0,[],0.0,73.0,[],0.0,closed,ANY23-343 upgrade to jsonld-java version 0.12.0,https://api.github.com/repos/apache/any23/pulls/73
+73,11.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,17.0,0.0,mvn clean test -> all tests pass (after modifying tests that were testing for incorrect behavior).,7.0,2018-04-12 23:17:59,0.0,1.0,2018-04-12 23:16:06,https://github.com/apache/any23/pull/74,181349621.0,[],0.0,74.0,[],0.0,closed,ANY23-167 fixed: parent itemscopes inherited all properties from child itemscopes,https://api.github.com/repos/apache/any23/pulls/74
+74,32.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,7.0,0.0,mvn clean test -> all tests pass,3.0,2018-04-13 03:14:53,0.0,1.0,2018-04-13 03:11:24,https://github.com/apache/any23/pull/75,181375867.0,[],0.0,75.0,[],0.0,closed,ANY23-331 put META-INF/services tool entries into correct jar file,https://api.github.com/repos/apache/any23/pulls/75
+75,129.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,79.0,0.0,mvn clean test -> all tests pass,7.0,2018-04-13 08:37:36,0.0,1.0,2018-04-13 08:36:37,https://github.com/apache/any23/pull/76,181420599.0,[],0.0,76.0,[],0.0,closed,ANY23-169 Fixed url resolving errors in MicrodataExtractor,https://api.github.com/repos/apache/any23/pulls/76
+76,64.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,3.0,0.0,Added a test case to ensure we don't inadvertently switch back to buggy behavior.,3.0,2018-04-13 13:33:42,0.0,1.0,2018-04-13 13:31:54,https://github.com/apache/any23/pull/77,181489219.0,[],0.0,77.0,[],0.0,closed,ANY23-237 added test case to ensure no regression,https://api.github.com/repos/apache/any23/pulls/77
+77,20.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,18.0,0.0,mvn clean test -> all tests pass,1.0,2018-04-13 16:09:57,0.0,1.0,2018-04-13 16:09:13,https://github.com/apache/any23/pull/78,181532674.0,[],0.0,78.0,[],0.0,closed,ANY23-337 fixed: BenchmarkTripleHandler reported inaccurate runtimes,https://api.github.com/repos/apache/any23/pulls/78
+78,12.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,8.0,0.0,mvn clean test -> all tests pass,1.0,2018-04-13 16:51:28,0.0,1.0,2018-04-13 16:48:44,https://github.com/apache/any23/pull/79,181541422.0,[],0.0,79.0,[],0.0,closed,ANY23-334 fixed: default language was a UUID,https://api.github.com/repos/apache/any23/pulls/79
+79,6.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,6.0,0.0,"See https://github.com/eclipse/rdf4j/issues/1017
+
+mvn clean test -> all tests pass
+
+As soon as this regression is fixed in rdf4j, we should revert back, because the ParsedIRI class looks pretty cool and apparently fixes some issues with URI resolving present in the java.net.URI class.",2.0,2018-04-15 23:22:43,0.0,1.0,2018-04-15 23:18:42,https://github.com/apache/any23/pull/80,181727283.0,[],0.0,80.0,[],0.0,closed,ANY23-346 reverted to rdf4j 2.2.4 due to regression in 2.3,https://api.github.com/repos/apache/any23/pulls/80
+80,8.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,8.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-322
+
+@HansBrende ",5.0,2018-04-19 19:02:11,0.0,1.0,2018-04-18 20:10:55,https://github.com/apache/any23/pull/81,182589426.0,[],0.0,81.0,[],0.0,closed,ANY23-322 Any23 embedded service is broken,https://api.github.com/repos/apache/any23/pulls/81
+81,337.0,Julio Caguano,,0.0,0.0,36753216.0,,2.0,User,232.0,0.0,"User JSON-LD as a default JSONWritter.
+
+Having the statement:
+```xml
+<http://sub/1> <http://pred/1> ""123""^^<http://datatype> <http://graph/1>.
+```
+
+Before using the default RDF4J writer:
+```json
+[
+  {
+    ""type"": ""uri"",
+    ""value"": ""http://sub/1""
+  },
+  ""http://pred/1"",
+  {
+    ""type"": ""literal"",
+    ""value"": ""123"",
+    ""lang"": null,
+    ""datatype"": ""http://datatype""
+  },
+  ""http://graph/1""
+]
+```
+
+Now, using the RDF4J writer:
+```json
+[
+  {
+    ""@graph"": [
+      {
+        ""@id"": ""http://sub/1"",
+        ""http://pred/1"": [
+          {
+            ""@type"": ""http://datatype"",
+            ""@value"": ""123""
+          }
+        ]
+      }
+    ],
+    ""@id"": ""http://graph/1""
+  }
+]
+```
+
+I am wondering about name conventions and some drawback compatibility. 
+- Should we rename the classes `JSONWriter` to `JSONLDWriter` and `JSONWriterFactory` to `JSONLDWriterFactory`. 
+- When using the REST API, should we use `jsonld` as output format  instead of `json`.
+
+Closes #ANY231 [issue](https://issues.apache.org/jira/browse/ANY23-231)",10.0,2018-05-10 06:01:09,8.0,6.0,2018-04-30 21:38:22,https://github.com/apache/any23/pull/82,185071685.0,[],0.0,82.0,[],0.0,closed,ANY23-231: Use RDF4J writer to return JSON-LD outputs.,https://api.github.com/repos/apache/any23/pulls/82
+82,48.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,14.0,0.0,"mvn clean test -> all tests pass
+
+@lewismc @JulioCCBUcuenca rdf4j version 2.3.2 defaults to pretty printing in the JSONLDWriter, so this PR seems to complement ANY23-231 nicely. Does that work for you?",5.0,2018-05-16 15:14:30,1.0,2.0,2018-05-16 04:40:47,https://github.com/apache/any23/pull/83,188317344.0,[],0.0,83.0,[],0.0,closed,ANY23-352 updated to rdf4j version 2.3.2,https://api.github.com/repos/apache/any23/pulls/83
+83,942.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,6.0,0.0,mvn clean test -> all tests pass,3.0,2018-05-17 15:48:18,0.0,1.0,2018-05-17 06:52:50,https://github.com/apache/any23/pull/84,188638833.0,[],0.0,84.0,[],0.0,closed,ANY23-349 repair syntactically invalid microdata links,https://api.github.com/repos/apache/any23/pulls/84
+84,130.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,17.0,0.0,"I did two things: 
+
+(1) Treat blank microdata types as if they were null
+
+(2) For other varieties of malformed microdata types, first attempt to fix them by trimming leading & trailing whitespaces and url-encoding illegal characters. If that fails, then only throw a fatal error if the microdata parser error mode is set to STOP_AT_FIRST_ERROR; otherwise, add the error to the error list, treat the type as if it were null, and continue parsing.
+
+mvn clean test -> all tests pass
+
+@lewismc what do you think?",6.0,2018-05-22 19:38:45,1.0,2.0,2018-05-18 22:57:16,https://github.com/apache/any23/pull/85,189152007.0,[],0.0,85.0,[],0.0,closed,ANY23-348 handle malformed microdata types gracefully,https://api.github.com/repos/apache/any23/pulls/85
+85,691.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,6.0,0.0,"This PR:
+1. fixes the NullPointerExceptions that have occurred in HCardExtractor
+2. supports the 'srcset' attribute in obtaining urls from img elements
+3. fixes the fallback url extraction method to align with the spec by only obtaining url text from 'value'-class elements, or, if none defined, from non-'type'-class elements.
+
+mvn clean test -> all tests pass",4.0,2018-06-27 20:16:12,2.0,1.0,2018-06-27 16:37:04,https://github.com/apache/any23/pull/86,197789538.0,[],0.0,86.0,[],0.0,closed,ANY23-351 fixed NullPointerException in HCardExtractor,https://api.github.com/repos/apache/any23/pulls/86
+86,16.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,0.0,0.0,"The RDFParseException was caused by the following malformed markup:
+
+`<link rel=\""shortcut icon\"">`
+
+Jsoup then cleaned this up into:
+
+`<link rel=""\&quot;shortcut"" icon\""="""">`
+
+The problem with that was that the underlying SAX parser doesn't play well with attribute names that contain quotes, so the attribute name `icon\""` caused the following exception:
+
+```
+org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 4536; Attribute name ""icon"" 
+associated with an element type ""link"" must be followed by the ' = ' character.
+	at org.semarglproject.rdf4j.rdf.rdfa.RDF4JRDFaParser.parse(RDF4JRDFaParser.java:111)
+	at org.semarglproject.rdf4j.rdf.rdfa.RDF4JRDFaParser.parse(RDF4JRDFaParser.java:95)
+	at org.apache.any23.extractor.rdf.BaseRDFExtractor.run(BaseRDFExtractor.java:158)
+```
+
+My solution to this problem was simply to sanitize all attribute names.
+
+mvn clean test -> all tests pass",1.0,2018-06-27 22:38:30,0.0,1.0,2018-06-27 22:33:51,https://github.com/apache/any23/pull/87,197871550.0,[],0.0,87.0,[],0.0,closed,ANY23-350 fixed RDFParseException caused by malformed attributes,https://api.github.com/repos/apache/any23/pulls/87
+87,54.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,"My solution to this problem was to strip all xml namespaces from attributes and tag names except the ""xml:"" and ""xmlns:"" namespaces. I also added a test case.
+
+mvn clean test -> all tests pass
+
+@lewismc any comments?",4.0,2018-06-28 23:45:18,1.0,1.0,2018-06-28 17:02:10,https://github.com/apache/any23/pull/88,198093907.0,[],0.0,88.0,[],0.0,closed,ANY23-347 fixed RDFParseExceptions caused by unbound xml namespaces,https://api.github.com/repos/apache/any23/pulls/88
+88,8.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,0.0,0.0,"For string literals of datatype ""langString"" with no language tag, I'm simply falling back to type ""string"" (or using the default language if specified).
+
+mvn clean test -> all tests pass
+
+@lewismc any comments?",2.0,2018-06-28 22:06:02,1.0,1.0,2018-06-28 18:09:33,https://github.com/apache/any23/pull/89,198109927.0,[],0.0,89.0,[],0.0,closed,ANY23-353 fallback on string datatype for langstring with no lang,https://api.github.com/repos/apache/any23/pulls/89
+89,21.0,Julio Caguano,,0.0,0.0,36753216.0,,2.0,User,14.0,0.0,"The [RDFParserFactory](https://github.com/apache/any23/blob/master/core/src/main/java/org/apache/any23/extractor/rdf/RDFParserFactory.java) uses Rio implementations, and as a consequence of this, the [RDFa11Parser](https://github.com/apache/any23/blob/master/core/src/main/java/org/apache/any23/extractor/rdfa/RDFa11Parser.java) is not longer used. Thus, it needs to be deprecated.",2.0,2018-07-02 21:03:49,4.0,2.0,2018-06-29 03:25:46,https://github.com/apache/any23/pull/90,198205862.0,[],0.0,90.0,[],0.0,closed,ANY23-355: Deprecate RDFa11Parser since Rio implementations are used instead,https://api.github.com/repos/apache/any23/pulls/90
+90,553.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,349.0,0.0,"Summary of changes:
+
+1. Remove the following dependencies from the `<dependencyManagement>` section of the parent pom:
+`commons-cli:commons-cli`
+`org.apache.poi:poi-ooxml-schemas`
+`net.sourceforge.owlapi:owlapi-impl`
+`org.slf4j:slf4j-jdk14`
+`org.mortbay.jetty:servlet-api-3.0`
+`org.mortbay.jetty:jetty-servlet-tester`
+
+2. Add all transitive dependencies which have specific versions declared in the `<dependencyManagement>` section of the parent pom to appropriate child poms explicitly. These dependencies include, but are not limited to:
+`org.apache.httpcomponents:httpclient-cache`
+`org.apache.httpcomponents:fluent-hc`
+`org.apache.httpcomponents:httpclient-osgi`
+`org.apache.httpcomponents:httpmime`
+`org.apache.httpcomponents:httpcore-osgi`
+`org.apache.httpcomponents:httpcore-nio`
+`net.sourceforge.owlapi:owlapi-api`
+`net.sourceforge.owlapi:owlapi-parsers`
+`org.apache.poi:poi-ooxml`
+`org.apache.poi:poi-scratchpad`
+`org.eclipse.rdf4j:rdf4j-rio-rdfjson`
+`org.slf4j:jcl-over-slf4j`
+
+3. Update the following dependencies:
+`net.sourceforge.owlapi:*:5.1.3` -> `net.sourceforge.owlapi:*:5.1.5`
+`org.apache.poi:*:3.16` -> `org.apache.poi:*:3.17`
+`org.apache.tika:*:1.17` -> `org.apache.tika:*:1.18`
+`commons-codec:1.10` -> `commons-codec:1.11`
+`commons-compress:1.14` -> `commons-compress:1.17`
+`commons-io:1.4` -> `commons-io:1.6`
+`snakeyaml:1.17` -> `snakeyaml:1.21`
+`mockito-core:2.8.47` -> `mockito-core:2.19.0`
+`org.mortbay.jetty:*` -> `org.eclipse.jetty:*:9.4.11.v20180605`
+`xercesImpl:2.9.1` -> `xercesImpl:2.12.0`
+`crawler4j:3.4` -> `crawler4j:4.4.0`
+`jcommander:1.30` -> `jcommander:1.72`
+
+4. Refactor the `ServletTest` class to account for update from `org.mortbay.jetty` to `org.eclipse.jetty`
+
+5. Refactor the `DefaultWebCrawler` class to account for update from crawler4j 3.4 to 4.4.0. 
+
+6. Update any23 plugin dependency versions in integration-test pom
+
+7. Refactor the `ExtractorDocumentation` class to account for update to jcommander 1.72 ([this commit](https://github.com/cbeust/jcommander/commit/192ec8695636e6793dfbebd8aaab2f1d467b922e) introduced a breaking change).
+
+8. Remove nekohtml dependency",17.0,2018-07-05 21:25:49,10.0,6.0,2018-06-29 22:28:09,https://github.com/apache/any23/pull/91,198438003.0,[],0.0,91.0,[],0.0,closed,ANY23-356 update all dependencies,https://api.github.com/repos/apache/any23/pulls/91
+91,14.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,21.0,0.0,"1. Changed `anyObject()` method to its alias `any()`
+2. Removed usages of `Matchers` class
+
+mvn clean test -> all tests passed",2.0,2018-07-09 19:52:24,0.0,1.0,2018-07-09 19:43:41,https://github.com/apache/any23/pull/92,200200046.0,[],0.0,92.0,[],0.0,closed,resolved mockito deprecation warnings,https://api.github.com/repos/apache/any23/pulls/92
+92,6.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,7.0,0.0,mvn clean test -> all tests passed,3.0,2018-07-09 21:18:34,0.0,1.0,2018-07-09 20:48:23,https://github.com/apache/any23/pull/93,200215562.0,[],0.0,93.0,[],0.0,closed,ANY23-358 fixed junit.framework.Assert & RDFa11Parser deprecation warnings,https://api.github.com/repos/apache/any23/pulls/93
+93,4.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,"`org.apache.commons.io.IOUtils.toString(InputStream)` became deprecated in version 2.5. 
+
+mvn clean test -> all tests passed",1.0,2018-07-09 22:13:49,0.0,1.0,2018-07-09 22:12:30,https://github.com/apache/any23/pull/94,200233931.0,[],0.0,94.0,[],0.0,closed,ANY23-359 resolved deprecation warning in Any23Test,https://api.github.com/repos/apache/any23/pulls/94
+94,32.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,48.0,0.0,"Also refactored a bit for code style.
+
+mvn clean test -> all tests passed",1.0,2018-07-10 01:06:59,0.0,1.0,2018-07-10 01:06:04,https://github.com/apache/any23/pull/95,200257793.0,[],0.0,95.0,[],0.0,closed,ANY23-360 Resolved Xerces deprecation warnings,https://api.github.com/repos/apache/any23/pulls/95
+95,43.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,39.0,0.0,"1. resolved tika deprecation warning
+2. refactored for code style
+3. avoid NullPointerException in `guessMIMEType()`
+4. avoid `SecurityException` in `getResourceAsStream()`
+5. use synchronization in constructor when initializing static variables
+
+@lewismc any comments?
+",1.0,2018-07-11 15:03:19,0.0,1.0,2018-07-10 17:13:08,https://github.com/apache/any23/pull/96,200466380.0,[],0.0,96.0,[],0.0,closed,ANY23-361 resolved tika deprecation warning,https://api.github.com/repos/apache/any23/pulls/96
+96,23.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,36.0,0.0,"1. resolved rdf4j deprecation warnings
+2. refactored for code style and improved singleton pattern in `RDFParserFactory`
+3. updated no-arg constructors in `RDFXMLExtractor` and `TriXExtractor` to match their javadoc specs, along with the behavior all the other RDF extractor classes' no-arg constructors
+
+mvn clean test -> all tests passed
+
+@lewismc any comments before I merge this in?",6.0,2018-07-11 21:18:08,0.0,1.0,2018-07-11 16:31:40,https://github.com/apache/any23/pull/97,200758971.0,[],0.0,97.0,[],0.0,closed,ANY23-362 resolved rdf4j deprecation warnings,https://api.github.com/repos/apache/any23/pulls/97
+97,2.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,mvn clean test -> all tests passed,1.0,2018-07-11 18:35:29,0.0,1.0,2018-07-11 18:28:52,https://github.com/apache/any23/pull/98,200787884.0,[],0.0,98.0,[],0.0,closed,ANY23-363 updated httpclient/httpcore to 4.5.6/4.4.10,https://api.github.com/repos/apache/any23/pulls/98
+98,28.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,23.0,0.0,mvn clean test -> all tests passed,2.0,2018-07-11 20:16:53,0.0,1.0,2018-07-11 20:12:34,https://github.com/apache/any23/pull/99,200812874.0,[],0.0,99.0,[],0.0,closed,ANY23-364 resolved POI deprecation warnings,https://api.github.com/repos/apache/any23/pulls/99
+99,8.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,4.0,0.0,"Resolved the following warnings:
+- Annotation `Author.class` is not retained for reflective access (in `o.a.a.cli.PluginVerifier`)
+- `o.a.a.cli.PluginVerifier` uses unchecked or unsafe operations
+- `sun.security.validator.ValidatorException` is internal proprietary API and may be removed in a future release (in `o.a.a.servlet.WebResponder`)
+
+mvn clean test -> all tests passed",3.0,2018-07-11 20:57:37,0.0,1.0,2018-07-11 20:56:24,https://github.com/apache/any23/pull/100,200823178.0,[],0.0,100.0,[],0.0,closed,ANY23-365 resolved additional warnings,https://api.github.com/repos/apache/any23/pulls/100
+100,93.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,5.0,0.0,"1. Excluded `commons-logging` from dependencies to ensure `jcl-over-slf4j` works as expected
+2. Changed deprecated 'name' tag to 'id' in `appassembler-maven-plugin`",4.0,2018-07-12 20:00:50,0.0,2.0,2018-07-12 19:47:52,https://github.com/apache/any23/pull/101,201106820.0,[],0.0,101.0,[],0.0,closed,ANY23-366 resolved additional build warnings,https://api.github.com/repos/apache/any23/pulls/101
+101,44.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,44.0,0.0,@lewismc anything else I need to do here to ensure this refactor works properly?,2.0,2018-08-01 16:41:54,2.0,1.0,2018-07-16 14:40:30,https://github.com/apache/any23/pull/102,201659448.0,[],0.0,102.0,[],0.0,closed,ANY23-367 update 'latest.stable.released' property,https://api.github.com/repos/apache/any23/pulls/102
+102,70.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,66.0,0.0,"Taking a hint from the [`tika-parsers` pom](https://github.com/apache/tika/blob/master/tika-parsers/pom.xml) and the [`rdf4j-rio-jsonld` pom](https://github.com/eclipse/rdf4j/blob/master/rio/jsonld/pom.xml), I excluded the following libraries from the project:
+- `stax:stax-api`
+- `org.apache.httpcomponents:fluent-hc`
+- `org.apache.httpcomponents:httpcore-nio`
+- `org.apache.httpcomponents:httpcore-osgi`
+- `org.apache.httpcomponents:httpclient-osgi`
+
+mvn clean test -> all tests passed",5.0,2018-07-18 19:26:38,0.0,1.0,2018-07-18 19:22:07,https://github.com/apache/any23/pull/103,202354254.0,[],0.0,103.0,[],0.0,closed,ANY23-369 Resolved overlapping dependencies,https://api.github.com/repos/apache/any23/pulls/103
+103,60.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,"Fixes microdata itemtype urls that are lacking a scheme by using a default scheme of ""http"".
+
+mvn clean test -> all tests passed.",3.0,2018-07-31 17:40:46,0.0,1.0,2018-07-31 17:38:52,https://github.com/apache/any23/pull/105,205189541.0,[],0.0,105.0,[],0.0,closed,ANY23-374 fix schemeless microdata urls,https://api.github.com/repos/apache/any23/pulls/105
+104,231.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,4.0,0.0,mvn clean test -> all tests passed,4.0,2018-07-31 20:40:50,0.0,1.0,2018-07-31 20:39:47,https://github.com/apache/any23/pull/106,205235453.0,[],0.0,106.0,[],0.0,closed,ANY23-376 fix IllegalArgumentException in microdata extractor,https://api.github.com/repos/apache/any23/pulls/106
+105,25.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,32.0,0.0,mvn clean test -> all tests passed,2.0,2018-07-31 21:53:01,0.0,1.0,2018-07-31 21:49:26,https://github.com/apache/any23/pull/107,205252544.0,[],0.0,107.0,[],0.0,closed,ANY23-377 don't replace empty strings with 'Null',https://api.github.com/repos/apache/any23/pulls/107
+106,859.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,25.0,0.0,"Remove trailing commas from objects and arrays. Also replace semicolons with commas (compare to gson's `JsonReader.setLenient()`). 
+
+mvn clean test -> all tests passed",3.0,2018-08-01 16:36:40,0.0,1.0,2018-08-01 16:34:43,https://github.com/apache/any23/pull/108,205483981.0,[],0.0,108.0,[],0.0,closed,ANY23-378 clean commas in JSON-LD,https://api.github.com/repos/apache/any23/pulls/108
+107,678.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,1.0,0.0,mvn clean test -> all tests passed,3.0,2018-08-01 18:55:35,0.0,1.0,2018-08-01 18:54:42,https://github.com/apache/any23/pull/109,205519867.0,[],0.0,109.0,[],0.0,closed,ANY23-379 remove invalid XML characters from document,https://api.github.com/repos/apache/any23/pulls/109
+108,870.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,82.0,0.0,"I disallowed duplicate attribute keys in html to avoid `org.xml.sax.SAXParseException`s.
+
+Along the way, I also cleaned up some annoying or unnecessary logging/console output produced by our massive suite of test cases.
+
+Also cleaned up some javadoc/miscellaneous items.
+
+mvn clean test -> all tests passed",21.0,2018-08-02 18:15:35,0.0,3.0,2018-08-02 18:12:25,https://github.com/apache/any23/pull/110,205818587.0,[],0.0,110.0,[],0.0,closed,ANY23-380 disallow duplicate attribute keys,https://api.github.com/repos/apache/any23/pulls/110
+109,969.0,Julio Caguano,,0.0,0.0,36753216.0,,2.0,User,137715.0,0.0,"# librdfa-rdf4j
+Implementation of librdfa bridge. This implementation has a RDF4J Parser  along with the bridge between librdfa (C) and RDF4J (Java). ",891.0,2018-08-03 03:48:54,2.0,13.0,2018-08-02 20:16:05,https://github.com/apache/any23/pull/111,205848816.0,[],0.0,111.0,[],0.0,closed,Any23 295 librdfa module,https://api.github.com/repos/apache/any23/pulls/111
+110,613.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,8.0,0.0,mvn clean test -> all tests passed,3.0,2018-08-02 21:49:16,0.0,1.0,2018-08-02 21:48:08,https://github.com/apache/any23/pull/112,205870946.0,[],0.0,112.0,[],0.0,closed,ANY23-381 escape illegal characters in JSON-LD strings,https://api.github.com/repos/apache/any23/pulls/112
+111,151.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,146.0,0.0,mvn clean test -> all tests passed,5.0,2018-08-03 21:13:27,0.0,1.0,2018-08-03 21:12:11,https://github.com/apache/any23/pull/113,206140034.0,[],0.0,113.0,[],0.0,closed,ANY23-382 don't kill extraction on fatal json parsing errors,https://api.github.com/repos/apache/any23/pulls/113
+112,193.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,13.0,0.0,mvn clean test -> all tests passed,9.0,2018-08-04 15:25:26,0.0,1.0,2018-08-04 15:17:32,https://github.com/apache/any23/pull/114,206196728.0,[],0.0,114.0,[],0.0,closed,ANY23-383 allow all unicode space chars in JSON-LD,https://api.github.com/repos/apache/any23/pulls/114
+113,101.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,4.0,0.0,"1. Increase default sniff limit for text charset detection from 12000 bytes to 65536 bytes
+2. Include results of xml declaration encoding detection
+3. Include results of html meta charset encoding detection
+
+mvn clean test -> all tests passed",2.0,2018-08-05 23:48:46,0.0,1.0,2018-08-05 23:46:17,https://github.com/apache/any23/pull/115,206264476.0,[],0.0,115.0,[],0.0,closed,ANY23-385 improve encoding detection,https://api.github.com/repos/apache/any23/pulls/115
+114,0.0,Lars G. Svensson,,2.0,0.0,4930956.0,,10.0,User,0.0,0.0,"Making the constructor of `RDFWriterTripleHandler` and its `writer` field protected, as [discussed](https://issues.apache.org/jira/browse/ANY23-388?focusedCommentId=16580679&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16580679) by me, @lewismc and @HansBrende ",0.0,2018-08-20 06:09:37,5.0,0.0,2018-08-16 16:43:13,https://github.com/apache/any23/pull/116,208919406.0,[],0.0,116.0,"[{'comment_id': 210723497, 'comment_body': 'I am a bit confused why you just did not add setter instead having the filed protected. Or expolit the protected constructor you did below.', 'comment_created': datetime.datetime(2018, 8, 16, 20, 0, 12), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 210724153, 'comment_body': 'I like it.', 'comment_created': datetime.datetime(2018, 8, 16, 20, 2, 17), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 210745076, 'comment_body': ""@jgrzebyta I don't see any reason to disallow protected access to the `writer` if we allow protected access to the constructor. Subclasses could bypass the `private` modifier anyway by simply saving a reference to the writer in the constructor."", 'comment_created': datetime.datetime(2018, 8, 16, 21, 18, 20), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 210858026, 'comment_body': '@HansBrende There is no reason. It is only the coding style.\r\n\r\nBut if user will override constructor in her/his custom class will call `super(someWriter)` anyway. In that case constructor is a setter for the writer.', 'comment_created': datetime.datetime(2018, 8, 17, 9, 44, 11), 'commenter': 'jgrzebyta', 'type': 'User'}]",4.0,closed,Any23 388,https://api.github.com/repos/apache/any23/pulls/116
+115,2.0,Lars G. Svensson,,2.0,0.0,4930956.0,,10.0,User,2.0,0.0,"Make the constructor of `RDFWriterTripleHandler` and its field `writer` protected, as [discussed](https://issues.apache.org/jira/browse/ANY23-388?focusedCommentId=16580679&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16580679) by me, @lewismc and @HansBrende. This replaces PR #116",1.0,2018-08-20 13:11:10,0.0,1.0,2018-08-20 08:33:36,https://github.com/apache/any23/pull/117,209447556.0,[],0.0,117.0,[],0.0,closed,ANY23-388 Make field writer and constructor protected,https://api.github.com/repos/apache/any23/pulls/117
+116,1943.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,2.0,0.0,"This is my first stab at implementing the ical, jcal, and xcal extractors.
+
+@lewismc Any input?",36.0,2018-08-27 17:14:27,3.0,2.0,2018-08-21 16:39:52,https://github.com/apache/any23/pull/118,209887940.0,[],0.0,118.0,[],0.0,closed,"ANY23-390 implement ICal, JCal, and XCal extractors",https://api.github.com/repos/apache/any23/pulls/118
+117,3.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,0.0,0.0,"Add configuration to load src/main/resources.
+Plugin settings are useful only for debugging purposes.
+
+* loads content of `src/main/` into web application resources",1.0,2018-08-30 23:16:37,3.0,1.0,2018-08-23 15:21:25,https://github.com/apache/any23/pull/119,210485965.0,[],0.0,119.0,[],0.0,closed,ANY23-392: Add configuration for maven-jetty-plugin,https://api.github.com/repos/apache/any23/pulls/119
+118,22.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,12.0,0.0,"Issue addresses build under following environment
+```
+Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T11:33:14-07:00)
+Maven home: /usr/local/Cellar/maven/3.5.4/libexec
+Java version: 10.0.2, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home
+Default locale: en_US, platform encoding: UTF-8
+OS name: ""mac os x"", version: ""10.12.6"", arch: ""x86_64"", family: ""Mac""
+```",2.0,2018-09-06 15:18:16,6.0,2.0,2018-08-25 18:08:48,https://github.com/apache/any23/pull/120,210914570.0,[],0.0,120.0,[],0.0,closed,ANY23-393 Any23 master to build under JDK 10.X,https://api.github.com/repos/apache/any23/pulls/120
+119,499.0,Jacek Grzebyta,,4.0,2.0,6738268.0,,20.0,User,10.0,0.0,- Add unit test with example. The test contains expected model.,12.0,2018-10-23 20:18:35,8.0,9.0,2018-09-06 12:21:28,https://github.com/apache/any23/pull/121,213598210.0,[],0.0,121.0,"[{'comment_id': 217037875, 'comment_body': 'Model should not be static, unless there is a very good reason for doing so?', 'comment_created': datetime.datetime(2018, 9, 12, 13, 48, 51), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 217041300, 'comment_body': 'This should not be a static call.', 'comment_created': datetime.datetime(2018, 9, 12, 13, 57), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 217041561, 'comment_body': 'Should not be static.', 'comment_created': datetime.datetime(2018, 9, 12, 13, 57, 36), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 217042421, 'comment_body': 'Feels hacky... what if not all of the triples came from the same extractor?', 'comment_created': datetime.datetime(2018, 9, 12, 13, 59, 20), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 217044167, 'comment_body': 'We should not need a separate flag to enable certain extractors. If an extractor is contained within the extractor group we are using, then that should be, on its own, enough to enable itself.', 'comment_created': datetime.datetime(2018, 9, 12, 14, 3), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 217044600, 'comment_body': 'No extra flag should be needed for this.', 'comment_created': datetime.datetime(2018, 9, 12, 14, 3, 57), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 217142024, 'comment_body': 'Yes I agree with you. The idea is that these models should be presented later on (inside SingleDocumentWriter) to ModelExtractor and conrain parsing outcome of previous extractors. Access to those models is not propagated further down from Rover. I meant without changing api. I thought adding them into extraction parameters.', 'comment_created': datetime.datetime(2018, 9, 12, 18, 30, 31), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 217143848, 'comment_body': ""The idea is to find extractor which produces theustomer's domain-specific rdf graph."", 'comment_created': datetime.datetime(2018, 9, 12, 18, 36, 35), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 217159830, 'comment_body': ""@jgrzebyta IMHO, it would be vastly more straightforward to simply have the user extend the [`CompositeTripleHandler`](https://github.com/apache/any23/blob/master/core/src/main/java/org/apache/any23/writer/CompositeTripleHandler.java) class to filter and transform triples into a domain-specific rdf graph of their choosing, before delegating the final domain-specific triple outputs to the wrapped `TripleHandler` instance(s) by calling `super.receiveTriple( [modified triple] )`.\r\n\r\n(Analogous in concept to Java's own [`FilterOutputStream`](https://docs.oracle.com/javase/8/docs/api/java/io/FilterOutputStream.html) class.)\r\n"", 'comment_created': datetime.datetime(2018, 9, 12, 19, 29, 25), 'commenter': 'HansBrende', 'type': 'User'}]",9.0,closed,ANY23-396 Add ability to run extractors in flow ,https://api.github.com/repos/apache/any23/pulls/121
+120,2446.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,343.0,0.0,"Here is one possible alternative to the existing PR for ANY23-396.
+
+**Pros:**
+
+1. Fully backwards compatible
+2. Extends `WriterFactory` with new `DelegatingWriterFactory` interface, which, rather than writing a `TripleHandler` to an output stream, writes a `TripleHandler` to another `TripleHandler`. This will allow users to produce a final domain-specific RDF graph of their choosing in Rover by implementing mapping/filtering `DelegatingWriterFactory` implementations. 
+3. the `--format` flag in rover now represents a list of WriterFactory ids, rather than a single WriterFactory id. Each id in the list is composed with the one previous to it to construct the final `TripleHandler`. All writer factories in the list, except the last, are required to implement `DelegatingWriterFactory`.
+
+**Cons:** 
+1. this solution requires deprecating 3 methods in the `WriterFactory` interface (and then un-deprecating them in the extending `FormatWriterFactory` interface.) However, this drawback does not affect backwards compatibility. 
+
+## ALTERNATIVE
+
+In order to avoid the single ""con"" I have listed, the alternative to this solution would be, rather than extending the `WriterFactory` interface with `DelegatingWriterFactory`, to keep these two interfaces completely separate and define a new `DelegatingWriterFactoryRegistry` (analogous to the `WriterFactoryRegistry`) with a different `ServiceLoader` in order to load `DelegatingWriterFactory` implementations.
+
+@jgrzebyta @lewismc Thoughts? ",41.0,2018-10-23 19:20:29,30.0,1.0,2018-09-14 15:51:20,https://github.com/apache/any23/pull/122,215637884.0,[],0.0,122.0,"[{'comment_id': 217989655, 'comment_body': '@HansBrende Please add some java doc. ', 'comment_created': datetime.datetime(2018, 9, 17, 8, 52, 34), 'commenter': 'jgrzebyta', 'type': 'User'}, {'comment_id': 226702275, 'comment_body': ""Actually, we should not allow keys to decorate values. Consider the following scenario: user copies the value from one setting into another setting. Now the key is decorating a value that has *already been decorated*. This could lead to an unfortunate chain of, e.g., \r\n```\r\nCollections.unmodifiableList(Collections.unmodifiableList(Collections.unmodifiableList(... )))\r\n```\r\n\r\nTherefore, any decorating should happen *before* the setting is created, and if the value is not appropriately decorated, the key should throw an exception in the value check. \r\n\r\nAlso we should change this method's signature to:\r\n```\r\nprotected void checkValue(Setting<V> initial, V newValue) throws Exception\r\n```"", 'comment_created': datetime.datetime(2018, 10, 19, 16, 13, 8), 'commenter': 'HansBrende', 'type': 'User'}]",2.0,closed,ANY23-396 Overhaul WriterFactory API,https://api.github.com/repos/apache/any23/pulls/122
+121,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,This issue addresses https://issues.apache.org/jira/browse/ANY23-399,1.0,2018-09-25 14:24:21,0.0,1.0,2018-09-25 01:57:16,https://github.com/apache/any23/pull/123,217834929.0,[],0.0,123.0,[],0.0,closed,ANY23-399 Upgrade Apache parent POM to version 21,https://api.github.com/repos/apache/any23/pulls/123
+122,174.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,0.0,0.0,"I created a microdata unit test which tests against the latest online [microdata test suite](http://w3c.github.io/microdata-rdf/tests/).
+
+Currently, 30 out of 84 total tests are failing!
+
+*Note: the tests are relaxed such that the expected model is only required to be a subset of the actual model, and not necessarily the other way around. Requiring strict isomorphism, on the other hand, causes 83 out of 84 tests to fail.*
+
+**The 30 failing tests are as follows:**
+Test 0002: Item with no itemtype and 2 elements with equivalent itemprop
+Test 0003: Item with itemprop having two properties
+Test 0046: Use of time with `@datetime` xsd:time
+Test 0047: Use of time with `@datetime` xsd:dateTime
+Test 0048: Use of time with `@datetime` xsd:duration
+Test 0049: Use of time with `@datetime` invalid
+Test 0051: relative URL as itemid
+Test 0052: token property no `@itemtype`
+Test 0053: token property empty `@itemtype`
+Test 0054: token property and relative `@itemtype`
+Test 0056: token property and multiple `@itemtypes` from different vocabularies
+Test 0062: `@itemref` to single id
+Test 0063: `@itemref` generates property values
+Test 0064: `@itemref` to single id with different types
+Test 0065: `@itemref` to multiple ids
+Test 0066: `@itemref` with chaining
+Test 0067: Shared `@itemref`
+Test 0070: Property URI generation (default) 3
+Test 0071: Vocabulary Expansion test with schema:additionalType
+Test 0073: Vocabulary Expansion test with rdfs:subPropertyOf
+Test 0074: Vocabulary Expansion test with owl:equivalentProperty
+Test 0075: Use of data and xsd:float
+Test 0076: Use of data and xsd:integer
+Test 0077: Use of data and string
+Test 0078: Use of meter and xsd:double
+Test 0079: Use of meter and xsd:integer
+Test 0080: Use of meter and xsd:string
+Test 0081: Simple `@itemprop-reverse` (experimental)
+Test 0082: `@itemprop-reverse` with `@itemscope` value (experimental)
+Test 0084: `@itemprop-reverse` with `@itemprop` (experimental)
+
+For more details on expected vs. actual statements, run the `MicrodataExtractorTest.runOnlineTests()` test.",1.0,2018-10-26 02:15:43,9.0,4.0,2018-10-23 03:23:26,https://github.com/apache/any23/pull/124,224882752.0,[],0.0,124.0,[],0.0,closed,ANY23-67 test against online microdata test-suite,https://api.github.com/repos/apache/any23/pulls/124
+123,113.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,21.0,0.0,This PR should ensure that our microdata extractor is compliant with the standard default microdata registry in terms of vocabulary expansion and property URI generation.,4.0,2018-10-24 00:45:11,0.0,1.0,2018-10-24 00:41:07,https://github.com/apache/any23/pull/125,225230698.0,[],0.0,125.0,[],0.0,closed,ANY23-404 hardcode default microdata registry,https://api.github.com/repos/apache/any23/pulls/125
+124,120.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,23.0,0.0,See http://w3c.github.io/microdata-rdf/#dfn-property-values,5.0,2018-10-24 15:42:13,0.0,1.0,2018-10-24 15:36:10,https://github.com/apache/any23/pull/126,225452694.0,[],0.0,126.0,[],0.0,closed,ANY23-405 Parse microdata property values correctly,https://api.github.com/repos/apache/any23/pulls/126
+125,10.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,8.0,0.0,,2.0,2018-10-24 17:02:34,0.0,1.0,2018-10-24 17:01:42,https://github.com/apache/any23/pull/127,225480331.0,[],0.0,127.0,[],0.0,closed,ANY23-407 allow microdata itemids from relative urls,https://api.github.com/repos/apache/any23/pulls/127
+126,15.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,1.0,0.0,"Currently, we just drop predicates that don't have a namespace in strict mode. This commit will align strict mode with the actual spec.",1.0,2018-10-24 19:22:11,0.0,1.0,2018-10-24 19:18:26,https://github.com/apache/any23/pull/128,225519703.0,[],0.0,128.0,[],0.0,closed,ANY23-408 Use document IRI as default namespace in microdata strict mode,https://api.github.com/repos/apache/any23/pulls/128
+127,73.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,47.0,0.0,This PR addresses the failed `Test 0056: token property and multiple @itemtypes from different vocabularies` microdata test.,3.0,2018-10-24 21:45:37,0.0,1.0,2018-10-24 21:39:02,https://github.com/apache/any23/pull/129,225559185.0,[],0.0,129.0,[],0.0,closed,ANY23-409 allow multiple microdata itemtype values,https://api.github.com/repos/apache/any23/pulls/129
+128,32.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,40.0,0.0,This fixes the regression introduced in version 2.2 causing Any23 to ignore itemrefs.,7.0,2018-10-25 22:50:19,0.0,1.0,2018-10-25 22:46:49,https://github.com/apache/any23/pull/130,225927586.0,[],0.0,130.0,[],0.0,closed,ANY23-410 fix microdata itemrefs,https://api.github.com/repos/apache/any23/pulls/130
+129,567.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,88.0,0.0,"Improves TikaEncodingDetector by:
+
+1. Not second-guessing UTF-8 if there is *any* indication that a stream is UTF-8-encoded. We can't afford false positives from obscure, obsolete charsets such as IBM500 (See [TIKA-2771](https://issues.apache.org/jira/browse/TIKA-2771)).
+2. Taking entire stream into account rather than a prefix (this shouldn't be a huge memory issue, as we are already holding the entire stream in memory to pass to each extractor, and extractors such as RDFa already parse the entire content into a DOM before generating the triples. If we want to make Any23 ""streaming""-capable in the future to reduce memory requirements, we can look into that, but for now, since we're not, we may as well use that to our advantage to be more accurate in charset detection.)
+3. Taking [TIKA-2771](https://issues.apache.org/jira/browse/TIKA-2771), [TIKA-2038](https://issues.apache.org/jira/browse/TIKA-2038), and [TIKA-539](https://issues.apache.org/jira/browse/TIKA-539) into account.",5.0,2019-02-07 05:04:35,10.0,16.0,2018-11-06 21:48:14,https://github.com/apache/any23/pull/131,228845756.0,[],0.0,131.0,"[{'comment_id': 252535110, 'comment_body': ""We should add to the NOTICE file to accomodate the MIT license you've provided the underlying f8 library as. Also, do you want to upgrade to 1.1-RC1?"", 'comment_created': datetime.datetime(2019, 1, 31, 4, 56, 58), 'commenter': 'lewismc', 'type': 'User'}]",1.0,closed,ANY23-418 improve TikaEncodingDetector,https://api.github.com/repos/apache/any23/pulls/131
+130,7.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,0.0,0.0,This issue addresses https://issues.apache.org/jira/browse/ANY23-419,1.0,2018-11-15 16:07:14,23.0,2.0,2018-11-08 03:00:41,https://github.com/apache/any23/pull/132,229235450.0,[],0.0,132.0,[],0.0,closed,ANY23-419 Add J2EE dependencies such that service runs under JDK11,https://api.github.com/repos/apache/any23/pulls/132
+131,5.0,Andy Seaborne,,168.0,3.0,101362.0,,33.0,User,5.0,0.0,,1.0,2019-01-31 04:54:22,1.0,1.0,2019-01-30 10:44:13,https://github.com/apache/any23/pull/133,248827127.0,[],0.0,133.0,[],0.0,closed,ANY23-423: Update POM on the move to gitbox,https://api.github.com/repos/apache/any23/pulls/133
+132,0.0,,,0.0,0.0,39485163.0,,1.0,User,1.0,0.0,This PR fixes the issue in question. However I am unaware of whether this will have any unwanted side-effects.,1.0,2019-02-03 23:53:11,2.0,1.0,2019-01-31 21:22:37,https://github.com/apache/any23/pull/134,249405886.0,[],0.0,134.0,[],0.0,closed,ANY23-422 Error message when any23 cli tool used,https://api.github.com/repos/apache/any23/pulls/134
+133,29.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,53.0,0.0,This PR will net us a bunch of additional bugfixes in various dependencies before we release 2.3.,3.0,2019-02-07 06:09:08,0.0,4.0,2019-02-04 05:24:18,https://github.com/apache/any23/pull/135,249941598.0,[],0.0,135.0,[],0.0,closed,ANY23-424 Update dependencies,https://api.github.com/repos/apache/any23/pulls/135
+134,203.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,6.0,0.0,,5.0,2019-02-09 21:40:07,0.0,2.0,2019-02-09 10:19:42,https://github.com/apache/any23/pull/136,251666033.0,[],0.0,136.0,[],0.0,closed,"ANY23-415 avoid n-triples errors for humans.txt files, etc",https://api.github.com/repos/apache/any23/pulls/136
+135,229.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,203.0,0.0,This issue addresses https://issues.apache.org/jira/browse/ANY23-429 and enabled me to build the new Website and publish to SVN,29.0,2019-03-05 23:39:45,0.0,1.0,2019-03-05 23:39:28,https://github.com/apache/any23/pull/137,258526296.0,[],0.0,137.0,[],0.0,closed,ANY23-429 Website Build Fails due to Javadoc issues,https://api.github.com/repos/apache/any23/pulls/137
+136,3.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,7.0,0.0,This issue addresses https://issues.apache.org/jira/browse/ANY23-427 and also stabilizes tests. ,1.0,2019-03-06 00:08:26,0.0,2.0,2019-03-05 23:53:34,https://github.com/apache/any23/pull/138,258529191.0,[],0.0,138.0,[],0.0,closed,ANY23-427 http://semanticweb.org/ down causes tests to fail,https://api.github.com/repos/apache/any23/pulls/138
+137,1.0,Anthony Pessy,anthony.pessy@gmail.com,11.0,0.0,230462.0,,15.0,User,1.0,0.0,"This ugprade fixes the ArrayOutOfBoundException described in [ANY23-441](https://issues.apache.org/jira/projects/ANY23/issues/ANY23-441).
+
+I did not add a test because I failed to found a minimal reproduction case.",1.0,2019-08-28 03:20:44,8.0,1.0,2019-08-27 09:28:15,https://github.com/apache/any23/pull/139,311289019.0,[],0.0,139.0,[],0.0,closed,ANY23-441 Upgrade JSoup version from 1.11.3 to 1.12.1,https://api.github.com/repos/apache/any23/pulls/139
+138,159.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,130.0,0.0,,5.0,2019-09-15 01:31:02,0.0,2.0,2019-09-15 01:19:59,https://github.com/apache/any23/pull/140,317601494.0,[],0.0,140.0,[],0.0,closed,ANY23-442 move HTML preprocessing from BaseRDFExtractor to semargl extractors,https://api.github.com/repos/apache/any23/pulls/140
+139,419.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,127.0,0.0,"I've implemented the performance (and stability) improvements I suggested in [ANY23-443](https://issues.apache.org/jira/browse/ANY23-443) by getting rid of all the RDFa middlemen: 
+
+Any23 → Jsoup → ~InputStream~ → ~RDF4J~ → ~XMLReader~ → RdfaParser → ~RDF4J~ → Any23
+
+All tests pass.",6.0,2019-09-22 22:20:53,3.0,3.0,2019-09-16 01:48:25,https://github.com/apache/any23/pull/141,317692083.0,[],0.0,141.0,"[{'comment_id': 326693115, 'comment_body': 'License header please', 'comment_created': datetime.datetime(2019, 9, 20, 15, 51, 7), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693171, 'comment_body': 'Just remove???', 'comment_created': datetime.datetime(2019, 9, 20, 15, 51, 16), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693308, 'comment_body': 'Remove additional whitespace', 'comment_created': datetime.datetime(2019, 9, 20, 15, 51, 34), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693417, 'comment_body': 'Remove whitespace', 'comment_created': datetime.datetime(2019, 9, 20, 15, 51, 50), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693719, 'comment_body': 'Please augment this with a comment on what to use in replacement.', 'comment_created': datetime.datetime(2019, 9, 20, 15, 52, 33), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693774, 'comment_body': 'Same here.', 'comment_created': datetime.datetime(2019, 9, 20, 15, 52, 41), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693850, 'comment_body': 'Same here', 'comment_created': datetime.datetime(2019, 9, 20, 15, 52, 50), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693877, 'comment_body': 'Same here', 'comment_created': datetime.datetime(2019, 9, 20, 15, 52, 54), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 326693916, 'comment_body': 'License header', 'comment_created': datetime.datetime(2019, 9, 20, 15, 52, 59), 'commenter': 'lewismc', 'type': 'User'}]",9.0,closed,ANY23-443 improve speed & stability of RDFa extractors,https://api.github.com/repos/apache/any23/pulls/141
+140,70.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,57.0,0.0,"This PR addresses https://issues.apache.org/jira/browse/ANY23-444
+
+In it's current state the PR introduces at least one test failure as follows
+```
+[ERROR] Failures:
+[ERROR]   EmbeddedJSONLDExtractorTest.testJSONLDUnescapedCharacters:76->AbstractExtractorTestCase.assertExtract:227->AbstractExtractorTestCase.assertExtract:212->AbstractExtractorTestCase.assertNoIssues:386 Unexpected issue for extractor html-embedded-jsonld : [FATAL: 	'Unrecognized character escape (CTRL-CHAR, code 8)' 	(5,31), FATAL: 	'Illegal unquoted character ((CTRL-CHAR, code 10)): has to be escaped using backslash to be included in string value' 	(6,43), FATAL: 	'Illegal unquoted character ((CTRL-CHAR, code 10)): has to be escaped using backslash to be included in string value' 	(6,22)]
+[INFO]
+[ERROR] Tests run: 449, Failures: 1, Errors: 0, Skipped: 0
+```
+I spent some time looking into the error but couldn't resolve it.",7.0,2019-09-23 03:48:27,4.0,3.0,2019-09-22 22:18:18,https://github.com/apache/any23/pull/142,320088399.0,[],0.0,142.0,"[{'comment_id': 326923670, 'comment_body': ""I'd prefer to not use pre-release versions... the latest stable version of slf4j is 1.7.28. Can we use that instead?"", 'comment_created': datetime.datetime(2019, 9, 22, 22, 59, 15), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 326923815, 'comment_body': 'Upgrading rdf4j is what caused your bug. Can we hold off on that? Upgrading rdf4j is worthy of being solved in its own separate issue. There are some hacks in the Jsonld extractor I need to fix at the same time the upgrade happens. Better to leave this for ANY23-433.', 'comment_created': datetime.datetime(2019, 9, 22, 23, 3, 51), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 326924022, 'comment_body': 'The latest stable version is `9.4.20.v20190813`, can we use that instead of the pre-release version?', 'comment_created': datetime.datetime(2019, 9, 22, 23, 9, 37), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 326928611, 'comment_body': 'Thanks @HansBrende I am happy to delay this. ', 'comment_created': datetime.datetime(2019, 9, 23, 0, 46, 1), 'commenter': 'lewismc', 'type': 'User'}]",4.0,closed,ANY23-444 Update all dependencies and plugins,https://api.github.com/repos/apache/any23/pulls/142
+141,3.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,4.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-183
+
+You can also see I bumped the javac version to 13... which is what I am using across the board now. If this is not desired then i can roll this back.",3.0,2019-09-25 16:05:37,0.0,2.0,2019-09-24 04:44:18,https://github.com/apache/any23/pull/143,320579891.0,[],0.0,143.0,"[{'comment_id': 327886999, 'comment_body': ""Can we keep this at 1.8? I don't think we should increase the java version until we are forced to do so by one of our dependencies. There are a *lot* of applications still on java 8."", 'comment_created': datetime.datetime(2019, 9, 25, 0, 21, 19), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 327896514, 'comment_body': 'I agree...', 'comment_created': datetime.datetime(2019, 9, 25, 1, 17, 15), 'commenter': 'lewismc', 'type': 'User'}]",2.0,closed,ANY23-183 Address javac warning's in Any23 code base,https://api.github.com/repos/apache/any23/pulls/143
+142,197.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,52.0,0.0,"Upgrade rdf4j to v3.0.0 and remove jsonld hack. I also took out the rdf4j middleman when working with the jsonld-java library, which will allow us to more easily tinker with jsonld-java in the future instead of resorting to terrible hacks.",4.0,2019-09-26 01:43:15,1.0,4.0,2019-09-25 05:47:53,https://github.com/apache/any23/pull/144,321071007.0,[],0.0,144.0,"[{'comment_id': 328211537, 'comment_body': 'This comment should be edited or removed ', 'comment_created': datetime.datetime(2019, 9, 25, 16, 7, 37), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 328212214, 'comment_body': 'I like your retro-active move of this code down into ```JSONLDExtractor.java```', 'comment_created': datetime.datetime(2019, 9, 25, 16, 8, 55), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 328213483, 'comment_body': ""I like it. I don't know quite enough about jsonld-java so know that this existed. Excellent suggestion. "", 'comment_created': datetime.datetime(2019, 9, 25, 16, 11, 37), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 328215543, 'comment_body': 'Can also remove this ```Duplicates``` annotation it is now unnecessary', 'comment_created': datetime.datetime(2019, 9, 25, 16, 15, 52), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 328404625, 'comment_body': ""Actually we still need that annotation to avoid Intellij warnings... unfortunately the `BaseRDFaExtractor` still can't see it because it's in a different package, and I don't want to make it protected, otherwise it'll be a backwards incompatible change if we delete it later (which we will probably do)."", 'comment_created': datetime.datetime(2019, 9, 26, 1, 40, 29), 'commenter': 'HansBrende', 'type': 'User'}]",5.0,closed,ANY23-433 upgrade rdf4j to v3.0.0,https://api.github.com/repos/apache/any23/pulls/144
+143,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,This PR addresses https://issues.apache.org/jira/browse/ANY23-440,1.0,2019-09-25 16:27:46,0.0,1.0,2019-09-25 16:27:34,https://github.com/apache/any23/pull/145,321335001.0,[],0.0,145.0,[],0.0,closed,ANY23-440 any23 configuration documentation has a wrong property name,https://api.github.com/repos/apache/any23/pulls/145
+144,85.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,42.0,0.0,This PR addresses https://issues.apache.org/jira/browse/ANY23-426,14.0,2019-09-26 13:36:52,1.0,3.0,2019-09-26 01:38:28,https://github.com/apache/any23/pull/146,321500342.0,[],0.0,146.0,"[{'comment_id': 328407214, 'comment_body': 'typo', 'comment_created': datetime.datetime(2019, 9, 26, 1, 56, 41), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 328410027, 'comment_body': 'Perhaps something more along the lines of:\r\n\r\n```\r\n@param setting a setting that may or may not have the same key as this setting\r\n@param <S> the type of the supplied setting\r\n```', 'comment_created': datetime.datetime(2019, 9, 26, 2, 14, 8), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 328412162, 'comment_body': 'Simply \r\n```\r\na value for a new setting\r\n```\r\nshould suffice.', 'comment_created': datetime.datetime(2019, 9, 26, 2, 27, 20), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 328420721, 'comment_body': 'Thanks', 'comment_created': datetime.datetime(2019, 9, 26, 3, 23, 38), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 328420738, 'comment_body': 'Thanks', 'comment_created': datetime.datetime(2019, 9, 26, 3, 23, 46), 'commenter': 'lewismc', 'type': 'User'}, {'comment_id': 328420761, 'comment_body': 'Thanks', 'comment_created': datetime.datetime(2019, 9, 26, 3, 23, 54), 'commenter': 'lewismc', 'type': 'User'}]",6.0,closed,ANY23-426 Address Javadoc WARNING's ,https://api.github.com/repos/apache/any23/pulls/146
+145,396.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,229.0,0.0,"**This PR is a work in progress** for https://issues.apache.org/jira/browse/ANY23-281
+
+When I execute an `install`, I get the following which I wanted to ask about
+```
+[INFO] --- forbiddenapis:2.6:check (default) @ apache-any23-api ---
+[INFO] Scanning for classes to check...
+[INFO] Reading bundled API signatures: jdk-unsafe-1.8
+[INFO] Reading bundled API signatures: jdk-deprecated-1.8
+[INFO] Reading bundled API signatures: jdk-non-portable
+[INFO] Reading bundled API signatures: jdk-reflection
+[INFO] Reading bundled API signatures: jdk-internal-1.8
+[INFO] Reading bundled API signatures: jdk-system-out
+[INFO] Loading classes to check...
+[INFO] Scanning classes for violations...
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.configuration.DefaultModifiableConfiguration (DefaultModifiableConfiguration.java:37)
+[ERROR] Forbidden method invocation: java.lang.String#toLowerCase() [Uses default locale]
+[ERROR]   in org.apache.any23.mime.MIMEType (MIMEType.java:65)
+[ERROR] Forbidden method invocation: java.lang.String#toLowerCase() [Uses default locale]
+[ERROR]   in org.apache.any23.mime.MIMEType (MIMEType.java:86)
+[ERROR] Forbidden method invocation: java.lang.String#toLowerCase() [Uses default locale]
+[ERROR]   in org.apache.any23.mime.MIMEType (MIMEType.java:87)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.configuration.DefaultConfiguration (DefaultConfiguration.java:142)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.configuration.DefaultConfiguration (DefaultConfiguration.java:165)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.extractor.IssueReport$Issue (IssueReport.java:97)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.extractor.ExtractionParameters (ExtractionParameters.java:246)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.extractor.ExtractionParameters (ExtractionParameters.java:253)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.plugin.Any23PluginManager (Any23PluginManager.java:106)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.plugin.Any23PluginManager (Any23PluginManager.java:126)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.plugin.Any23PluginManager (Any23PluginManager.java:148)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.plugin.Any23PluginManager (Any23PluginManager.java:168)
+[ERROR] Forbidden method invocation: java.lang.String#format(java.lang.String,java.lang.Object[]) [Uses default locale]
+[ERROR]   in org.apache.any23.plugin.Any23PluginManager (Any23PluginManager.java:397)
+[ERROR] Forbidden method invocation: java.io.PrintWriter#<init>(java.io.OutputStream) [Uses default charset]
+[ERROR]   in org.apache.any23.extractor.ExtractionException (ExtractionException.java:47)
+[ERROR] Forbidden method invocation: java.lang.String#toUpperCase() [Uses default locale]
+[ERROR]   in org.apache.any23.vocab.Vocabulary (Vocabulary.java:148)
+[ERROR] Scanned 101 class file(s) for forbidden API invocations (in 1.11s), 16 error(s).
+```
+
+Therefore the question at hand is... what we want to do about [Locale](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html) and [Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html)?",77.0,2019-09-28 00:50:36,3.0,4.0,2019-09-26 03:58:24,https://github.com/apache/any23/pull/147,321524956.0,[],0.0,147.0,[],0.0,closed,ANY23-281 Build Policeman's Forbidden API Checker into Maven config,https://api.github.com/repos/apache/any23/pulls/147
+146,20.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,23.0,0.0,Easier than I thought it would be.,9.0,2019-09-26 05:51:00,0.0,1.0,2019-09-26 05:48:58,https://github.com/apache/any23/pull/148,321548052.0,[],0.0,148.0,[],0.0,closed,ANY23-439 replace commons-lang with commons-lang3,https://api.github.com/repos/apache/any23/pulls/148
+147,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,"This issue addresses https://issues.apache.org/jira/browse/ANY23-437
+Trivial. ",1.0,2019-10-16 03:51:49,1.0,1.0,2019-10-15 17:46:45,https://github.com/apache/any23/pull/149,328389530.0,[],0.0,149.0,[],0.0,closed,ANY23-437 Upgrade snakeyaml to v1.25,https://api.github.com/repos/apache/any23/pulls/149
+148,1.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,1.0,0.0,"This PR addresses https://issues.apache.org/jira/browse/ANY23-436
+Trivial. ",1.0,2019-10-16 03:51:04,1.0,1.0,2019-10-15 17:54:34,https://github.com/apache/any23/pull/150,328392551.0,[],0.0,150.0,[],0.0,closed,ANY23-436 Upgrade commons-csv to v1.7,https://api.github.com/repos/apache/any23/pulls/150
+149,1.0,,,0.0,0.0,49699333.0,,0.0,Bot,1.0,0.0,"Bumps `jackson.version` from 2.9.10 to 2.10.0.
+
+Updates `jackson-core` from 2.9.10 to 2.10.0
+<details>
+<summary>Commits</summary>
+
+- [`2ce8890`](https://github.com/FasterXML/jackson-core/commit/2ce88904df6c60ef0c4708f6c514885cef850409) [maven-release-plugin] prepare release jackson-core-2.10.0
+- [`0e59212`](https://github.com/FasterXML/jackson-core/commit/0e5921298398d8a4d1410a1b5d7823e619f53353) Prepare for 2.10.0
+- [`e8c9f22`](https://github.com/FasterXML/jackson-core/commit/e8c9f228c057033d205057293ea034bbb4a1c4a1) Merge branch '2.9' into 2.10
+- [`4899c28`](https://github.com/FasterXML/jackson-core/commit/4899c28558e73bed16eddc8013a12def6643f231) [maven-release-plugin] prepare for next development iteration
+- [`fc73bee`](https://github.com/FasterXML/jackson-core/commit/fc73bee380444112e9294545d4f0b66094884dab) Fix [#563](https://github-redirect.dependabot.com/FasterXML/jackson-core/issues/563) (async parser, location for array values)
+- [`ce70782`](https://github.com/FasterXML/jackson-core/commit/ce70782781693c8f3410c1ea9f0c6a9f66750523) Start work on [#563](https://github-redirect.dependabot.com/FasterXML/jackson-core/issues/563)
+- [`1c852df`](https://github.com/FasterXML/jackson-core/commit/1c852dfb26f008047b676d435395ced3ebd2946c) ...
+- [`8a0df82`](https://github.com/FasterXML/jackson-core/commit/8a0df820bb997f4e82a1c6859820f39a8652185a) Minor test change
+- [`e623c75`](https://github.com/FasterXML/jackson-core/commit/e623c75ae1911706b9b79946df4cc194d966265e) Manually merge test in 2.10 from [#562](https://github-redirect.dependabot.com/FasterXML/jackson-core/issues/562)
+- [`2aa5552`](https://github.com/FasterXML/jackson-core/commit/2aa55522b25e01e8dd7d20223d4b30dfdacbaee5) ...
+- Additional commits viewable in [compare view](https://github.com/FasterXML/jackson-core/compare/jackson-core-2.9.10...jackson-core-2.10.0)
+</details>
+<br />
+
+Updates `jackson-databind` from 2.9.10 to 2.10.0
+<details>
+<summary>Commits</summary>
+
+- See full diff in [compare view](https://github.com/FasterXML/jackson/commits)
+</details>
+<br />
+
+Updates `jackson-annotations` from 2.9.10 to 2.10.0
+<details>
+<summary>Commits</summary>
+
+- See full diff in [compare view](https://github.com/FasterXML/jackson/commits)
+</details>
+<br />
+
+Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.
+
+[//]: # (dependabot-automerge-start)
+[//]: # (dependabot-automerge-end)
+
+---
+
+<details>
+<summary>Dependabot commands and options</summary>
+<br />
+
+You can trigger Dependabot actions by commenting on this PR:
+- `@dependabot rebase` will rebase this PR
+- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+- `@dependabot merge` will merge this PR after your CI passes on it
+- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it
+- `@dependabot cancel merge` will cancel a previously requested merge and block automerging
+- `@dependabot reopen` will reopen this PR if it is closed
+- `@dependabot ignore this [patch|minor|major] version` will close this PR and stop Dependabot creating any more for this minor/major version (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+- `@dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+- `@dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+- `@dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+
+You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/apache/any23/network/alerts).
+
+</details>",1.0,2019-11-13 06:07:25,1.0,1.0,2019-11-01 12:16:41,https://github.com/apache/any23/pull/152,335394694.0,['dependencies'],1.0,152.0,[],0.0,closed,Bump jackson.version from 2.9.10 to 2.10.0,https://api.github.com/repos/apache/any23/pulls/152
+150,1.0,,,0.0,0.0,49699333.0,,0.0,Bot,1.0,0.0,"Bumps `jackson.version` from 2.9.10 to 2.10.1.
+
+Updates `jackson-core` from 2.9.10 to 2.10.1
+<details>
+<summary>Commits</summary>
+
+- [`60956fc`](https://github.com/FasterXML/jackson-core/commit/60956fccd24d6bdb66abb3182cb2234122039b7a) [maven-release-plugin] prepare release jackson-core-2.10.1
+- [`05a025d`](https://github.com/FasterXML/jackson-core/commit/05a025d16b32bf69184811dcebae9e000a56e0cb) ...
+- [`81a9952`](https://github.com/FasterXML/jackson-core/commit/81a9952a681f6f6e1fab6fa5216749cf75f4a7e9) prepare for 2.10.1
+- [`ce0d5e1`](https://github.com/FasterXML/jackson-core/commit/ce0d5e10ddb290cdc6b107805fb15b5eed97f5f3) revert now unnecessary sonatype deploy plugin
+- [`adf6fd0`](https://github.com/FasterXML/jackson-core/commit/adf6fd02a4aa0ba872f6857c6e1ac38d3b96c9dc) Add Sonatype deploy plugin to simplify releases
+- [`7ca30ec`](https://github.com/FasterXML/jackson-core/commit/7ca30eccc96e8eb02bc6b1a4aab3d78c1bba1388) array index out of bounds in hex lookup ([#578](https://github-redirect.dependabot.com/FasterXML/jackson-core/issues/578))
+- [`da5365e`](https://github.com/FasterXML/jackson-core/commit/da5365edc9b0644ed446ce8b227dadb62a8821e9) Fix [#578](https://github-redirect.dependabot.com/FasterXML/jackson-core/issues/578): non-blocking path still had potential problem, but changed method i...
+- [`db0f586`](https://github.com/FasterXML/jackson-core/commit/db0f5860085425dbe08b3e2b81801fc0e5e62bba) ...
+- [`243fadc`](https://github.com/FasterXML/jackson-core/commit/243fadc879345732a9a5bb18b2d587a0272e5ddc) Fix [#567](https://github-redirect.dependabot.com/FasterXML/jackson-core/issues/567)
+- [`714df7b`](https://github.com/FasterXML/jackson-core/commit/714df7b5f3507d13ba7480c27b30e96d69fc076b) ...
+- Additional commits viewable in [compare view](https://github.com/FasterXML/jackson-core/compare/jackson-core-2.9.10...jackson-core-2.10.1)
+</details>
+<br />
+
+Updates `jackson-databind` from 2.9.10 to 2.10.1
+<details>
+<summary>Commits</summary>
+
+- See full diff in [compare view](https://github.com/FasterXML/jackson/commits)
+</details>
+<br />
+
+Updates `jackson-annotations` from 2.9.10 to 2.10.1
+<details>
+<summary>Commits</summary>
+
+- See full diff in [compare view](https://github.com/FasterXML/jackson/commits)
+</details>
+<br />
+
+Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.
+
+[//]: # (dependabot-automerge-start)
+[//]: # (dependabot-automerge-end)
+
+---
+
+<details>
+<summary>Dependabot commands and options</summary>
+<br />
+
+You can trigger Dependabot actions by commenting on this PR:
+- `@dependabot rebase` will rebase this PR
+- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+- `@dependabot merge` will merge this PR after your CI passes on it
+- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it
+- `@dependabot cancel merge` will cancel a previously requested merge and block automerging
+- `@dependabot reopen` will reopen this PR if it is closed
+- `@dependabot ignore this [patch|minor|major] version` will close this PR and stop Dependabot creating any more for this minor/major version (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
+- `@dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
+- `@dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
+- `@dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
+
+You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/apache/any23/network/alerts).
+
+</details>",1.0,2020-03-19 02:28:37,0.0,1.0,2019-11-13 06:07:22,https://github.com/apache/any23/pull/153,340258348.0,['dependencies'],1.0,153.0,[],0.0,closed,Bump jackson.version from 2.9.10 to 2.10.1,https://api.github.com/repos/apache/any23/pulls/153
+151,2.0,Colm O hEigeartaigh,,30.0,0.0,472162.0,,66.0,User,2.0,0.0,"Fixes:
+
+commons-compress-1.18.jar (pkg:maven/org.apache.commons/commons-compress@1.18, cpe:2.3:a:apache:commons-compress:1.18:*:*:*:*:*:*:*, cpe:2.3:a:apache:commons_compress:1.18:*:*:*:*:*:*:*) : CVE-2019-12402
+poi-4.1.0.jar (pkg:maven/org.apache.poi/poi@4.1.0, cpe:2.3:a:apache:poi:4.1.0:*:*:*:*:*:*:*) : CVE-2019-12415
+",1.0,2019-11-19 17:50:56,0.0,1.0,2019-11-19 15:36:15,https://github.com/apache/any23/pull/154,342743846.0,[],0.0,154.0,[],0.0,closed,Updating Compress and POI to fix CVE issues,https://api.github.com/repos/apache/any23/pulls/154
+152,2.0,Jonathan Leitschuh,jonathan.leitschuh@gmail.com,294.0,51.0,1323708.0,,1802.0,User,2.0,0.0,"[![mitm_build](https://user-images.githubusercontent.com/1323708/59226671-90645200-8ba1-11e9-8ab3-39292bef99e9.jpeg)](https://medium.com/@jonathan.leitschuh/want-to-take-over-the-java-ecosystem-all-you-need-is-a-mitm-1fc329d898fb?source=friends_link&sk=3c99970c55a899ad9ef41f126efcde0e)
+
+- [Want to take over the Java ecosystem? All you need is a MITM!](https://medium.com/@jonathan.leitschuh/want-to-take-over-the-java-ecosystem-all-you-need-is-a-mitm-1fc329d898fb?source=friends_link&sk=3c99970c55a899ad9ef41f126efcde0e)
+- [Update: Want to take over the Java ecosystem? All you need is a MITM!](https://medium.com/bugbountywriteup/update-want-to-take-over-the-java-ecosystem-all-you-need-is-a-mitm-d069d253fe23?source=friends_link&sk=8c8e52a7d57b98d0b7e541665688b454)
+
+---
+
+This is a security fix for a  vulnerability in your [Apache Maven](https://maven.apache.org/) `pom.xml` file(s).
+
+The build files indicate that this project is resolving dependencies over HTTP instead of HTTPS.
+This leaves your build vulnerable to allowing a [Man in the Middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) (MITM) attackers to execute arbitrary code on your or your computer or CI/CD system.
+
+This vulnerability has a CVSS v3.0 Base Score of [8.1/10](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H).
+
+[POC code](https://max.computer/blog/how-to-take-over-the-computer-of-any-java-or-clojure-or-scala-developer/) has existed since 2014 to maliciously compromise a JAR file in-flight.
+MITM attacks against HTTP are [increasingly common](https://security.stackexchange.com/a/12050), for example [Comcast is known to have done it to their own users](https://thenextweb.com/insights/2017/12/11/comcast-continues-to-inject-its-own-code-into-websites-you-visit/#).
+
+This contribution is a part of a submission to the [GitHub Security Lab](https://securitylab.github.com/) Bug Bounty program.
+
+## Detecting this and Future Vulnerabilities
+
+This vulnerability was automatically detected by [LGTM.com](https://lgtm.com) using this [CodeQL Query](https://lgtm.com/rules/1511115648721/).
+
+As of September 2019 LGTM.com and Semmle are [officially a part of GitHub](https://github.blog/2019-09-18-github-welcomes-semmle/).
+
+You can automatically detect future vulnerabilities like this by enabling the free (for open-source) [LGTM App](https://github.com/marketplace/lgtm).
+
+I'm not an employee of GitHub nor of Semmle, I'm simply a user of [LGTM.com](https://lgtm.com) and an open-source security researcher.
+
+## Source
+
+Yes, this contribution was automatically generated, however, the code to generate this PR was lovingly hand crafted to bring this security fix to your repository.
+
+The source code that generated and submitted this PR can be found here:
+[JLLeitschuh/bulk-security-pr-generator](https://github.com/JLLeitschuh/bulk-security-pr-generator)
+
+## Opting-Out
+
+If you'd like to opt-out of future automated security vulnerability fixes like this, please consider adding a file called
+`.github/GH-ROBOTS.txt` to your repository with the line:
+
+```
+User-agent: JLLeitschuh/bulk-security-pr-generator
+Disallow: *
+```
+
+This bot will respect the [ROBOTS.txt](https://moz.com/learn/seo/robotstxt) format for future contributions.
+
+Alternatively, if this project is no longer actively maintained, consider [archiving](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-archiving-repositories) the repository.
+
+## CLA Requirements
+
+_This section is only relevant if your project requires contributors to sign a Contributor License Agreement (CLA) for external contributions._
+
+It is unlikely that I'll be able to directly sign CLAs. However, all contributed commits are already automatically signed-off.
+
+> The meaning of a signoff depends on the project, but it typically certifies that committer has the rights to submit this work under the same license and agrees to a Developer Certificate of Origin 
+> (see [https://developercertificate.org/](https://developercertificate.org/) for more information).
+>
+> \- [Git Commit Signoff documentation](https://developercertificate.org/)
+
+If signing your organization's CLA is a strict-requirement for merging this contribution, please feel free to close this PR.
+
+## Tracking
+
+All PR's generated as part of this fix are tracked here: 
+https://github.com/JLLeitschuh/bulk-security-pr-generator/issues/2",1.0,2020-03-19 02:28:15,1.0,1.0,2020-02-11 00:13:31,https://github.com/apache/any23/pull/155,373417604.0,[],0.0,155.0,[],0.0,closed,[SECURITY] Use HTTPS to resolve dependencies in Maven Build,https://api.github.com/repos/apache/any23/pulls/155
+153,1.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,1.0,0.0,,1.0,2020-03-29 18:33:46,0.0,1.0,2020-03-29 18:33:11,https://github.com/apache/any23/pull/156,395297316.0,[],0.0,156.0,[],0.0,closed,ANY23-446 update jsoup to v1.13.1,https://api.github.com/repos/apache/any23/pulls/156
+154,6.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,1.0,0.0,,1.0,2020-03-29 20:28:28,0.0,1.0,2020-03-29 20:27:54,https://github.com/apache/any23/pull/157,395315634.0,[],0.0,157.0,[],0.0,closed,ANY23-449 patch microdata test,https://api.github.com/repos/apache/any23/pulls/157
+155,64.0,Hans Brende,,5.0,4.0,5846890.0,,11.0,User,0.0,0.0,,3.0,2020-03-29 23:09:50,0.0,1.0,2020-03-29 23:09:06,https://github.com/apache/any23/pull/158,395337143.0,[],0.0,158.0,[],0.0,closed,ANY23-428 resolve rdfa vocabs more intelligently,https://api.github.com/repos/apache/any23/pulls/158
+156,17.0,Lewis John McGibbney,lewis.mcgibbney@gmail.com,139.0,85.0,1165719.0,,200.0,User,17.0,0.0,"This is a simple batch dep and plugin update... verified that it does not break any unit tests with mvn clean install
+
+",1.0,2020-04-01 18:20:09,4.0,4.0,2020-03-29 23:17:30,https://github.com/apache/any23/pull/159,395338221.0,[],0.0,159.0,"[{'comment_id': 399868975, 'comment_body': 'Can we update the version declared in properties instead?', 'comment_created': datetime.datetime(2020, 3, 29, 23, 20, 9), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 399869074, 'comment_body': ""Let's not use release candidates... I prefer to stay on stable versions only."", 'comment_created': datetime.datetime(2020, 3, 29, 23, 21, 7), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 399869166, 'comment_body': ""Don't know why we replaced the version declared in the properties section."", 'comment_created': datetime.datetime(2020, 3, 29, 23, 21, 59), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 399869230, 'comment_body': 'Prefer to stay away from alpha versions...', 'comment_created': datetime.datetime(2020, 3, 29, 23, 22, 28), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401134822, 'comment_body': 'This one still needs to be updated in properties and referenced by `${httpclient.version}`', 'comment_created': datetime.datetime(2020, 3, 31, 18, 44, 30), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401134931, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 44, 41), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401134997, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 44, 47), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401135119, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 44, 59), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401135242, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 45, 10), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401135292, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 45, 16), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401135370, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 45, 23), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401135806, 'comment_body': 'Ditto for all the rdf4j dependencies below', 'comment_created': datetime.datetime(2020, 3, 31, 18, 46, 4), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401135982, 'comment_body': 'Ditto for all the owlapi deps', 'comment_created': datetime.datetime(2020, 3, 31, 18, 46, 23), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401136124, 'comment_body': 'Ditto', 'comment_created': datetime.datetime(2020, 3, 31, 18, 46, 35), 'commenter': 'HansBrende', 'type': 'User'}, {'comment_id': 401330713, 'comment_body': 'Last one: need to update httpcore.version to 4.4.13 and change this to ${httpcore.version}', 'comment_created': datetime.datetime(2020, 4, 1, 3, 7, 56), 'commenter': 'HansBrende', 'type': 'User'}]",15.0,closed,ANY23-450 Update Maven deps and plugin versions,https://api.github.com/repos/apache/any23/pulls/159
