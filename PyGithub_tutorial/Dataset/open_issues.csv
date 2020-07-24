@@ -1,0 +1,957 @@
+,contributions,followers,followings,issueORPR,issue_body,issue_comments,issue_date,issue_id,issue_labels,issue_number,issue_title,owner,owner_username,stars
+0,,42.0,20.0,,"Can we add a new property `GitCommit` for a shorter description of the commit message especially for squashed commit introduced lately by Git.
+","[{'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '@Lucashuang0802 Can you elaborate a bit more? Why do you need this and how?'}]",2016-07-18 18:42:54,166163541.0,"['Hacktoberfest', 'feature request', 'good first issue']",423.0,Feature request,Lucas Huang,Lucashuang0802,208.0
+1,,38.0,68.0,,"I'm using PyCharm for my development environment. I noticed that your code is rather well documented using docstrings. For example:
+
+``` python
+    def get_user(self, login=github.GithubObject.NotSet):
+        """"""
+        :calls: `GET /users/:user <http://developer.github.com/v3/users>`_ or `GET /user <http://developer.github.com/v3/users>`_
+        :param login: string
+        :rtype: :class:`github.NamedUser.NamedUser`
+        """"""
+```
+
+However, this seems to not be the appropriate syntax, as my IDE still thinks the result could be Any. However, if I remove the `:class:`, it works properly. Could you send me any links that point to the `:class:` standard? I am going off of [this](https://www.jetbrains.com/help/pycharm/2016.1/type-hinting-in-pycharm.html#legacy).
+","[{'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Ryan', 'user_id': 185004, 'user_site_admin': False, 'body': 'There has been no change or answer. Do not auto-close. '}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""It's hinting for our docs build -- see https://pygithub.readthedocs.io/en/latest/github_objects/Branch.html#github.Branch.Branch.get_required_status_checks, without the :class: it doesn't link the return type to the class.""}, {'user': 'Ryan', 'user_id': 185004, 'user_site_admin': False, 'body': 'Is it possible that during the 3 years since this issue was filed that the syntax has changed? More-so, I was more interested in finding a link to the documentation that shows it is necessary (not a link to where your docs show it in us), as - at least 3 years ago (to the day, no less!) - this syntax broke PyCharm. I imagine it must be standardized by now. \r\n\r\nPS: I must say I am quite surprised to see any activity on this, me and stale bot have become quite good friends in the meantime 😊 '}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""It's possible the syntax has changed, but I can't find any documentation for Sphinx about it, and it works, so I'm loathe to change it. Also, it pre-dates my involvement in the project, so that goes double.""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Ryan', 'user_id': 185004, 'user_site_admin': False, 'body': ""Do as you wish, but I'd encourage you to use a syntax that IDEs use to make things easier for contributors. I'm not sure if PyCharm supports this syntax or not now, but at the time it definitely did not.""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Ryan', 'user_id': 185004, 'user_site_admin': False, 'body': ""Why don't other issues get marked as stale? Can we untag this as a question?""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Ah ha, I found the documentation. https://www.sphinx-doc.org/en/1.5/domains.html#python-roles\r\n\r\nHave you considered filing a bug against PyCharm for this?'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Ryan', 'user_id': 185004, 'user_site_admin': False, 'body': 'From what I can tell, the `:class:` syntax is to create a link to a class within Sphinx documentation, not to actually designate a return type in `:rtype:`.\r\n\r\nFor example, I would expect this is how it would be used (not tested):\r\n\r\n```\r\n:rtype: github.NamedUser.NamedUser The rest of this text is describing the return type and may contain links to other classes like :class:`github.CommitStatus.CommitStatus` which would show up in the Sphinx documentation.\r\n```\r\n'}]",2016-07-22 17:43:40,167096455.0,[],427.0,Docstrings problem,Ryan,RSully,1089.0
+2,,163.0,50.0,,"GitHub added some support to pick up some new Milestone and Label events. Would be great if these were supported/tested by PyGithub.
+
+ref: https://developer.github.com/changes/2016-10-27-new-label-and-milestone-webhooks",[],2016-12-09 17:46:32,194656045.0,"['Hacktoberfest', 'feature request']",503.0,Handling new milestone and label events,,jakirkham,158.0
+3,,133.0,0.0,,"If I query an issue and access ```issue.created_at.tzinfo```, it is ```None```, indicating a naive datetime object
+
+The values always appear to be UTC values so the ```tzinfo``` should be set to UTC (offset 0)
+
+If the values are naive, all kinds of unusual bugs can occur in programs that try to insert the values into databases or other systems that assume a naive datetime is in local time.","[{'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Yossarian King', 'user_id': 6392037, 'user_site_admin': False, 'body': 'It would be great if the main Github object provided a mechanism for setting desired time zone, and that all retrieved datetimes would respect it. Alternatively, make all times timezone aware based on their local context - for example the datetime on a commit should indicate the timezone where the commit occurred.'}, {'user': 'Yossarian King', 'user_id': 6392037, 'user_site_admin': False, 'body': 'By the way, for anyone arriving here who wants to get the PyGithub datetimes converted to a particular time zone, this should help:\r\n```\r\nimport pytz  # Need to ""pip install pytz""\r\ndef LocalDateTimeFromUTC(utc):\r\n    tzLocal = pytz.timezone(\'America/Vancouver\')  # insert your time zone here (list available here: https://stackoverflow.com/questions/13866926/is-there-a-list-of-pytz-timezones)\r\n    return pytz.utc.localize(utc).astimezone(tzLocal)\r\n```'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Michael Dockter', 'user_id': 9219602, 'user_site_admin': False, 'body': 'I ran into this issue with when coding\r\n\r\n```python\r\n                        created_at_epoch = int(comment.created_at.timestamp())\r\n```\r\n\r\nhttps://github.com/docktermj/python-github-tasks/blob/5014d05990b181aec36b9fe2c8374450ec66dad8/github-tasks.py#L688'}, {'user': 'Michael Dockter', 'user_id': 9219602, 'user_site_admin': False, 'body': 'Is this a reasonable work-around?\r\n\r\n```python\r\nlocal_timezone = pytz.timezone(""GMT"")\r\ncreated_at = local_timezone.localize(comment.created_at)\r\ncreated_at_epoch = int(created_at.timestamp())\r\n```'}, {'user': 'Michael Dockter', 'user_id': 9219602, 'user_site_admin': False, 'body': '@dpocock @bbi-yggy @sfdye @s-t-e-v-e-n-k \r\n\r\nThis is no longer a stale issue.   How can this issue be reopened?   ...or do I open another issue?'}, {'user': 'Michael Dockter', 'user_id': 9219602, 'user_site_admin': False, 'body': ""@sfdye,  thank you!  I'll close #1218 ""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Michael Dockter', 'user_id': 9219602, 'user_site_admin': False, 'body': '@dpocock @bbi-yggy @sfdye @s-t-e-v-e-n-k\r\n\r\nThis is no longer a stale issue. How can this issue be reopened? ...or do I open another issue?'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Michael Dockter', 'user_id': 9219602, 'user_site_admin': False, 'body': '@dpocock @bbi-yggy @sfdye @s-t-e-v-e-n-k\r\n\r\nThis is no longer a stale issue. How can this issue be reopened? ...or do I open another issue?\r\n\r\nOr is it fixed?'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Dato Simó', 'user_id': 73768, 'user_site_admin': False, 'body': ""It'd be nice to see this fixed. It can be trivially fixed in application code:\r\n\r\n```\r\nauthor_date = commit.author.date.replace(tzinfo=datetime.timezone.utc)\r\n```\r\n\r\nbut a strong argument for fixing it in the library is that it's easy to forget to replace tzinfo _on every single date use_.\r\n\r\nThanks for considering.""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""This might be a little bit of 'perfect is the enemy of good', but I've been wanting to solve this by allowing users to pass in a timezone to the Github() constructor, *but* there's no good library without awkward sharp edges to parse things like 'Australia/Sydney' and 'Europe/Berlin' into what GitHub is expecting. But it has been a little while since I dug into this code.""}]",2017-01-02 19:54:31,198375239.0,['improvement'],512.0,"datetime returned by (issue and comment) created_at is naive, should be UTC",Daniel Pocock,dpocock,3.0
+4,,5.0,0.0,,"When recording a test and using a `GithubCredentials.py` like:
+
+```
+login = ""meneal""
+password = """"
+oauth_token = ""REDACTED""
+```
+
+the test recorder places the string `token private_token_removed` in the recorded file.  When the test is run after the recording is made, the following stack trace is produced:
+
+```
+Traceback (most recent call last):
+  File ""github/tests/OrganizationHasInMembers.py"", line 32, in setUp
+    self.user = self.g.get_user(""meneal"")
+  File ""github/MainClass.py"", line 159, in get_user
+    ""/users/"" + login
+  File ""github/Requester.py"", line 172, in requestJsonAndCheck
+    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
+  File ""github/Requester.py"", line 213, in requestJson
+    return self.__requestEncode(cnx, verb, url, parameters, headers, input, encode)
+  File ""github/Requester.py"", line 252, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(cnx, verb, url, requestHeaders, encoded_input)
+  File ""github/Requester.py"", line 277, in __requestRaw
+    requestHeaders
+  File ""github/tests/Framework.py"", line 151, in request
+    self.__testCase.assertEqual(headers, eval(readLine(self.__file)))
+AssertionError: {'Authorization': 'Basic login_and_password_removed', 'User-Agent': 'PyGithub/Py [truncated]... != {'Authorization': 'token private_token_removed', 'User-Agent': 'PyGithub/Python' [truncated]...
+- {'Authorization': 'Basic login_and_password_removed',
++ {'Authorization': 'token private_token_removed',
+   'User-Agent': 'PyGithub/Python'}
+```
+
+I manually changed the string in the recorded file to be `Basic login_and_password_removed` and the test passed with no error. I believe there are two options for this:
+
+- Make the test in `Framework.py` in some way accept the `token_private_token_removed`
+- Change something(not sure what this is offhand) in the recorder to make it use `Basic login_and_password_removed` regardless of whether a token or basic login is used.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'I keep getting bitten by this, so I may get sufficiently annoyed to fix it.'}]",2017-01-19 02:31:33,201749406.0,"['feature request', 'question']",516.0,Test recorder adds wrong string for token authorization,Matthew Neal,meneal,7.0
+5,,0.0,0.0,,"I notice that the GitHubObject has an `eTag` attribute, but I don't see the ability to pass this in to any of the different api calls.  Am I missing something or is this a missing feature?  I notice it's mentioned in the v2 API docs.","[{'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Raphael Yancey', 'user_id': 5130438, 'user_site_admin': False, 'body': 'I also would very much like this to be implemented in PyGithub.'}]",2017-03-15 22:38:49,214547443.0,"['Hacktoberfest', 'feature request']",536.0,ETag not supported to make conditional requests through API?,,instructure-analytics,0.0
+6,,0.0,0.0,,"GitHub Pull Request page provides a [Delete Branch] that invokes ..../pull/:number/cleanup
+
+Need equivalent Pull Request methods to remove and/or restore the branch associated with the pull request","[{'user': 'Rich Johnson', 'user_id': 3719299, 'user_site_admin': False, 'body': 'One convoluted recipe to delete the branch for pull request ""pr_num"" is:\r\n```\r\nrepo.get_git_ref( ""heads/%s""%(repo.get_pull(pr_num).head.ref) ).delete()\r\n```\r\n\r\nAnd to restore:\r\n```\r\npr = repo.get_pull(pr_num)\r\nrepo.create_git_ref(""refs/heads/""+pr.head.ref, sha=pr.head.sha)\r\n```\r\nIt\'s would be nice if the ""heads/"" & ""refs/heads/"" manipulations could be encapsulated.\r\n\r\nThanks to http://stackoverflow.com/questions/39065544/how-do-i-remove-all-stale-branches-from-github for the breadcrumbs.\r\n\r\n\r\n\r\n\r\n'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '@wrjohnson This is very useful! Would you like to make an PR? I will be happy for review.'}]",2017-05-20 11:38:35,230148272.0,"['Hacktoberfest', 'feature request', 'good first issue']",580.0,Delete/restore branch associated with a pull request,Rich Johnson,wrjohnson,0.0
+7,,244.0,10.0,,"As we all know, today more than ever before, it is crucial to be able to trust our computing environments. One of the main difficulties that package maintainers of GNU/Linux distributions face, is the difficulty to verify the authenticity and the integrity of the source code. With GPG signatures it is possible for packagers to verify source code releases quickly and easily.
+
+In order to securely package your software I am kindly requesting GPG signatures for the source tarballs. If you are not yet familiar with secure source code signing I recommend using [GPGit](https://github.com/NicoHood/gpgit) which automates the process of secure source code signing and also has a quick start guide on GPG for learning how to use it manually.
+
+Thanks in advance.",[],2018-03-04 11:15:09,302077211.0,"['Hacktoberfest', 'feature request']",721.0,GPG signatures for source validation,Nico,NicoHood,192.0
+8,,21.0,18.0,,"It would be nice to have the class `GithubIntegration` coming with calls like `get_installations()`, `get_installation(:installation_id).get_repos()`, etc. Currently it only serves as a credential fetching helper class, while it is still necessary to manually make app installation specific requests.","[{'user': 'Sviatoslav Sydorenko', 'user_id': 578543, 'user_site_admin': False, 'body': 'M/b do this through CM?\r\n```python\r\nwith GithubIntegration(...).get_installation(...) as github_client:\r\n    github_client.get_repos()\r\n```'}, {'user': 'Sviatoslav Sydorenko', 'user_id': 578543, 'user_site_admin': False, 'body': ""FTR\r\nI've made a CLI for GitHub Checks API recently (https://pypi.org/p/check-in) and here's how I handle this:\r\nhttps://github.com/webknjaz/check-in/blob/master/check_in/github_api.py#L18""}]",2018-03-07 22:32:57,303285162.0,"['Hacktoberfest', 'feature request']",725.0,GithubIntegration with APP specific APIs,Gabriel Freitas Vasconelos,gfreivasc,52.0
+9,,2.0,1.0,,"Does this lib support github enterprise, especially the pre-receive-hook apis?
+
+- https://developer.github.com/v3/repos/pre_receive_hooks
+- https://developer.github.com/v3/orgs/pre_receive_hooks/
+- https://developer.github.com/v3/enterprise-admin/pre_receive_hooks/
+
+
+","[{'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'AFAIK `pre-receive-hooks` is not supported currently.'}]",2018-03-29 09:27:46,309682565.0,"['Hacktoberfest', 'enterprise', 'feature request']",739.0,Support for github enterprise pre-receive-hooks,Kevin,kevin-y,0.0
+10,,0.0,0.0,,"I am trying to perform oauth using my github app and then read authenticated users repository and organization. However for queries related to ""list installations for user"", ""list repositories accessible to the user for installation"" and many other endpoints, I am not able to get the pygithub apis for the same.
+
+ref link : http://pygithub.readthedocs.io/en/latest/apis.html
+
+PS. Previously I was using oauth app and was able to perform the flow, now since I also require to listen to events for which I needed to subscribe to webhooks, so I switched to github app.","[{'user': 'Shubham Singh', 'user_id': 41840111, 'user_site_admin': False, 'body': 'Would like to work on it.'}, {'user': 'Ivan Ogasawara', 'user_id': 5209757, 'user_site_admin': False, 'body': 'this feature would be very helpful :+1: '}, {'user': 'Ahmed Osman', 'user_id': 45465427, 'user_site_admin': False, 'body': 'This is covered in #1021 but is awaiting approval/merge, @sfdye can we get eyes on it?'}, {'user': 'x0r', 'user_id': 1642627, 'user_site_admin': False, 'body': 'To get auth_token:\r\n\r\n`\r\n    installations_url = ""https://github.com/api/v3/app/installations""\r\n    installations_response = requests.get(installations_url, headers=headers, auth=CustomJWTAuth())\r\n    installations_response.raise_for_status()\r\n\r\n    for item in installations_response.json():\r\n        installation_id = item[\'id\']\r\n        #print (installation_id)\r\n        access_tokens_url = ""https://github.com/api/v3/app/installations/{installation_id}/access_tokens"".format(\r\n            installation_id=installation_id)\r\n        access_tokens_response = requests.post(access_tokens_url, headers=headers, auth=CustomJWTAuth())\r\n        access_tokens_response.raise_for_status()\r\n        #print (access_tokens_response.json())\r\n\r\n\r\n        token = access_tokens_response.json()[\'token\']\r\n        #print (token)\r\n        #return github3.login(token=token)\r\n        return token\r\n\r\n    raise Exception(""No app installations"")\r\n`'}]",2018-06-26 10:29:49,335755783.0,"['Hacktoberfest', 'feature request']",828.0,Support for github apps,Abhra Dey,AdyaAbhra,0.0
+11,,0.0,1.0,,"For Github Enterprise usage, if we need to suspend an inactive user, can we have a suspend_user function call implemented?
+The only solution currently is directly making a API call? https://developer.github.com/v3/users/administration/","[{'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'As it is not currently implemented, PR are welcome'}]",2018-07-31 20:22:50,346343924.0,"['Hacktoberfest', 'feature request']",852.0,usage of suspend a github enterprise user,Minwu Yu,Ermenymw,0.0
+12,,150.0,144.0,,"Motivation:
+#862 #456 #321 #584 #762 
+
+PyGithub is a great library, however it may not be intuitive to use at the beginning. Not everyone is a Github API expert, so I am trying to provide some working examples (recipes) that will hopefully help you get started.
+
+The skeleton has been setup [here](https://github.com/PyGithub/PyGithub/tree/master/doc/examples) and the example docs is already live on readthedocs as usual:
+
+https://pygithub.readthedocs.io/en/latest/examples.html
+
+Note that the list will expand and **any PR to add more examples is extremely welcome** 😄 
+
+If you want to see any examples not covered here, just leave a comment.","[{'user': 'Abdur-Rahmaan Janhangeer', 'user_id': 22630684, 'user_site_admin': False, 'body': '@sfdye readd the login example please ^^_'}, {'user': 'Michael Scheper', 'user_id': 366599, 'user_site_admin': False, 'body': ""I just started with PyGithub, and [found some examples](https://pygithub.readthedocs.io/en/latest/examples.html), so obviously some work has been done—thanks, people!\r\n\r\nBut I don't see any examples for how to listen for events, e.g. [pushevent](https://developer.github.com/v3/activity/events/types/#pushevent) and [pullrequestevent](https://developer.github.com/v3/activity/events/types/#pullrequestevent). Could examples for those be added?""}, {'user': 'Michael Scheper', 'user_id': 366599, 'user_site_admin': False, 'body': 'Thanks, @LeviMatus!'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'this is not stale'}, {'user': 'Gavin Goodship', 'user_id': 10147276, 'user_site_admin': False, 'body': 'I am Writing Organization examples now '}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Yogesh Sharma', 'user_id': 6111679, 'user_site_admin': False, 'body': 'I am new to PyGithub SDK and trying to do below operations. However, having difficulty going through documents to know the usage.\r\n\r\n1. get a file content from a specific branch \r\n\r\ncommand line equivalent: \r\n\r\n`git checkout <<branch>> and then get file content`\r\n\r\n**Issue:**\r\n\r\n**I am able to get file content from master branch using this sdk but not from specific branch**\r\n\r\n2. repo tags and its details \r\n\r\ncommand line equivalent: \r\n\r\n`git tag -v <<tag_id>>`\r\n\r\n3. Update that file\r\n\r\nI see here the docs `https://pygithub.readthedocs.io/en/latest/examples/Repository.html#update-a-file-in-the-repository`\r\n\r\n4. Update user details for commit \r\n\r\n```\r\ngit config user.email ""cicd@example.com""\r\ngit config user.name ""cicd""\r\ngit commit --amend --reset-author --no-edit\r\n```\r\n\r\n5. Git pull that branch before commit  as other automation might have committed some other file.\r\n6. git commit in the branch\r\n\r\n```\r\ngit pull --no-edit\r\ngit add $FILE_NAME\r\ngit commit -m ""updating $FILE_NAME""\r\ngit pull --no-edit && git push origin\r\n```\r\n\r\nI am also trying to find the method/api of this sdk to do that, but if someone have it ready, please help with the same.'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Lukasz', 'user_id': 1486177, 'user_site_admin': False, 'body': ""Hello, I'm a relatively new developer and this is helping a lot. Is any one planning to do examples for github app? Thanks!""}, {'user': None, 'user_id': 19464609, 'user_site_admin': False, 'body': '> I am new to PyGithub SDK and trying to do below operations. However, having difficulty going through documents to know the usage.\r\n> \r\n> 1. get a file content from a specific branch\r\n> \r\n> command line equivalent:\r\n> \r\n> `git checkout <<branch>> and then get file content`\r\n> \r\n> **Issue:**\r\n> \r\n> **I am able to get file content from master branch using this sdk but not from specific branch**\r\n> \r\n> 1. repo tags and its details\r\n> \r\n> command line equivalent:\r\n> \r\n> `git tag -v <<tag_id>>`\r\n> \r\n> 1. Update that file\r\n> \r\n> I see here the docs `https://pygithub.readthedocs.io/en/latest/examples/Repository.html#update-a-file-in-the-repository`\r\n> \r\n> 1. Update user details for commit\r\n> \r\n> ```\r\n> git config user.email ""cicd@example.com""\r\n> git config user.name ""cicd""\r\n> git commit --amend --reset-author --no-edit\r\n> ```\r\n> \r\n> 1. Git pull that branch before commit  as other automation might have committed some other file.\r\n> 2. git commit in the branch\r\n> \r\n> ```\r\n> git pull --no-edit\r\n> git add $FILE_NAME\r\n> git commit -m ""updating $FILE_NAME""\r\n> git pull --no-edit && git push origin\r\n> ```\r\n> \r\n> I am also trying to find the method/api of this sdk to do that, but if someone have it ready, please help with the same.\r\n\r\nhi! I\'m trying to get the content of an specific branch too. Did you get it? Thanks!'}, {'user': 'Gordon Fleetwood', 'user_id': 7785756, 'user_site_admin': False, 'body': '@estagumor If you still need this answer the key is the [ref parameter](https://developer.github.com/v3/repos/contents/#get-contents) in the `get_contents` function. The default is ""master"". Here\'s an example getting the contents of the ""0.6.X"" branch of the scikit-learn repo.\r\n\r\n```\r\nfrom github import Github\r\n\r\ng = Github(""USERNAME"", ""PASSWORD"")\r\nrepo = g.get_repo(""scikit-learn/scikit-learn"")\r\nrepo.get_contents("""", ref = ""0.6.X"")\r\n```'}, {'user': None, 'user_id': 46783072, 'user_site_admin': False, 'body': ""@sfdye I just started working with PyGithub and it works great.  However even if i'am familiar with the git api, it would be great if you can provide a working example of how to set create / set branch protection rules.\r\n\r\nI tried for example:\r\ng.get_repo('SECRET/SECRET').get_branch('master').add_required_signatures()""}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '@qbits-rwx I think the method you need is:\r\nhttps://pygithub.readthedocs.io/en/latest/github_objects/Branch.html#github.Branch.Branch.edit_protection\r\n\r\nhttps://developer.github.com/v3/repos/branches/#update-branch-protection'}, {'user': None, 'user_id': 46783072, 'user_site_admin': False, 'body': 'Yes this did the trick. Unfortunately, require signed commits, is not implemented. Would be nice to have, as it is a policy we need to set on every branch. '}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'Feel free to send a FR or PR'}]",2018-08-21 08:24:38,352434787.0,"['documentation', 'good first issue', 'high priority']",874.0,PyGithub example usage,Liuyang Wan,sfdye,1804.0
+13,,10.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A7FFE7A88>,"# Problem
+
+`Authorization` header is overwritten by `.netrc` even if I set `login_or_token` in `github.Github`.
+
+## Steps to reproduce
+
+1. Add entry for github.com in `~/.netrc`
+2. Construct `Github` with different config than `~/.netrc`: `gh = Github(token)`
+3. Make any request
+
+# Cause
+
+Since v1.40, PyGithub start using [**requests**](https://github.com/requests/requests) library for http requesting (see #664).
+
+In **requests**, `auth` attribute  of session or requests is the primary way of authenticate. If no `auth` set, `.netrc` file is used and 'Authorization' header is overwritten.
+
+However, PyGithub authenticates requests by simply adding 'Authorization' header in `Requester.__authenticate`, which is not the way **requests** library expected.
+
+# Solution
+
+Defined custom authentication function which uses `.netrc` file if-and-only-if `Authorization` header isn't set already.
+
+## Other possible, but declined solution
+
+### Set `trust_env=False`
+
+This is [the official way to ignore `.netrc`](https://github.com/requests/requests/issues/2773), but it disables `.netrc` at all even when no token specified, and also disables proxy handling.
+
+### Use custom authentication to set `Authorization` header.
+
+This seems the cleaner way when using only **requests** library.
+
+However, PyGithub's `Requester` support injection of http client, and the above method won't work for injected non-**requests** client.","[{'user': 'Shinichi TAMURA', 'user_id': 3760893, 'user_site_admin': False, 'body': ""Hey maintainers, I'm thinking how to test this, since it's about `~/.netrc` file.""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Shinichi TAMURA', 'user_id': 3760893, 'user_site_admin': False, 'body': ""Hey hello, don't close this pr! It's ready, and just waiting for reviews.""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Shinichi TAMURA', 'user_id': 3760893, 'user_site_admin': False, 'body': '@sfdye Hello, is it possible to prevent stale bot from closing this?\r\n\r\nI understand it takes some time to review this in depth, but how long it will be, I want keep it open until you (or other maintainers) decide to merge/close this.'}, {'user': 'phithon', 'user_id': 5711185, 'user_site_admin': False, 'body': ""I also met this problem, it's so confusing.""}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '@tmshn Finally got some time to work on this. Did you have a chance to test all the different scenario?'}, {'user': 'Shinichi TAMURA', 'user_id': 3760893, 'user_site_admin': False, 'body': '@sfdye Great!\r\nIIRC, not ""all"". I just tested with the combination of with/without password and with/without `~/.netrc` file. Maybe I should test similarly with `login_or_token`, `jwt` and `client_secret`?'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': ""Yeah that would be great :) Don't want to break the other auth methods just by supporting `netrc` file, don't we? Let me know if you are able to test this locally.""}, {'user': 'Shinichi TAMURA', 'user_id': 3760893, 'user_site_admin': False, 'body': ""@sfdye Test added for password and token authentication, so could you take a look?\r\n(I'm planning to do similar tests for JWT and client secret authentication later, but it seems I need to create OAuth Apps and Github Apps...)""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'SeunghwanJoo', 'user_id': 13096688, 'user_site_admin': False, 'body': ""It seems to be closed automatically even though the issue was not resolved...\r\nCould you open it again?\r\nI'm suffering from the same problem now...""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=h1) Report\n> Merging [#910](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/048c8a1df2cc45108deeb0ddabb7d032d12b1a15&el=desc) will **increase** coverage by `0.01%`.\n> The diff coverage is `100.00%`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/910/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=tree)\n\n```diff\n@@            Coverage Diff             @@\n##           master     #910      +/-   ##\n==========================================\n+ Coverage   98.49%   98.50%   +0.01%     \n==========================================\n  Files          47       47              \n  Lines        2259     2276      +17     \n==========================================\n+ Hits         2225     2242      +17     \n  Misses         34       34              \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [github/MainClass.py](https://codecov.io/gh/PyGithub/PyGithub/pull/910/diff?src=pr&el=tree#diff-Z2l0aHViL01haW5DbGFzcy5weQ==) | `95.15% <100.00%> (+0.10%)` | :arrow_up: |\n| [github/Requester.py](https://codecov.io/gh/PyGithub/PyGithub/pull/910/diff?src=pr&el=tree#diff-Z2l0aHViL1JlcXVlc3Rlci5weQ==) | `97.46% <100.00%> (+0.09%)` | :arrow_up: |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=footer). Last update [048c8a1...79cd828](https://codecov.io/gh/PyGithub/PyGithub/pull/910?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}, {'user': 'Shinichi TAMURA', 'user_id': 3760893, 'user_site_admin': False, 'body': '@sfdye \r\n\r\nFinally caught up everything since 1 year ago! So now it\'s ready to be reviewed.\r\n\r\n## Recent updates:\r\n\r\n### Tests covers all auth method\r\n\r\nI added tests for client_id/client_secret and JWT auth, so now it covers all authentication method.\r\n(BTW, having JWT auth in `MainClass.Github` seems as weird as client_id/client_secret, because I don\'t think it can be used to access normal APIs directly. It\'s for obtaining access token, which in turn used to access normal APIs.)\r\n\r\n### Covers `MainClass.GithubIntegration`\r\n\r\nThis is the one I didn\'t noticed when I work this last year. They uses `requests` library directly instead of using `Requester`.\r\nThe hardest parts is: http response record/replay mechanism is unique to `Requester`, so I have to i""re-invent"" the same wheel.'}]",2018-09-26 09:20:11,363932154.0,['needs further review'],910.0,Prevent .netrc from overwriting Auth header,Shinichi TAMURA,tmshn,54.0
+14,,0.0,0.0,,"As documented here: https://developer.github.com/v3/media/#commits-commit-comparison-and-pull-requests. 
+
+Required for determining position for creating a review comment.",[],2018-12-05 22:52:37,387981380.0,['feature request'],983.0,Support  application/vnd.github.VERSION.diff,Alex Elent,aelent-scalyr,1.0
+15,,44.0,32.0,,"The Github v3 API now supports a first-class notion of [check runs] and [check suites] that can be used to gate whether a pull-request should be merged or not.
+
+Adding support for this part of the API to PyGithub would be useful for users who want to develop custom checks.  As I'm in that case, I might have a stab at this, but simply didn't make the time yet.
+
+[check runs]: https://developer.github.com/v3/checks/runs/
+[check suites]: https://developer.github.com/v3/checks/suites/","[{'user': 'Baptiste Wicht', 'user_id': 196746, 'user_site_admin': False, 'body': 'It would be really great to support this API indeed 👍 \r\n\r\nWe are currently using pygithub to add comments automatically to our PRs from our CI jobs. However, we would like to switch to the Checks API in order to keep the discussion cleaner. '}, {'user': 'Shubham Singh', 'user_id': 41840111, 'user_site_admin': False, 'body': '@sfdye, I would like to work on this feature request.'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'Go ahead 👍 '}, {'user': 'Josh Hawkins', 'user_id': 9123458, 'user_site_admin': False, 'body': ""@singh811 Have you made any progress on this? I'd like to see this feature in too, so I'm happy to help if you have started, else I'll start and open a draft PR.\n\nEdit 4mo later: was not able to figure out how to structure the code in this repo, so I did not make significant progress.""}, {'user': 'Mira Szewczyk', 'user_id': 6984271, 'user_site_admin': False, 'body': ""Hi @singh811 how's the work going? It's the feature I'm dreaming about ;)""}, {'user': 'Ricardo Contreras', 'user_id': 4225823, 'user_site_admin': False, 'body': ""@sfdye @singh811  @hawkins @nbraud \r\nDoes anyone have any idea how difficult a task this would be?  is it a major task?\r\n\r\nI'm wondering if there's any guidance on how to get it done?""}]",2019-03-15 19:22:21,421669691.0,['feature request'],1063.0,Add support for the Checks API,nicoo,nbraud,61.0
+16,,28.0,0.0,,"It would be nice to have a way to use GitRelease.upload_asset() with a blob of data in memory without having to write it to disk first.
+
+Currently it is implemented via https://github.com/PyGithub/PyGithub/blob/master/github/Requester.py#L360 which uses `open()`.",[],2019-06-17 09:59:47,456847282.0,['feature request'],1140.0,Feature request: upload_asset with data in memory,,sarum9in,187.0
+17,,14.0,36.0,,"When doing a source import, there are a number of additional operations available once the import has been started. It would be nice if support for these could be implemented. For me personally, mapping authors is the most needed, but it would also be useful to support getting large files, and being able to cancel an import.
+",[],2019-11-24 22:37:06,527769154.0,['feature request'],1298.0,Support all features of SourceImport,Morten Lied Johansen,mortenlj,1.0
+18,,2.0,3.0,,"The paginated list returned from a search_issues() will report a totalCount that maxes out to 1000 when a search query results in more than 1000 items. The totalCount() method in PaginatedList() will get headers and data from result of a requester.requestJsonAndCheck() using the first URL. The logic then tests to see if 'link' is not in headers which in my case there is a 'link' so it falls to the else side and parses the lastUrl line for 'page' which is 1000.
+
+Problem though is that in my search, the original 'data' structure has a valid 'total_count' field of 3041 so I'm not sure why the logic tries to derive something from the lastUrl which is generating an incorrect value?
+
+And if I iterate through the PaginatedList returned I count only 1020 items so I'm not able to iterate through all 3041 items. Note that I put rate limiting code in the iteration loop to sleep checking on get_rate_limit().search.remaining to go nonzero.
+","[{'user': 'David Leach', 'user_id': 28570325, 'user_site_admin': False, 'body': 'this may be some limit in number of pages the search will support... pretty much most of my test runs return 1000 where there are 10 pages of 1000 entries.'}, {'user': None, 'user_id': 10054216, 'user_site_admin': False, 'body': 'possible to set this high priority, thanks.'}, {'user': 'David Leach', 'user_id': 28570325, 'user_site_admin': False, 'body': ""> possible to set this high priority, thanks.\r\n\r\n@djwgit, Not sure I'm following what you are saying? Are you wanting this issue made a high priority issue or are you suggesting there is something I could do in my code to make my search request high priority?""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'David Leach', 'user_id': 28570325, 'user_site_admin': False, 'body': ""I guess I had an open question to @djwgit. Wasn't sure if this person wanted me to mark this issue as high?""}, {'user': None, 'user_id': 10054216, 'user_site_admin': False, 'body': '@dleach02  \r\nsorry for the late reply, and thanks for opening this issue.\r\ncurrently, I am doing a workaround, to query several times by time ranges, then put results together... \r\nit will be nice to have this solved in a nicer way without using the time-slicing workaround.\r\nyes,  it is nice if this issue (#1309) could be marked as high-priority \r\n(oh, @sfdye already did :-) )\r\nthanks again for this awesome package !'}, {'user': 'David Leach', 'user_id': 28570325, 'user_site_admin': False, 'body': '@djwgit \r\n\r\nYes, my work around is doing the same thing. Time slice the search request. Time permitting, I was also going to investigate the v4 API to see if that would be easier... but would like a nice python wrapper ;-)\r\n'}]",2019-12-05 23:13:11,533652112.0,"['bug', 'high priority']",1309.0,search_issues() result has totalCount maxed out to 1000,David Leach,dleach02,0.0
+19,,0.0,0.0,,"Docs here: https://developer.github.com/v3/actions/
+
+Are there plans to add support for GitHub Actions? The API is still in beta, but I would suspect that it won't change much in the future.","[{'user': 'Dima Parzhitsky', 'user_id': 59528510, 'user_site_admin': False, 'body': ""Isn't Actions still in beta?""}, {'user': 'Ganden Schaffner', 'user_id': 11418203, 'user_site_admin': False, 'body': 'Looks like the beta ended in November [[source](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/)]. The API is definitely still in beta though.'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'https://developer.github.com/changes/2020-03-23-ActionsGA/'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'Pin this issue to get more attention'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""I won't split this issue up into six, but documenting progress as I get to them.\r\n\r\n- [ ] Artifacts\r\n- [ ] Secrets (with now Org secrets)\r\n- [ ] Self-hosted runners\r\n- [x] Workflows\r\n- [ ] Workflow jobs\r\n- [x] Workflow runs""}, {'user': 'Christian Clauss', 'user_id': 3709715, 'user_site_admin': False, 'body': '#1456 and #1457'}, {'user': 'Marcel Arns', 'user_id': 38068686, 'user_site_admin': False, 'body': 'Are there any plans, when the Actions API will be supported?'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'Not yet, but we are open to any granular PR to implement the checklist items ^ '}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'I have a local branch for Workflows, it requires some polish, tests and more importantly some free time.'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'I can take `Secrets` when I have some time.'}, {'user': 'Ewen BRUN', 'user_id': 28008852, 'user_site_admin': False, 'body': 'Is somebody already working on Artifacts ? Otherwise I can take it'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '@3wnbr1 Feel free'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'I have a local branch that needs some more love for ``Workflow Runs``.'}, {'user': None, 'user_id': 1254407, 'user_site_admin': False, 'body': '@3wnbr1 what is the status of your artifacts?\r\n\r\nI have list of artifacts and downloading artifact working but I have no tests and also my implementation need modification.\r\n'}]",2020-01-29 02:39:30,556602980.0,['feature request'],1373.0,GitHub Actions support,Ganden Schaffner,gschaffner,35.0
+20,,1.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00009148>,"This PR adds a new `create_repo_from_template` method to `AuthenticatedUser` and `Organization` that uses the new `/generate` endpoint of a repo. I followed the same pattern as the similar `create_fork` method;
+
+I also added a new `is_template` attribute to the `Repository` class. This attribute will only be sent by Github when we use the feature's `Accept` header which I only added to the POST to create the new repo. Let me know if I should also add it to `get_repo` calls.
+
+The documentation mentions a template_repository attribute but Github never sends it.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'I love the direction, but I think we need to have a think about how we implement this before we land it.'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=h1) Report\n> Merging [#1395](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/e5ce4912f5e96107eeb2670b8d29c173f82362f8&el=desc) will **increase** coverage by `0.14%`.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=tree)\n\n```diff\n@@            Coverage Diff             @@\n##           master    #1395      +/-   ##\n==========================================\n+ Coverage   98.20%   98.35%   +0.14%     \n==========================================\n  Files         188      188              \n  Lines       14071    14140      +69     \n==========================================\n+ Hits        13819    13907      +88     \n+ Misses        252      233      -19     \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [tests/Framework.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvRnJhbWV3b3JrLnB5) | `96.00% <0.00%> (-0.02%)` | :arrow_down: |\n| [tests/Logging\\_.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvTG9nZ2luZ18ucHk=) | `100.00% <0.00%> (ø)` | :arrow_up: |\n| [tests/NamedUser.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvTmFtZWRVc2VyLnB5) | `100.00% <0.00%> (ø)` | :arrow_up: |\n| [tests/GitRelease.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvR2l0UmVsZWFzZS5weQ==) | `100.00% <0.00%> (ø)` | :arrow_up: |\n| [tests/Repository.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvUmVwb3NpdG9yeS5weQ==) | `100.00% <0.00%> (ø)` | :arrow_up: |\n| [tests/Persistence.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvUGVyc2lzdGVuY2UucHk=) | `100.00% <0.00%> (ø)` | :arrow_up: |\n| [tests/RateLimiting.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvUmF0ZUxpbWl0aW5nLnB5) | `100.00% <0.00%> (ø)` | :arrow_up: |\n| [github/Repository.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-Z2l0aHViL1JlcG9zaXRvcnkucHk=) | `97.29% <0.00%> (+0.74%)` | :arrow_up: |\n| [tests/AllTests.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvQWxsVGVzdHMucHk=) | `100.00% <0.00%> (+1.07%)` | :arrow_up: |\n| [github/Rate.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-Z2l0aHViL1JhdGUucHk=) | `100.00% <0.00%> (+4.16%)` | :arrow_up: |\n| ... and [1 more](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree-more) | |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=footer). Last update [e5ce491...1aac6e9](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}, {'user': 'Isac Souza', 'user_id': 9718970, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k thanks for the review!\r\n\r\nThe `create_fork` and `create_repo_from_template` methods are different than the other methods in the class because they are Repository endpoints, instead of Organization or User endpoints. Maybe we should move them to `Repository`? I think it would be harder to use but would at least match the API endpoint.\r\n\r\nWe could even keep the Org and AuthUser methods which would call the Repo method and set the appropriate owner. Thoughts?'}, {'user': 'Codecov', 'user_id': 8655789, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=h1) Report\n> Merging [#1395](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/b4f5991eb139bfa12dd953399afccc8a6e4d81d3?src=pr&el=desc) will **not change** coverage.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/graphs/tree.svg?width=650&token=L86YLuWNGm&height=150&src=pr)](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1395   +/-   ##\n=======================================\n  Coverage   98.35%   98.35%           \n=======================================\n  Files         188      188           \n  Lines       14140    14140           \n=======================================\n  Hits        13907    13907           \n  Misses        233      233\n```\n\n\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=footer). Last update [b4f5991...d1c282e](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}, {'user': 'Isac Souza', 'user_id': 9718970, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k thoughts on my comment above?'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""@isouza-daitan Sorry for the late reply. From a correctness perspective Repository is probably the right place, but given our architecture it's hard to require a user grab a repository object just to create a different repo, potentially in a different namespace entirely.\r\n\r\nI'm still against the code duplication -- how about one method on AuthenicatedUser that also takes owner as NotSet. If owner is NotSet, use self.login, otherwise assert it's an Organization (or an id). What do you think?""}, {'user': 'Isac Souza', 'user_id': 9718970, 'user_site_admin': False, 'body': ""@s-t-e-v-e-n-k won't we have auth problems if we try to create a new repo in an org using an AuthenticatedUser instance?\r\n\r\nI agree getting a Repository to create a new repo is not great. \r\nHow about a new `RepositoryActions` module that has:\r\n```\r\n@staticmethod\r\ndef create_repo_from_template(\r\n            new_repo_owner,  # AuthenticatedUser or Organization\r\n            new_repo_name,\r\n            template_full_name,  # my-org/my-template-name\r\n            description=github.GithubObject.NotSet,\r\n            private=github.GithubObject.NotSet,\r\n    ):\r\n```\r\nand we call `RepositoryActions.create_repo_from_template` from `AuthenticatedUser` and `Organization`""}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=h1) Report\n> Merging [#1395](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/0396a4931a46b1cc585230055c1d3af464fb07fe&el=desc) will **increase** coverage by `0.00%`.\n> The diff coverage is `100.00%`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1395   +/-   ##\n=======================================\n  Coverage   98.34%   98.35%           \n=======================================\n  Files         188      188           \n  Lines       14083    14140   +57     \n=======================================\n+ Hits        13850    13907   +57     \n  Misses        233      233           \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [github/AuthenticatedUser.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-Z2l0aHViL0F1dGhlbnRpY2F0ZWRVc2VyLnB5) | `98.51% <100.00%> (+0.02%)` | :arrow_up: |\n| [github/Consts.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-Z2l0aHViL0NvbnN0cy5weQ==) | `100.00% <100.00%> (ø)` | |\n| [github/Organization.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-Z2l0aHViL09yZ2FuaXphdGlvbi5weQ==) | `97.85% <100.00%> (+0.05%)` | :arrow_up: |\n| [github/Repository.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-Z2l0aHViL1JlcG9zaXRvcnkucHk=) | `97.29% <100.00%> (+0.01%)` | :arrow_up: |\n| [tests/AuthenticatedUser.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvQXV0aGVudGljYXRlZFVzZXIucHk=) | `100.00% <100.00%> (ø)` | |\n| [tests/Organization.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvT3JnYW5pemF0aW9uLnB5) | `100.00% <100.00%> (ø)` | |\n| [tests/Repository.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1395/diff?src=pr&el=tree#diff-dGVzdHMvUmVwb3NpdG9yeS5weQ==) | `100.00% <100.00%> (ø)` | |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=footer). Last update [e44d11d...30e7100](https://codecov.io/gh/PyGithub/PyGithub/pull/1395?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '1. Could you fix the python 3.6 tests?\r\n2. I still see travis check in the PR, can you rebase against master?'}]",2020-02-13 01:01:18,564373247.0,[],1395.0,Adds support to create repository from a template,Isac Souza,isouza-daitan,60.0
+21,,24.0,133.0,,"GitHub Developer API announcement:
+https://developer.github.com/changes/2020-02-26-new-delete-reactions-endpoints/
+
+These new endpoints need to be supported:
+
+- [ ] Delete a commit comment reaction
+  - `DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id`
+  - Docs: https://developer.github.com/v3/reactions/#delete-a-commit-comment-reaction
+
+- [ ] Delete an issue reaction
+   - `DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id`
+   - Docs: https://developer.github.com/v3/reactions/#delete-an-issue-reaction
+
+- [ ] Delete a reaction to a commit comment
+  - `DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id`
+  - Docs: https://developer.github.com/v3/reactions/#delete-an-issue-comment-reaction
+
+- [ ] Delete a pull request comment reaction
+  - `DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id`
+  - Docs: https://developer.github.com/v3/reactions/#delete-a-pull-request-comment-reaction
+
+- [ ] Delete team discussion reaction
+  - `DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id`
+  - Docs: https://developer.github.com/v3/reactions/#delete-team-discussion-reaction
+
+- [ ] Delete team discussion comment reaction
+  - `DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id`
+  - Docs: https://developer.github.com/v3/reactions/#delete-team-discussion-comment-reaction
+","[{'user': 'Gustavo Juan Cairo', 'user_id': 5359423, 'user_site_admin': False, 'body': 'Hey, I will work on this.'}]",2020-03-06 18:59:06,577115411.0,"['feature request', 'good first issue']",1421.0,"Support new ""Delete Reactions"" endpoints",Weslei Juan Moser Pereira,wesleimp,451.0
+22,,0.0,0.0,,Unable to create internal type of repo,"[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""What do you mean? Are you able to give more information, along with what code you're using, and what error you're getting?""}, {'user': None, 'user_id': 39563336, 'user_site_admin': False, 'body': 'According https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user\r\nI can see when I am creating new repo I can use string parameter **visibility**. It doesn\'t available\r\n\r\nCan be public or private. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, visibility can also be internal. For more information, see ""Creating an internal repository"" in the GitHub Help documentation.\r\nThe visibility parameter overrides the private parameter when you use both parameters with the nebula-preview preview header.\r\n'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Ah ha, this is an API extension that was published in December. https://developer.github.com/changes/2019-12-03-internal-visibility-changes/'}, {'user': None, 'user_id': 39563336, 'user_site_admin': False, 'body': 'Ok thank you very much. Do you have ETA when it could be implemented?'}, {'user': ""Ruairí O'Brien"", 'user_id': 1150322, 'user_site_admin': False, 'body': ""@s-t-e-v-e-n-k I was thinking I could take a stab at this if that's OK?""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': '@ruairitobrien Absolutely, I look forward to reviewing your PR.'}, {'user': ""Ruairí O'Brien"", 'user_id': 1150322, 'user_site_admin': False, 'body': ""@s-t-e-v-e-n-k sorry to have to trouble you with this :)\r\n\r\nI added the visibility prop to `Organization.create_repo`\r\n\r\nThis required a header to be set `application/vnd.github.nebula-preview+json`\r\n\r\nI updated the test to pass in the visibility flag and have tested it works in a real project but I am hitting an error in the unit tests that I am not sure about. Initially the test failed and I realised in needed to update the recording but when I tried to update it like so:\r\n\r\n```\r\npytest -k Organization.testCreateRepoWithAllArguments --record\r\n=============================================================================================== test session starts ================================================================================================\r\nplatform linux -- Python 3.6.10, pytest-5.4.2, py-1.8.1, pluggy-0.13.1\r\nrootdir: /usr/app, inifile: pytest.ini\r\nplugins: cov-2.8.1\r\ncollected 640 items / 640 deselected                                                                                                                                                                               \r\n\r\n============================================================================================= 640 deselected in 10.70s =============================================================================================\r\n```\r\n\r\nNo changes were made to the recording file. \r\n\r\nI did a workaround by manually updating the record and the test passed but I guess that's not ideal. I'm a bit new to a lot of the technologies in this project so just wanted to check if you had any pointers on how to make sure I am doing a real recording for the test. Thanks!""}, {'user': ""Ruairí O'Brien"", 'user_id': 1150322, 'user_site_admin': False, 'body': 'Also I realise I probably need to add this flag to a few other places but am hoping to get feedback on what I have so far to make sure I am on the right track. '}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'pytest is actually pretty great at telling you what it will run -- play around with -k and --collect-only which will tell you exactly what it will execute without doing so.'}, {'user': 'Kunal Nanda', 'user_id': 36263354, 'user_site_admin': False, 'body': 'Any updates on this feature?'}, {'user': 'Kay Hannay', 'user_id': 6499415, 'user_site_admin': False, 'body': 'I have tried to add the visibility parameter today. I hit an issue while updating the recordings for the tests. The organization ""BeaverSoftware"" does not exist any more. So currently the only way I see to implement this is by editing the record data manually. Once this is done, all tests pass.\r\n\r\n@ruarfff The reason that nothing was recorded in your case is that no tests were executed: `collected 640 items / 640 deselected`. Try to run the test using `pytest -k testCreateRepoWithAllArguments --record`.\r\n'}, {'user': ""Ruairí O'Brien"", 'user_id': 1150322, 'user_site_admin': False, 'body': '> I have tried to add the visibility parameter today. I hit an issue while updating the recordings for the tests. The organization ""BeaverSoftware"" does not exist any more. So currently the only way I see to implement this is by editing the record data manually. Once this is done, all tests pass.\r\n> \r\n> @ruarfff The reason that nothing was recorded in your case is that no tests were executed: `collected 640 items / 640 deselected`. Try to run the test using `pytest -k testCreateRepoWithAllArguments --record`.\r\n\r\nThanks! In my PR I had eventually gotten to the point where I hit the same issue as you. The PR has gotten to a point of being able to create repos with the parameter but got a bit more complicated to get tests passing when adding the parameter in the various GETs.\r\n\r\nI need to get back to that soon. It just appears getting the tests to pass is fairly significant effort unless I am missing something. '}]",2020-03-25 16:50:20,587840197.0,['feature request'],1446.0,Support new 'visibility' field of Repository,,adiagil,0.0
+23,,0.0,0.0,,"We would like to be able to make use of the SCIM API (https://developer.github.com/v3/scim/) within the pyGithub package. This would enable us to search users in our organisation by their SCIM attributes, such as the idp provided email address, nameID. These attributes cannot be changed by the organisation members, unlike their personal github account details, so would provide an immutable set of search criteria for us. ",[],2020-03-27 22:43:02,589448108.0,['feature request'],1448.0,SCIM API for SAML linked accounts,,isg-ncl-kd,0.0
+24,,619.0,40.0,,"`PullRequest.edit` does not allow a `draft` attribute:
+
+```python
+def edit(
+        self,
+        title=github.GithubObject.NotSet,
+        body=github.GithubObject.NotSet,
+        state=github.GithubObject.NotSet,
+        base=github.GithubObject.NotSet,
+    ):
+```","[{'user': 'Florent Clarret', 'user_id': 1266346, 'user_site_admin': False, 'body': 'I might be wrong, but it looks like this is not yet possible to update the draft attribute since this attribute is not exposed : https://developer.github.com/v3/pulls/#update-a-pull-request'}, {'user': 'Charles-Axel Dein', 'user_id': 120501, 'user_site_admin': False, 'body': ""I think you're right, I tried making a plain HTTP request and it didn't work. Also, in the documentation they hint at this being available only v4. \r\n\r\nBummer.\t""}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': '![image](https://user-images.githubusercontent.com/1016390/79286684-eefe0900-7ef3-11ea-8a75-948022fc54b2.png)\r\nI can see it 😳 '}, {'user': 'Florent Clarret', 'user_id': 1266346, 'user_site_admin': False, 'body': ""It's definitely in the output and the draft attribute is already in the PullRequest class, however it does not seem possible to update it through the PATCH method (I also tried when @charlax submitted the issue)""}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'Maybe need some custom headers?'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""Nope, custom headers won't help, the docs don't list it at all for the PATCH call. :-(""}]",2020-04-09 09:34:50,597152714.0,"['feature request', 'good first issue']",1461.0,Add support for modifying PR draft status,Charles-Axel Dein,charlax,293.0
+25,,10.0,3.0,,"When calling `get_teams()` on an object of type `github.Repository.Repository`, it returns only those teams that have access to the repo (correct), but the permissions shown for those teams do not reflect the permission granted to those teams for that particular repository (incorrect).
+
+Steps to replicate:
+
+1. Create a team with a default permission of ""pull""
+2. Add that team to a repository's access with a permission of ""admin""
+3. Call that repository object's `get_teams()` method and inspect the results.
+
+The returned teams are regular `github.Team.Team` objects, and the `permission` attribute for that object indicates that team's default permission setting. However, when retrieving the teams that have access to a repository, the permission those teams have for that specific repository is implied to match the context (hence, why only teams with access are returned).","[{'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Joey Espinosa', 'user_id': 685255, 'user_site_admin': False, 'body': ""Anybody looking at this? It's still an issue.""}]",2020-04-19 04:55:40,602621846.0,['bug'],1475.0,Calling `Repository.get_teams()` returns incorrect team permissions,Joey Espinosa,particledecay,20.0
+26,,8.0,0.0,,"PaginatedList has a totalCount attribute that is useful, but it should support __len__() as a more Pythonic way. Currently this breaks the test suite in interesting ways.","[{'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'still valid'}, {'user': 'Jesse Li', 'user_id': 24727586, 'user_site_admin': False, 'body': 'Regarding the test suite - would it be reasonable to create one (or more?) repositories under the PyGithub organization, for use in testing? It might not be possible to cover every usage but I imagine having dedicated repositories for testing would make it easier to update tests'}]",2020-04-19 11:28:33,602691110.0,['improvement'],1476.0,PaginatedList should support __len__(),Steve Kowalik,s-t-e-v-e-n-k,0.0
+27,,4.0,1.0,,"I am trying to make a script that is both capable of determining the current owners of an org and setting them. I started by trying to just read who the current owners are but am having issues with that.
+
+I've tried to do
+
+```
+git = Github(access_token)
+self.org = self.git.get_organization('ORG')
+for user in self.org.get_members(role=""admin""):
+   print(f""user = {user}, user.permissions = {user.permissions}, user.role = {user.role}, user.site_admin = {user.site_admin}, user.type = {user.type}"")
+```
+
+But when it comes across a member that is an admin, it prints out 
+```
+2020-04-20 21:14:43 = INFO - user = NamedUser(login=""userX""), user.permissions = None, user.role = None, user.site_admin = False, user.type = User
+```
+
+What am I doing wrong?","[{'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'What is the role of the current user? I suspect you need admin permission to view and set admin of organization.'}, {'user': 'Jace Manshadi', 'user_id': 14242088, 'user_site_admin': False, 'body': '@sfdye by ""current user"". I assume you mean the user that the access token was being used. In which case the access token was generated from the ""Personal access tokens"" for a user who is the owner for that organization.'}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'I can reproduce this in my own org, marking it as a `bug`'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Jace Manshadi', 'user_id': 14242088, 'user_site_admin': False, 'body': 'this is still a relevant bug.'}]",2020-04-21 04:39:28,603699576.0,['bug'],1477.0,unable to read or set the owners for an organization,Jace Manshadi,modernNeo,19.0
+28,,0.0,0.0,,"This code works fine:
+
+```
+g = Github(username, password)
+repo = g.get_repo(repo)
+issues = repo.get_issues(state='closed', sort='updated', direction='asc')
+print(issues.totalCount)
+for idx, issue in enumerate(issues):
+    print(issues.totalCount)
+    break
+```
+
+The output will be: 
+```
+195
+195
+```
+
+195 is indeed the number of closed issues.
+
+If I comment one of the lines:
+
+```
+g = Github(username, password)
+repo = g.get_repo(repo)
+issues = repo.get_issues(state='closed', sort='updated', direction='asc')
+# print(issues.totalCount)
+for idx, issue in enumerate(issues):
+    print(issues.totalCount)
+    break
+```
+
+The output becomes:
+```
+42
+```
+
+42 is the number of **opened** issues I have on that repo. This is obviously wrong.
+
+
+The for-loop iterates on 195 in both cases, so no problem there.","[{'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'steveoh', 'user_id': 325813, 'user_site_admin': False, 'body': '`totalCount` is wrong when using labels also.\r\n\r\nI misunderstood labels and queried for two mutually exclusive labels. This resulted in `0`issues being returned but `totalCount` displayed `11`. \r\n\r\nPossibly related to https://github.com/PyGithub/PyGithub/issues/960'}]",2020-04-24 15:17:03,606390281.0,['bug'],1479.0,PaginatedList totalCount is wrong when iterating the issues,,shacharor-Vayyar,0.0
+29,,254.0,120.0,,"The method [github.Team.Team.set_repo_permission](https://pygithub.readthedocs.io/en/stable/github_objects/Team.html#github.Team.Team.set_repo_permission) calls an old API-Endpoint:
+https://github.com/PyGithub/PyGithub/blob/219bde53d31845ae147e14382ceeed07153dcbda/github/Team.py#L237
+
+It calls
+```python
+headers, data = self._requester.requestJsonAndCheck(
+   ""PUT"", self.url + ""/repos/"" + repo._identity, input=put_parameters
+)
+```
+
+This endpoint is linked to [Teams: Add or update team repository (Legacy)](https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy).
+The new API endpoint for this is [Teams: Add or update team repository](https://developer.github.com/v3/teams/#add-or-update-team-repository): `PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo`","[{'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': ""Additional note:\r\nLegacy doesn't seem to mean Deprecated. Deprecated methods seem to be marked explicitly. See https://developer.github.com/v3/teams/members/#deprecation-notice-2""}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': 'Nevermind. https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy has a deprecation notice. It just has a different design.'}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': 'After checking the code of the current Team implementation, it seems that this is implementing the Legacy API for all endpoints: https://developer.github.com/v3/teams/'}, {'user': None, 'user_id': 26384082, 'user_site_admin': False, 'body': 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.\n'}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': '/unstale (See related PR)'}]",2020-05-06 19:10:50,613548013.0,[],1507.0,github.Team.Team.set_repo_permission calls a legacy API endpoint,Andy Grunwald,andygrunwald,1121.0
+30,,3.0,0.0,,"Hello :wave: 
+
+I'm unable to fetch the list of merged PRs using the issues endpoint with PyGithub : 
+```
+from github import Github
+
+g = Github()
+
+print(g.search_issues(query=""repo:apache/beam+is:pr+is:merged+merged:2020-04-22..2020-05-06+sort:updated"").totalCount)
+```
+
+Returns :
+```
+Traceback (most recent call last):
+  File ""test.py"", line 5, in <module>
+    print(g.search_issues(query=""repo:apache/beam+is:pr+is:merged+merged:2020-04-22..2020-05-06+sort:updated"").totalCount)
+  File ""/home/abbass/.virtualenvs/github-stats/lib/python3.6/site-packages/github/PaginatedList.py"", line 154, in totalCount
+    ""GET"", self.__firstUrl, parameters=params, headers=self.__headers
+  File ""/home/abbass/.virtualenvs/github-stats/lib/python3.6/site-packages/github/Requester.py"", line 319, in requestJsonAndCheck
+    verb, url, parameters, headers, input, self.__customConnection(url)
+  File ""/home/abbass/.virtualenvs/github-stats/lib/python3.6/site-packages/github/Requester.py"", line 342, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.GithubException: 422 {""message"": ""Validation Failed"", ""errors"": [{""message"": ""The listed users and repositories cannot be searched either because the resources do not exist or you do not have permission to view them."", ""resource"": ""Search"", ""field"": ""q"", ""code"": ""invalid""}], ""documentation_url"": ""https://developer.github.com/v3/search/""}
+```
+
+The same query works in a browser : 
+https://api.github.com/search/issues?q=repo:apache/beam+is:pr+is:merged+merged:2020-04-22..2020-05-06+sort:updated&sort=created&order=asc
+","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""If you're actually using ``Github()`` then you're making the query anonymously, which is likely why you're getting back an exception. Generate a token and pass it in as the first argument.""}, {'user': 'Abbass MAROUNI', 'user_id': 4222063, 'user_site_admin': False, 'body': ""@s-t-e-v-e-n-k \r\n\r\nThe repository that I'm using is a public one apache/beam, even with the token (a personal one for this github account) I keep getting the same error.\r\n\r\nIsn't supposed to return the same result as this call :\r\nhttps://api.github.com/search/issues?q=repo:apache/beam+is:pr+is:merged+merged:2020-04-22..2020-05-06+sort:updated&sort=created&order=asc\r\n""}, {'user': 'Paul Gessinger', 'user_id': 1058585, 'user_site_admin': False, 'body': ""Have a similar issue I think. Looks to me like `search_issues` escapes `+` to `%2B`, which triggers the error. If curl the exact URL that the verbose logging says it's trying, I get the same error. If I replace `%2B` with `+` it works fine.""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""Ahhh, that's a wonderful hint. I've been scratching my head over this, but that gives me a direction to dig when I get some time.""}, {'user': 'Paul Gessinger', 'user_id': 1058585, 'user_site_admin': False, 'body': ""I think it's because it's basically double encoding the +. @marouni I think in your example, you might be able to get it to work by just removeing the + signs. Spaces get urlencoded to +, and then it should make it to the API endpoint in the correct form.""}, {'user': 'Abbass MAROUNI', 'user_id': 4222063, 'user_site_admin': False, 'body': ""@paulgessinger Thanks for the hint, I'll give it a try !""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""@marouni Did the hint help? If so, I think we can solve this by replacing the +'s with spaces.""}, {'user': 'Abbass MAROUNI', 'user_id': 4222063, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k \r\nyup : \r\n```\r\nfrom github import Github\r\n\r\ng = Github()\r\n\r\nprint(g.search_issues(query=""repo:apache/beam is:pr is:merged merged:2020-04-22..2020-05-06 sort:updated"").totalCount)\r\n```\r\n```\r\n112\r\n```'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""Excellent! I will put together a PR that replaces +'s with a test that will close this issue.""}]",2020-05-06 21:03:48,613611962.0,[],1508.0,Cannot fetch the list of merged PRs with date range,Abbass MAROUNI,marouni,10.0
+31,,254.0,120.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00022748>,"See https://github.com/PyGithub/PyGithub/issues/1507
+
+Side Note:
+This PR is untested for now because I don't know how to use a local python library (yet). However, I want to get feedback on this PR if this is the way if this is acceptable.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Er, Fixes #1491 indeed...'}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': 'Thanks @s-t-e-v-e-n-k for the review. I have made some changes and asked a few questions.\r\n\r\n> Also, the commit body should include ""Fixes #1507"" not the commit title.\r\n\r\nCan you squash the commit once it is good to merge? Otherwise, I would have to make a push force.'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""Further, you've added some linting failures, which is why the 3.6 job fails, have a look at the ouput of tox -e lint""}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k Linting errors fixed in https://github.com/PyGithub/PyGithub/pull/1509/commits/6c6cd17bcbcc48bd8ec96c5f025f8727e2210136\r\n\r\nAnd this completes the second round of iteration. Would you mind checking the code again?'}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k I think we are moving in the right direction.\r\nWith the unit test, I fixed two small bugs (assertion + API url).\r\n\r\nI recorded a unit test, however, it seems to fail. Here is what i did:\r\n- Added credentials into the `GithubCredentials.py` file\r\n- Changed the `setUp` to use an organization and team of mine\r\n- Executed `pytest tests/Team.py -k testUpdateTeamRepository --record --auth_with_token`\r\n\r\nAny guidance on how to record a test that it will succeed the CI checks?'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""It's a sharp edge with the replaying, I'm afraid -- if you look at the text file that the recording mode wrote out, you'll see the hostname of the request, headers sent and the reply, etc -- the problem is your replay data has token auth in the headers sent, and other tests mock password auth. It should be an obvious fix by looking at another replay data file.""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""@andygrunwald Do you have time to get back to this? It's so close!""}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k I still have it on my list to finish it. Sorry for taking so long. Private topics are filling up my time right now.'}, {'user': 'Lech Jakub', 'user_id': 66142903, 'user_site_admin': False, 'body': '✌️'}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': ""@s-t-e-v-e-n-k I have adjusted the replay payload manually. However, the error messages don't make sense to me, Can you guide me a bit here to make the test pass?""}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k Any news on this?'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': '@andygrunwald I\'m so sorry for forgetting to look at this! ``TypeError: can only concatenate str (not ""NoneType"") to str`` looks like the proximate cause when constructing the URL.'}, {'user': 'Andy Grunwald', 'user_id': 320064, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k I don\'t understand on how to fix this error. It seems to be related to the replay data file.\r\nNot sure what is missing or what is wrong. The replay file seems quite similar to the others.\r\nWould you mind having a look at this?\r\n\r\nHow to execute this single unit test:\r\n```\r\n$ pytest tests/Team.py -k testUpdateTeamRepository\r\n```\r\n\r\nOutput right now:\r\n```\r\n================================================================================================================== ERRORS ==================================================================================================================\r\n____________________________________________________________________________________________ ERROR at teardown of Team.testUpdateTeamRepository ____________________________________________________________________________________________\r\ntests/Framework.py:297: in tearDown\r\n    self.__closeReplayFileIfNeeded()\r\ntests/Framework.py:325: in __closeReplayFileIfNeeded\r\n    self.assertEqual(readLine(self.__file), """")\r\nE   AssertionError: \'https\' != \'\'\r\nE   - https\r\nE   +\r\n================================================================================================================= FAILURES =================================================================================================================\r\n______________________________________________________________________________________________________ Team.testUpdateTeamRepository _______________________________________________________________________________________________________\r\n\r\nself = <tests.Team.Team testMethod=testUpdateTeamRepository>\r\n\r\n    def testUpdateTeamRepository(self):\r\n        repo = self.org.get_repo(""FatherBeaver"")\r\n>       self.assertTrue(self.team.update_team_repository(repo, ""admin""))\r\n\r\ntests/Team.py:115:\r\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\r\n\r\nself = Team(name=""Team created by PyGithub"", id=189850), repo = Repository(full_name=""BeaverSoftware/FatherBeaver""), permission = \'admin\'\r\n\r\n    def update_team_repository(self, repo, permission):\r\n        """"""\r\n        :calls: `PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo <https://developer.github.com/v3/teams/#add-or-update-team-repository>`_\r\n        :param repo: string or :class:`github.Repository.Repository`\r\n        :param permission: string\r\n        :rtype: bool\r\n        """"""\r\n        assert isinstance(repo, github.Repository.Repository) or isinstance(\r\n            repo, str\r\n        ), repo\r\n        assert isinstance(permission, str), permission\r\n        repo_url_param = repo\r\n        if isinstance(repo, github.Repository.Repository):\r\n            repo_url_param = repo._identity\r\n        put_parameters = {\r\n            ""permission"": permission,\r\n        }\r\n        status, _, _ = self._requester.requestJson(\r\n            ""PUT"",\r\n            self.organization.url\r\n            + ""/teams/""\r\n            + self.slug\r\n            + ""/repos/""\r\n>           + repo_url_param,\r\n            input=put_parameters,\r\n        )\r\nE       TypeError: can only concatenate str (not ""NoneType"") to str\r\n\r\ngithub/Team.py:283: TypeError\r\n========================================================================================================= short test summary info ==========================================================================================================\r\nFAILED tests/Team.py::Team::testUpdateTeamRepository - TypeError: can only concatenate str (not ""NoneType"") to str\r\nERROR tests/Team.py::Team::testUpdateTeamRepository - AssertionError: \'https\' != \'\'\r\n================================================================================================= 1 failed, 9 deselected, 1 error in 0.24s =================================================================================================\r\n```'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""The error at the top is a side effect of the test failure, the fixtures are a little brittle, so they tend to explode when something unexpected happens.\r\n\r\nSo the proximate cause is either self.slug, repo_url_param is None. ``repo_name = repo._identity if isintance(github.Repository.Repository) else repo`` is how that line is expressed elsewhere.\r\n\r\nI would suggest either using pdb to step and see what's set or not, or adding two lines to the method to see which goes bang:\r\n```\r\nassert self.slug is not None\r\nassert repo_url_param is not None\r\n``\r\n""}]",2020-05-06 21:24:33,613622687.0,[],1509.0,Fix #1507: Add new Teams: Add or update team repository endpoint,Andy Grunwald,andygrunwald,1121.0
+32,,26.0,33.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00024388>,Update for issue #1446,"[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=h1) Report\n> Merging [#1530](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/7abf600480089550b4224aa97004367c2fa25b38&el=desc) will **increase** coverage by `0.00%`.\n> The diff coverage is `100.00%`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1530/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1530   +/-   ##\n=======================================\n  Coverage   98.43%   98.43%           \n=======================================\n  Files          46       46           \n  Lines        2171     2172    +1     \n=======================================\n+ Hits         2137     2138    +1     \n  Misses         34       34           \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [github/Consts.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1530/diff?src=pr&el=tree#diff-Z2l0aHViL0NvbnN0cy5weQ==) | `100.00% <100.00%> (ø)` | |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=footer). Last update [7abf600...5d0d2db](https://codecov.io/gh/PyGithub/PyGithub/pull/1530?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}, {'user': ""Ruairí O'Brien"", 'user_id': 1150322, 'user_site_admin': False, 'body': ""> I like the direction, but I also don't think it goes far enough. We should also change get_repos/get_repo calls to send the header so we can populate visibility on the Repository object, which we should also support.\r\n\r\nMakes sense. Will do that. ""}, {'user': ""Ruairí O'Brien"", 'user_id': 1150322, 'user_site_admin': False, 'body': '> Just one niggle left, but this is looking good. I\'m tossing up whether we add visibility to get_repos() in this PR or a different one.\r\n\r\n@s-t-e-v-e-n-k \r\n\r\nSorry it took me a while to get back to this. \r\n\r\nI am looking at adding the header to get_repos in various places. One issue I am hitting again is getting the recorded tests to pass. \r\n\r\nFor example, I went into Organization.get_repos and added this:\r\n\r\n```python\r\n# Top of class\r\nVISIBILITY_PREVIEW_HEADERS = {""Accept"": Consts.repositoryVisibilityPreview}\r\n\r\n# In the get_repos method\r\nreturn github.PaginatedList.PaginatedList(\r\n            github.Repository.Repository,\r\n            self._requester,\r\n            self.url + ""/repos"",\r\n            url_parameters,\r\n            headers=VISIBILITY_PREVIEW_HEADERS,\r\n        )\r\n```\r\n\r\nWhen I run `pytest` I see 7 failures in various test cases. \r\n\r\n```\r\n============================================================================================= short test summary info ==============================================================================================\r\nFAILED tests/Authentication.py::Authentication::testSecretKeyAuthentication - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nFAILED tests/Issue158.py::Issue158::testPaginationWithSecretKeyAuthentication - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nFAILED tests/Issue80.py::Issue80::testIgnoreHttpsFromGithubEnterprise - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nFAILED tests/Issue80.py::Issue80::testIgnoreHttpsFromGithubEnterpriseWithPort - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nFAILED tests/Organization.py::Organization::testGetRepos - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nFAILED tests/Organization.py::Organization::testGetReposSorted - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nFAILED tests/Organization.py::Organization::testGetReposWithType - requests.exceptions.ConnectionError: (\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))\r\nERROR tests/Authentication.py::Authentication::testSecretKeyAuthentication - AssertionError: \'None\' != \'\'\r\nERROR tests/Issue158.py::Issue158::testPaginationWithSecretKeyAuthentication - AssertionError: \'None\' != \'\'\r\nERROR tests/Issue80.py::Issue80::testIgnoreHttpsFromGithubEnterprise - AssertionError: \'None\' != \'\'\r\nERROR tests/Issue80.py::Issue80::testIgnoreHttpsFromGithubEnterpriseWithPort - AssertionError: \'None\' != \'\'\r\nERROR tests/Organization.py::Organization::testGetRepos - AssertionError: \'None\' != \'\'\r\nERROR tests/Organization.py::Organization::testGetReposSorted - AssertionError: \'None\' != \'\'\r\nERROR tests/Organization.py::Organization::testGetReposWithType - AssertionError: \'None\' != \'\'\r\n===================================================================================== 7 failed, 634 passed, 7 errors in 37.49s =====================================================================================\r\n```\r\n\r\nI\'ve been trying to follow the instructions in CONTRiBUTION.md to see if I can update the recording to include the new header. I created a personal access token with most permissions and tried:\r\n\r\n```\r\npytest tests/Organization.py -k testGetRepos --record --auth_with_token\r\n```\r\n\r\nFailure output:\r\n\r\n```\r\nFAILED tests/Organization.py::Organization::testGetRepos - github.GithubException.UnknownObjectException: 404 {""message"": ""Not Found"", ""documentation_url"": ""https://developer.github.com/v3/orgs/#get-an-organiz...\r\nFAILED tests/Organization.py::Organization::testGetReposSorted - github.GithubException.UnknownObjectException: 404 {""message"": ""Not Found"", ""documentation_url"": ""https://developer.github.com/v3/orgs/#get-an-o...\r\nFAILED tests/Organization.py::Organization::testGetReposWithType - github.GithubException.UnknownObjectException: 404 {""message"": ""Not Found"", ""documentation_url"": ""https://developer.github.com/v3/orgs/#get-an...\r\n```\r\n\r\nI know if I go here I get a 404 https://github.com/BeaverSoftware but I suspect the issue is I am completely misunderstanding how the tests work. \r\n\r\nI\'ll keep at it trying to figure out how it works but if you have any tips please let me know :)\r\n'}]",2020-05-21 21:31:17,622804113.0,[],1530.0,Added visibility flag to Organization create_repo,Ruairí O'Brien,ruarfff,338.0
+33,,2.0,0.0,,"I know #525 introduced release asset capabilities, but unless I've missed the right doc page I don't think it's possible to download the binary content of a release asset - just the information about an asset.  See https://developer.github.com/v3/repos/releases/#get-a-single-release-asset and the note about downloading the asset's binary content.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Ah ha, that is diabolical. I think the best way to handle this is to add a method to GitReleaseAsset that calls GET self.url with the Accept header set. What do you think?'}, {'user': 'Jesse Li', 'user_id': 24727586, 'user_site_admin': False, 'body': ""Sounds fair to me, although I can't say I'm too familiar with the code.""}, {'user': None, 'user_id': 1254407, 'user_site_admin': False, 'body': 'I can prepare something - I need the same thing + I need it in Actions artifacts.\r\n\r\nBut I am totally puzzled...\r\n\r\nActions artifacts - work fine...\r\n\r\nRelease Downlonads - not .. even from command line... but they do work through browser... very strange...\r\n\r\n'}]",2020-05-27 07:02:32,625435092.0,[],1541.0,Add ability to download binary content of release asset,Jesse Li,jesseli2002,4.0
+34,,1.0,0.0,,"Calling `get_required_status_checks ` (https://pygithub.readthedocs.io/en/latest/github_objects/Branch.html#github.Branch.Branch.get_required_status_checks) with required status checks disabled produces a stack trace:
+```
+>>> master.get_required_status_checks()
+Traceback (most recent call last):
+  File ""<stdin>"", line 1, in <module>
+  File ""/home/mnel/.pyenv/versions/3.6.8/lib/python3.6/site-packages/github/Branch.py"", line 264, in get_required_status_checks
+    ""GET"", self.protection_url + ""/required_status_checks""
+  File ""/home/mnel/.pyenv/versions/3.6.8/lib/python3.6/site-packages/github/Requester.py"", line 319, in requestJsonAndCheck
+    verb, url, parameters, headers, input, self.__customConnection(url)
+  File ""/home/mnel/.pyenv/versions/3.6.8/lib/python3.6/site-packages/github/Requester.py"", line 342, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.GithubException: 404 {""message"": ""Required status checks not enabled"", ""documentation_url"": ""https://developer.github.com/v3/repos/branches/#get-required-status-checks-of-protected-branch""}
+>>> 
+```
+I would have expected a simple `false`.
+
+Calling `get_required_status_checks ` with required status checks enabled produces good output.
+```
+>>> master.get_required_status_checks()
+RequiredStatusChecks(url=""https://api.github.com/repos/some_repo/branches/master/protection/required_status_checks"", strict=True)
+```","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""This is actually the pattern we use all over the code base. We have never implemented a look-before-you-leap mentality, leaving it up the GitHub API itself on what data it returns -- even if that response is a 400 or a 404. While yes, I can understand your point of view, I'm against such a large change to the code base.""}]",2020-06-01 13:45:26,628449563.0,[],1548.0,Stack trace in `get_required_status_checks` when not enabled.,,martinusnel,0.0
+35,,4.0,1.0,,"I don't see `required_linear_history` as an available option in `edit_protection` or elsewhere. Is there a specific reason for its absence or any timeline on when it might make it in?
+
+[The update protection GH docs for reference](https://developer.github.com/enterprise/2.20/v3/repos/branches/#update-branch-protection)","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""Huh. I will note that parameter was not available when I wrote the branch protection code, which is why it's missing. I'll investigate adding it.""}]",2020-06-04 19:06:30,631078038.0,['improvement'],1551.0,required_linear_history not supported in branch protection,Ryan Hill,rthill91,10.0
+36,,0.0,0.0,,I have been using **issues.updated_at** to keep track of the github issues since they have gotten last updated. I want to somehow stop the clock on the weekends. Any suggestions appreciated!,[],2020-06-04 19:30:38,631091212.0,[],1552.0,Attempting to stop the clock on the weekends,,srihari15,0.0
+37,,19.0,0.0,,"Please see https://github.com/PyGithub/PyGithub/blob/master/github/Issue.py#L577-L584. It lists the supported reactions, but some are missing, if you follow your own error message leading to https://developer.github.com/v3/reactions/#reaction-types, e.g. `eyes`.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""I'm tempted to remove that check and just assert content is a string, and let GitHub throw an error if an unsupported emoji is passed in -- what do you think?""}, {'user': 'Vedran Lerenc', 'user_id': 4974203, 'user_site_admin': False, 'body': 'Yes @s-t-e-v-e-n-k, my thought as well. Otherwise, you always run the risk of becoming outdated. Thanks!'}]",2020-06-09 09:30:43,635270089.0,[],1554.0,Not all issue reactions are supported by PyGitHub,Vedran Lerenc,vlerenc,16.0
+38,,0.0,0.0,,"I wonder if it was possible to reduce boilerplate... something like this:
+
+```
+class Artifact(
+    github.GithubObject.CompletableGithubObject,
+    metaclass=github.GithubObject.CompletableGithubObjectMeta
+):
+    """"""
+    This class represents Artifacts.
+    The reference can be found here https://developer.github.com/v3/actions/artifacts/
+    """"""
+    _ATTRIBUTES = {
+        ""id"": ""Int"",
+        ""node_id"": ""String"",
+        ""name"": ""String"",
+        ""size_in_bytes"": ""Int"",
+        ""url"": ""String"",
+        ""archive_download_url"": ""String"",
+        ""expired"": ""Bool"",
+        ""created_at"": ""Datetime"",
+        ""expires_at"": ""Datetime""
+    }
+```
+Then
+```
+class CompletableGithubObjectMeta(type):
+    def __new__(cls, name, bases, dct):
+        instance = super().__new__(cls, name, bases, dct)
+        for attr in dct.get('_ATTRIBUTES') or []:
+            def fget(self, attr_=attr):
+                _attr = getattr(self, '_' + attr_)
+                self._completeIfNotSet(_attr)
+                return _attr.value
+            setattr(instance, attr, property(fget))
+        return instance
+```
+and
+```
+class GithubObject(object):
+    def _initAttributes(self):
+        for attribute in self._ATTRIBUTES:
+            setattr(self, '_' + attribute, NotSet)
+
+    def _useAttributes(self, attributes):
+        for attribute, type_ in self._ATTRIBUTES.items():
+            if attribute in attributes: # pragma no branch
+                make_method = getattr(self, f'_make{type_}Attribute')
+                setattr(self, '_' + attribute, make_method(attributes[attribute]))
+```
+
+And some form of .pyi autogeneration.
+
+What do you think?","[{'user': None, 'user_id': 1254407, 'user_site_admin': False, 'body': 'this is Artifacts implementation \r\n\r\nhttps://github.com/JacekPliszka/PyGithub/pull/1'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'The boilerplate reduction is an interesting idea, but I think it also loses us the docstrings mentioning type of the attributes, which is important.'}, {'user': None, 'user_id': 1254407, 'user_site_admin': False, 'body': 'docstring is not a problem as you can modify it in meta.\r\n\r\n```\r\n    _ATTRIBUTES = {\r\n        ""id"": (""Int"", ""doctring for id""),\r\n        ""node_id"": (""String"",""docstring for node_id""),\r\n        ""name"": (""String"", ""docstring for name""),\r\n...\r\n    }\r\n```\r\nThe only difference is that you need to import the class for it to work (sphinx does import).\r\nBut there is pyi which can be generated.\r\n\r\nSo the question is if there is any use of the .py file that is not importing it?'}, {'user': None, 'user_id': 1254407, 'user_site_admin': False, 'body': 'docstring is not a problem as you can modify it in meta.\r\n\r\n```\r\n    _ATTRIBUTES = {\r\n        ""id"": (""Int"", ""doctring for id""),\r\n        ""node_id"": (""String"",""docstring for node_id""),\r\n        ""name"": (""String"", ""docstring for name""),\r\n...\r\n    }\r\n```\r\n\r\nAnd then\r\n```\r\nfunc_wrapper.__doc__ = f\'some text ``{name}`` \\n{docstring}\'\r\n```\r\n\r\nThe only difference is that you need to import the class for it to work (sphinx does import).\r\nBut there is pyi which can be generated.\r\n\r\nSo the question is if there is any use of the .py file that is not importing it?'}]",2020-06-11 19:30:27,637265833.0,[],1556.0,Possibility of boilerplate reduction,,JacekPliszka,3.0
+39,,3.0,3.0,,"When query is something like this `filename:poetry.lock user:ZechCodes` the module fails to find repo. The file poetry.lock is from Bevy Repo of ZechCodes. I used this particular line of code
+```
+def search_all(git_repo: str, git_wordlist: str):
+    #lines_list = [line.rstrip('\n') for line in open(git_wordlist)]
+    lines_list = git_wordlist
+    git_query = ""filename:""+lines_list + "" user:""+git_repo
+    print(f""Query: {git_query}"")
+    git_repo_results = git_conn.search_repositories(git_query)
+    git_code_results = git_conn.search_code(git_query)
+    git_commits_results = git_conn.search_commits(git_query)
+    git_users_results = git_conn.search_users(git_query)
+    git_issues_results = git_conn.search_issues(git_query)
+    print(f'Found {git_repo_results.totalCount} {git_code_results.totalCount} {git_commits_results.totalCount} {git_users_results.totalCount} {git_issues_results.totalCount}')
+    return
+search_all(""ZechCodes"", ""poetry.lock"")
+``` 
+Output is something like this:
+```
+Query: filename:poetry.lock user:ZechCodes
+Found 0 2 0 0 0
+```
+It successfully find the code but not the repo. ","[{'user': 'Machinexa2', 'user_id': 60662297, 'user_site_admin': False, 'body': 'https://stackoverflow.com/questions/62373212/why-is-the-pygithub-search-limited-how-do-i-overcome-it-to-get-more-result-her'}]",2020-06-14 13:56:45,638357193.0,[],1557.0,Doesnt find repo.,Machinexa2,machinexa2,1.0
+40,,5.0,1.0,,"I'm using `PyGithub==1.51` with Github Enterprise 2.19 
+
+**Example:**
+```python
+g = Github(base_url=""https://github.company.com/api/v3"", login_or_token=os.getenv(""GHE_TOKEN""))
+ghr = g.get_repo(org + ""/"" + repo)
+ghr.edit(delete_branch_on_merge=True)
+```
+
+**Expected:**
+```
+ghr.delete_branch_on_merge == True
+```
+
+**Actual:**
+```
+ghr.delete_branch_on_merge == None
+```
+
+**Logs:**
+```
+PATCH https://github.company.com/api/v3/repos/org/repo {'Authorization': 'token (oauth token removed)', 'User-Agent': 'PyGithub/Python', 'Content-Type': 'application/json'} {""name"": ""repo"", ""delete_branch_on_merge"": true} ==> 200 {'server': 'openresty', 'date': 'Wed, 17 Jun 2020 15:27:11 GMT', 'content-type': 'application/json; charset=utf-8', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'x-ratelimit-limit': '5000', 'x-ratelimit-reset': '1592407968', 'x-ratelimit-remaining': '4930', 'status': '200 OK', 'cache-control': 'private, max-age=60, s-maxage=60', 'vary': 'Accept, Authorization, Cookie, X-GitHub-OTP',[...]'}
+```","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""It probably is taking effect if you re-fetch the repository. I think what is going on is the object isn't using the attributes after they're edited.""}, {'user': 'Markus Zoeller', 'user_id': 7761429, 'user_site_admin': False, 'body': ""> It probably is taking effect if you re-fetch the repository. I think what is going on is the object isn't using the attributes after they're edited.\r\n\r\nThe `actual` result was happening after re-fetching the repository.""}]",2020-06-17 15:47:17,640550279.0,[],1562.0,Changes to repo attribute `delete_branch_on_merge` take no effect,Markus Zoeller,markuszoeller,12.0
+41,,150.0,144.0,,,[],2020-06-19 00:29:57,641625333.0,['project management'],1567.0,No Issue/PR template,Liuyang Wan,sfdye,1804.0
+42,,6.0,3.0,,"When I constructed an `Issue` object, I was expecting time-related fields (eg: `created_at` and `closed_at`) would return the same data type: `datetime.datetime`. However, `last_modified` did not. It returned in a string format representing date and time, like the following:
+```
+ipdb> issue.last_modified
+'Sat, 20 Jun 2020 00:43:01 GMT'
+```
+
+It is not a blocker as there are workarounds. But it would be a better experience if the data type is consistent for those fields.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Duplicate of #512 '}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""Actually, no it isn't, my bad.""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""The reasons are from an implementation detail -- ``created_at`` and ``closed_at`` are attributes on Issue, ``last_modified`` comes from the superclass, and is passed as-is to further requests if it's set. We should probably move it to a _ attribute. Since it's useful, we can then a real last_modified that is datetime.datetime.""}]",2020-06-20 01:55:14,642286320.0,[],1568.0,Inconsistent data type for time related attributes of `<class 'github.Issue.Issue'>`,Arthur Jen,FYJen,19.0
+43,,11.0,12.0,,"Is it possible to delete a branch by it's name? I did not see that on the docs: https://pygithub.readthedocs.io/en/latest/github_objects/Branch.html
+
+I also did not find a way to delete it while merging a PR and there is an [open issue from 2017](https://github.com/PyGithub/PyGithub/issues/580).",[],2020-06-22 23:05:55,643413543.0,[],1570.0,How to delete branch?,Thiago C. D'Ávila,staticdev,128.0
+44,,2.0,1.0,,"The [PullRequest.pyi](https://github.com/PyGithub/PyGithub/blob/master/github/PullRequest.pyi) file is missing a few attributes that are present in the source. I noticed that `draft` and `maintainer_can_modify` are both missing, but there are likely more in PullRequest or other classes.
+
+I created #1577 to fix the above problem, but wanted to file this issue to bring up the issue that there may be more, and that some sort of CI solution is likely needed to fix existing omissions and prevent future regression.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""We try and keep them up to date, but sometimes things in the code change without updating the stubs. The plan I'm working towards is running mypy in strict mode, so any errors such as this are caught during CI, but we aren't there yet.""}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': 'we can enforce mypy strict mode in pre-commit'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""That is my plan -- but turning it on results in a bunch of failures, which I'm working through as I get time.""}]",2020-06-24 14:40:35,644670852.0,[],1578.0,mypy stub files not always kept up to date,Alex Torok,alex-torok,20.0
+45,,26.0,2.0,,"Hello, I use your library and meet problem with memory. I do five threads with search and my program need more than 1GB RAM, I found problem in PaginatedList object - it use more than 50 MB of every instance. I think it is happened because PaginatedList stored all results. What do you think about additional parameter which disable storing elements in `__elements`? ",[],2020-06-24 15:13:24,644697131.0,[],1579.0,Many elements stored in PaginatedList,Oleg Yurchik,OlegYurchik,11.0
+46,,26.0,2.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00043048>,I add storing parameter in functions search_code and search_commits. It is work - I tried it in my server. In future I can add in other methods which used PaginatedList as return object,"[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=h1) Report\n> Merging [#1580](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/f41c046f0e05aa8d6ea34813116d0dfc97ddd73d&el=desc) will **increase** coverage by `0.06%`.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1580/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=tree)\n\n```diff\n@@            Coverage Diff             @@\n##           master    #1580      +/-   ##\n==========================================\n+ Coverage   98.43%   98.49%   +0.06%     \n==========================================\n  Files          46       47       +1     \n  Lines        2171     2258      +87     \n==========================================\n+ Hits         2137     2224      +87     \n  Misses         34       34              \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [github/MainClass.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1580/diff?src=pr&el=tree#diff-Z2l0aHViL01haW5DbGFzcy5weQ==) | `95.05% <ø> (ø)` | |\n| [github/GitReleaseAsset.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1580/diff?src=pr&el=tree#diff-Z2l0aHViL0dpdFJlbGVhc2VBc3NldC5weQ==) | `100.00% <0.00%> (ø)` | |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=footer). Last update [f41c046...ec79282](https://codecov.io/gh/PyGithub/PyGithub/pull/1580?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}]",2020-06-24 22:00:38,645005816.0,[],1580.0,Add storing to PaginatedList,Oleg Yurchik,OlegYurchik,11.0
+47,,8.0,3.0,,"I'm trying to fetch users with pagination, and am facing issues. GitHub returns 0 results.
+
+Here's my snippet:
+`users = g.search_users('', location=""Israel"", since=44345425)`
+
+When searching from the UI I see there are many results after user with id 44345425, but through PyGithub I'm just unable to fetch these.
+
+Help please?","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""I can't find the documentation to hand, but if I'm remembering correctly, the ``since`` parameter is a timestamp, not an id. Searching for users named empty string is probably your issue there, but I'm not very familiar with the Search API.""}]",2020-06-30 16:18:04,648310480.0,[],1590.0,Since parameter not working in get_users?,Daniel Gorlovetsky,DanielGorlo,3.0
+48,,8.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00046748>,"There is a bunch of repeated code checking reactions which has the issue
+that it can easily get out of date with what GitHub accepts. Drop the
+check, and rely on GitHub returning an error.
+
+Fixes #1554","[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1592?src=pr&el=h1) Report\n> Merging [#1592](https://codecov.io/gh/PyGithub/PyGithub/pull/1592?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/048c8a1df2cc45108deeb0ddabb7d032d12b1a15&el=desc) will **not change** coverage.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1592/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1592?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1592   +/-   ##\n=======================================\n  Coverage   98.49%   98.49%           \n=======================================\n  Files          47       47           \n  Lines        2259     2259           \n=======================================\n  Hits         2225     2225           \n  Misses         34       34           \n```\n\n\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1592?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1592?src=pr&el=footer). Last update [048c8a1...d8d3de4](https://codecov.io/gh/PyGithub/PyGithub/pull/1592?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}]",2020-07-02 06:27:26,649671658.0,[],1592.0,Do not check reaction_type before sending,Steve Kowalik,s-t-e-v-e-n-k,0.0
+49,,6.0,38.0,,"When using PyGithub to upload release assets, the script just waits for the upload to complete, and there is nothing in console that tells the progress. This could baffle some users. It would be much better to display a progress bar to indicate that something is going on.
+
+Some existing library like [tqdm](https://github.com/tqdm/tqdm) and [progressbar2](https://github.com/WoLpH/python-progressbar) are good tools to utilize.","[{'user': 'Jesse Li', 'user_id': 24727586, 'user_site_admin': False, 'body': ""Just a question - I wasn't aware that PyGithub provided the functionality to download a release asset - see #1541 and so I had to call the API myself; how are you doing it?""}, {'user': None, 'user_id': 25131775, 'user_site_admin': False, 'body': '@jesseli2002 Sorry, I made a mistake. It should be about uploading release assets. You are right that there is currently no release-asset download functionality provided by PyGithub.'}]",2020-07-03 08:36:39,650439621.0,[],1594.0,[Feature Request] Display progress bar when uploading large assets,,MapleCCC,670.0
+50,,7.0,6.0,,"Hi, 
+
+when running on python 3.8.2 with PyGithub 1.51 when I try this: 
+`token = GithubIntegration(71447,'/Users/jorge/Downloads/bot.2020-07-04.private-key.pem').create_jwt() `
+I get: 
+`  File ""/Users/jorge/.venv/dmesh-bot/lib/python3.8/site-packages/github/MainClass.py"", line 802, in create_jwt
+    encrypted = jwt.encode(payload, key=self.private_key, algorithm=""RS256"")
+AttributeError: module 'jwt' has no attribute 'encode'`
+
+Does someone have the same issue ?","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Seems like jwt has changed their API -- if you ``pip install jwt==0.5.4`` in that venv does that help?'}, {'user': 'Jorge', 'user_id': 4804546, 'user_site_admin': False, 'body': 'no. Same result as before'}, {'user': 'Jorge', 'user_id': 4804546, 'user_site_admin': False, 'body': ""ok, I found a working solution. \r\nmy dependencies: \r\naiohttp==3.6.2\r\nbotbuilder-adapters-slack==4.9.1\r\nbotbuilder-core==4.9.1\r\nbotbuilder-dialogs==4.9.1\r\nbotbuilder-integration-aiohttp==4.9.1\r\nbotbuilder-schema==4.9.1\r\nbotframework-connector==4.9.1\r\ncertifi==2020.4.5.2\r\ncffi==1.14.0\r\nchardet==3.0.4\r\ncommon==0.1.2\r\ncryptography==2.8\r\njwt==0.5.4\r\nPyGithub==1.51\r\nPyJWT==1.7.1\r\npyparsing==2.4.7\r\npytest==5.4.3\r\npython-dateutil==2.8.1\r\npytz==2020.1\r\nPyYAML==5.3.1\r\nrequests==2.22.0\r\nrequests-oauthlib==1.3.0\r\nsix==1.15.0\r\nsortedcontainers==2.2.2\r\nurllib3==1.25.9\r\n\r\nthen I use this :\r\n``` \r\n   from github import Github, GithubIntegration, InstallationAuthorization, GithubException, Consts\r\n    private_key = None\r\n    with open('/Users/jorge/Downloads/blabla-bot.2020-07-04.private-key.pem', 'rb') as fh:\r\n        private_key = fh.read()\r\n    git_integration = GithubIntegration(71447, private_key)\r\n    app_token = git_integration.get_access_token(10267567)\r\n```\r\n\r\n""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""I'm not clear on JWT at all, but I'll try and dig into this, see when JWT dropped the function we use.""}, {'user': 'Liuyang Wan', 'user_id': 1016390, 'user_site_admin': False, 'body': ""the package is [pyjwt](https://github.com/PyGithub/PyGithub/blob/0ca534ee1c0d6c6ddcf5f238ffe1838d75a8e082/setup.py#L102), which hasn't been updated on [PyPI](https://pypi.org/project/PyJWT/#history) for a while""}]",2020-07-04 15:55:36,650913952.0,[],1595.0,module 'jwt' has no attribute 'encode',Jorge,jomach,1.0
+51,,44.0,6.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A0004D948>,"It is also possible to add app_push_restrictions for branch protections,
+this adds support for it.
+
+Signed-off-by: Paul Belanger <pabelanger@redhat.com>",[],2020-07-06 18:25:21,651736144.0,[],1596.0,Add app_push_restrictions support for branch-protections,Paul Belanger,pabelanger,98.0
+52,,21.0,14.0,,"I'm using PyGithub to write some automation around org-level Github projects.
+
+However, I'm running into a problem when I try and fetch a project associated with an organization. See below as an example:
+
+```python
+github = Github(token)
+repo = github.get_repo(repo_name)
+org_projects = repo.organization.get_projects()
+project = org_projects[0]
+```
+
+When running this code, I encounter a `GithubException` with `422` as the error:
+
+```python
+Traceback (most recent call last):
+  File ""scripts/exec"", line 4, in <module>
+    sprint_project = org_projects[0]
+  File ""/home/runner/.local/lib/python3.6/site-packages/github/PaginatedList.py"", line 50, in __getitem__
+    self.__fetchToIndex(index)
+  File ""/home/runner/.local/lib/python3.6/site-packages/github/PaginatedList.py"", line 68, in __fetchToIndex
+    self._grow()
+  File ""/home/runner/.local/lib/python3.6/site-packages/github/PaginatedList.py"", line 71, in _grow
+    newElements = self._fetchNextPage()
+  File ""/home/runner/.local/lib/python3.6/site-packages/github/PaginatedList.py"", line 201, in _fetchNextPage
+    ""GET"", self.__nextUrl, parameters=self.__nextParams, headers=self.__headers
+  File ""/home/runner/.local/lib/python3.6/site-packages/github/Requester.py"", line 319, in requestJsonAndCheck
+    verb, url, parameters, headers, input, self.__customConnection(url)
+  File ""/home/runner/.local/lib/python3.6/site-packages/github/Requester.py"", line 342, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.GithubException: 422 {""message"": ""ID 67755615 is an Organization, not a User. Change your request to use Organization endpoints."", ""documentation_url"": ""https://developer.github.com/v3/projects/""}
+```
+
+I'm reading this as PyGithub using the incorrect endpoint for fetching organization projects internally. Or am I mistaken?
+
+Happy to help further if needed.","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""We've had this come up a few times -- what happens if you fetch the org directly, rather than via a repo -- GitHub seems to assume that every owner of a repo is a user even if it's a org, with hilarious results. https://pygithub.readthedocs.io/en/latest/github.html#github.MainClass.Github.get_organization""}]",2020-07-09 22:09:19,654378153.0,['bug'],1598.0,[BUG] PyGithub uses incorrect API endpoint when fetching organization projects,Mark Bestavros,mbestavros,18.0
+53,,125.0,10.0,,"The following call (for that repo specifically) gets stuck in an infinite loop:
+```
+g = Github(TOKEN)
+repo = g.get_repo(""basnijholt/cf-graph-countyfair"").get_stats_contributors()
+```
+
+I am using Python 3.8.2 and PyGithub 1.51.
+
+
+This is probably related to the ""Contributors"" tab not showing up at https://github.com/basnijholt/cf-graph-countyfair.
+<img width=""1255"" alt=""Screenshot 2020-07-12 at 13 05 47 1"" src=""https://user-images.githubusercontent.com/6897215/87244818-7817d400-c440-11ea-8665-a48ef19d4814.png"">
+
+I am not sure how to check this, but `get_stats_contributors` should raise an error whenever this is not possible.",[],2020-07-12 11:01:05,655377519.0,[],1599.0,get_stats_contributors gets stuck on specific repo,Bas Nijholt,basnijholt,394.0
+54,,125.0,10.0,,"This is very standard, see https://www.python.org/dev/peps/pep-0396/","[{'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'Sort of. It is very much optional, based on even the content of that PEP.'}, {'user': 'Bas Nijholt', 'user_id': 6897215, 'user_site_admin': False, 'body': 'Everything is optional, however, right now there is no option to check the version inside of your code, which is kind of suboptimal.'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""I'm still trying to understand your use case. Are you checking for API support by attempting checking the version in your code, or for example not using something like ``hasattr()``?""}]",2020-07-12 11:02:54,655377754.0,[],1600.0,github.__version__ is missing,Bas Nijholt,basnijholt,394.0
+55,,2.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00055788>,"My solution to #1140.
+I made a few new methods to handle this case instead of wrapping functionality into the existing `upload_asset`, since there's a couple bits of additional information that you can get out of the file path that aren't available with a generic file-like object (specifically -  a default asset label/name, the MIME type, and the file size). 
+
+I'll be honest - I'm kind of confused at how/what the `--record` option does in testing, so I'm not sure if I did it correctly.
+
+Organization wise, it'd probably be nice to merge the tests/GitRelease1140.py file into tests/GitRelease.py, but it seems like that has issues with tests/ReplayData. From what I can tell I'd have to reset it to use my testing Github account instead of the existing one, which I'm open to looking into.
+
+While I'm here I should mention that since Github will be phasing out password authentications in a few months, so should the default authentication for testing be set to using a token?","[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=h1) Report\n> Merging [#1601](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/048c8a1df2cc45108deeb0ddabb7d032d12b1a15&el=desc) will **increase** coverage by `0.00%`.\n> The diff coverage is `100.00%`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1601/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1601   +/-   ##\n=======================================\n  Coverage   98.49%   98.49%           \n=======================================\n  Files          47       47           \n  Lines        2259     2266    +7     \n=======================================\n+ Hits         2225     2232    +7     \n  Misses         34       34           \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [github/Requester.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1601/diff?src=pr&el=tree#diff-Z2l0aHViL1JlcXVlc3Rlci5weQ==) | `97.42% <100.00%> (+0.05%)` | :arrow_up: |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=footer). Last update [048c8a1...911ca1b](https://codecov.io/gh/PyGithub/PyGithub/pull/1601?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""``--record`` will query GitHub and write out the responses received into the replay data, as opposed to the normal way, which reads from the replay data. I'd be delighted if you wanted to merge the two test cases, but the data the GitRelease tests expect to find is missing.""}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': 'I have a branch locally that cleans up the GitRelease tests. I thought I had already merged it...'}, {'user': 'Jesse Li', 'user_id': 24727586, 'user_site_admin': False, 'body': ""> the data the GitRelease tests expect to find is missing.\r\n\r\nIf I've understood you correctly, I've replaced that data with my own. I've also reorganized the code to make it somewhat easier to change in the future - it's not perfect and you'd still have to fiddle around a bit but there's a couple of constants all in one place now.""}, {'user': 'Jesse Li', 'user_id': 24727586, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k Are there any other changes I should make?\r\n'}]",2020-07-12 20:31:12,655471063.0,[],1601.0,upload_asset with data in memory,Jesse Li,jesseli2002,4.0
+56,,71.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A000583C8>,"GitHub is returning incorrect URL values for organizations. Work around
+this by correcting them.
+
+Fixes: #1598","[{'user': 'Nathaniel McCallum', 'user_id': 288304, 'user_site_admin': False, 'body': 'You can see the GitHub\'s data is actually incorrect:\r\n\r\n```bash\r\n$ curl -s -H ""Accept: application/vnd.github.v3+json"" https://api.github.com/repos/enarx/enarx | jq \'.organization\'\r\n{\r\n  ""login"": ""enarx"",\r\n  ""id"": 44877733,\r\n  ""node_id"": ""MDEyOk9yZ2FuaXphdGlvbjQ0ODc3NzMz"",\r\n  ""avatar_url"": ""https://avatars1.githubusercontent.com/u/44877733?v=4"",\r\n  ""gravatar_id"": """",\r\n  ""url"": ""https://api.github.com/users/enarx"",\r\n  ""html_url"": ""https://github.com/enarx"",\r\n  ""followers_url"": ""https://api.github.com/users/enarx/followers"",\r\n  ""following_url"": ""https://api.github.com/users/enarx/following{/other_user}"",\r\n  ""gists_url"": ""https://api.github.com/users/enarx/gists{/gist_id}"",\r\n  ""starred_url"": ""https://api.github.com/users/enarx/starred{/owner}{/repo}"",\r\n  ""subscriptions_url"": ""https://api.github.com/users/enarx/subscriptions"",\r\n  ""organizations_url"": ""https://api.github.com/users/enarx/orgs"",\r\n  ""repos_url"": ""https://api.github.com/users/enarx/repos"",\r\n  ""events_url"": ""https://api.github.com/users/enarx/events{/privacy}"",\r\n  ""received_events_url"": ""https://api.github.com/users/enarx/received_events"",\r\n  ""type"": ""Organization"",\r\n  ""site_admin"": false\r\n}\r\n```'}, {'user': 'Steve Kowalik', 'user_id': 15225059, 'user_site_admin': False, 'body': ""It returns wrong information in *some* circumstances, not all. Personally, I object to this sort of transform, and furthermore, it spreads around hardcoded URLs in the code base, and won't work for GitHub Enterprise installs.""}, {'user': 'Nathaniel McCallum', 'user_id': 288304, 'user_site_admin': False, 'body': '@s-t-e-v-e-n-k I agree. However, I needed a way to reproduce the situation. I have forwarded this PR to a developer at GitHub. We can hold off on merging anything until I get a response from them.'}, {'user': 'eric sciple', 'user_id': 12102068, 'user_site_admin': True, 'body': 'asking internally...'}, {'user': 'eric sciple', 'user_id': 12102068, 'user_site_admin': True, 'body': 'I chatted with someone from the orgs team and opened a bug internally.'}]",2020-07-14 03:37:57,656298436.0,[],1602.0,Work around GitHub Organization URL bug,Nathaniel McCallum,npmccallum,13.0
+57,,1.0,0.0,,"For example, this issue has some hyperlinks on it:
+
+https://github.com/PyGithub/PyGithub/issues/874
+
+I'd like to get those links, is there a way to do it?","[{'user': 'Jesse Li', 'user_id': 24727586, 'user_site_admin': False, 'body': ""Github API doesn't seem to provide this functionality directly - but I think you could try parsing the body of an issue as Markdown. ""}]",2020-07-14 19:22:32,656842953.0,[],1603.0,Is it possible to get the hyperlinks of issues' body?,,augustoolucas,1.0
+58,,0.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A0005CD48>,"Bumps [codecov/codecov-action](https://github.com/codecov/codecov-action) from v1 to v1.0.10.
+<details>
+<summary>Release notes</summary>
+<p><em>Sourced from <a href=""https://github.com/codecov/codecov-action/releases"">codecov/codecov-action's releases</a>.</em></p>
+<blockquote>
+<h2>Migrate to requestretry</h2>
+<h2>Version <code>1.0.10</code> introduces the following changes:</h2>
+<ul>
+<li><code>1.0.9</code> had a built-in dependency that was not easily packaged causing failures. We have switched out this dependency.</li>
+</ul>
+</blockquote>
+</details>
+<details>
+<summary>Commits</summary>
+<ul>
+<li><a href=""https://github.com/codecov/codecov-action/commit/f3570723ef743f6942b6a480461ed0cd6c0f9baa""><code>f357072</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/codecov/codecov-action/issues/89"">#89</a> from codecov/fix-ependency</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/f40f110376fbb164c804f925b583445164e1e667""><code>f40f110</code></a> Try requestretry</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/4f81def87b0e16c92af2922826e57003370ca284""><code>4f81def</code></a> Upgrade ncc</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/ddc46b31076017733ed86861490474962acca269""><code>ddc46b3</code></a> Fix dependencies</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/1b088680d537fe1539d2f20f2650b58683107ca5""><code>1b08868</code></a> Fix dependencies</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/22f6ff10ac45bbfee7a35d295d2b916763f79407""><code>22f6ff1</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/codecov/codecov-action/issues/88"">#88</a> from codecov/update-dist</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/0ceca4b5d317c165971f8be1a2617d2e2de4459e""><code>0ceca4b</code></a> Install dependencies</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/3658bafacb3801ba198aa672d48d8aa996920881""><code>3658baf</code></a> Bump version</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/ef3b48314f196e578bb35442351852030e75eec8""><code>ef3b483</code></a> Update dist</li>
+<li><a href=""https://github.com/codecov/codecov-action/commit/dbf1ddee080f2a33f5f4e1cc37d00ea600b5b366""><code>dbf1dde</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/codecov/codecov-action/issues/87"">#87</a> from codecov/retry-bash</li>
+<li>Additional commits viewable in <a href=""https://github.com/codecov/codecov-action/compare/v1...f3570723ef743f6942b6a480461ed0cd6c0f9baa"">compare view</a></li>
+</ul>
+</details>
+<br />
+
+
+Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.
+
+[//]: # (dependabot-automerge-start)
+[//]: # (dependabot-automerge-end)
+
+---
+
+<details>
+<summary>Dependabot commands and options</summary>
+<br />
+
+You can trigger Dependabot actions by commenting on this PR:
+- `@dependabot rebase` will rebase this PR
+- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+- `@dependabot merge` will merge this PR after your CI passes on it
+- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it
+- `@dependabot cancel merge` will cancel a previously requested merge and block automerging
+- `@dependabot reopen` will reopen this PR if it is closed
+- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+
+
+</details>","[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1608?src=pr&el=h1) Report\n> Merging [#1608](https://codecov.io/gh/PyGithub/PyGithub/pull/1608?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/e272f1172178391f80e4c61b113fb7e1e2002962&el=desc) will **not change** coverage.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1608/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1608?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1608   +/-   ##\n=======================================\n  Coverage   98.49%   98.49%           \n=======================================\n  Files          47       47           \n  Lines        2259     2259           \n=======================================\n  Hits         2225     2225           \n  Misses         34       34           \n```\n\n\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1608?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1608?src=pr&el=footer). Last update [e272f11...14e4429](https://codecov.io/gh/PyGithub/PyGithub/pull/1608?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}]",2020-07-16 13:57:51,658225297.0,"['dependencies', 'github_actions']",1608.0,Bump codecov/codecov-action from v1 to v1.0.10,,dependabot[bot],0.0
+59,,0.0,0.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A0005FC08>,"Updates the requirements on [sphinx](https://github.com/sphinx-doc/sphinx) to permit the latest version.
+<details>
+<summary>Changelog</summary>
+<p><em>Sourced from <a href=""https://github.com/sphinx-doc/sphinx/blob/3.x/CHANGES"">sphinx's changelog</a>.</em></p>
+<blockquote>
+<h1>Release 3.1.2 (released Jul 05, 2020)</h1>
+<h2>Incompatible changes</h2>
+<ul>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7650"">#7650</a>: autodoc: the signature of base function will be shown for decorated
+functions, not a signature of decorator</li>
+</ul>
+<h2>Bugs fixed</h2>
+<ul>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7844"">#7844</a>: autodoc: Failed to detect module when relative module name given</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7856"">#7856</a>: autodoc: AttributeError is raised when non-class object is given to
+the autoclass directive</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7850"">#7850</a>: autodoc: KeyError is raised for invalid mark up when autodoc_typehints
+is 'description'</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7812"">#7812</a>: autodoc: crashed if the target name matches to both an attribute and
+module that are same name</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7650"">#7650</a>: autodoc: function signature becomes <code>(*args, **kwargs)</code> if the
+function is decorated by generic decorator</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7812"">#7812</a>: autosummary: generates broken stub files if the target code contains
+an attribute and module that are same name</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7806"">#7806</a>: viewcode: Failed to resolve viewcode references on 3rd party builders</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7838"">#7838</a>: html theme: List items have extra vertical space</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7878"">#7878</a>: html theme: Undesired interaction between &quot;overflow&quot; and &quot;float&quot;</li>
+</ul>
+<h1>Release 3.1.1 (released Jun 14, 2020)</h1>
+<h2>Incompatible changes</h2>
+<ul>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7808"">#7808</a>: napoleon: a type for attribute are represented as typed field</li>
+</ul>
+<h2>Features added</h2>
+<ul>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7807"">#7807</a>: autodoc: Show detailed warning when type_comment is mismatched with its
+signature</li>
+</ul>
+<h2>Bugs fixed</h2>
+<ul>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7808"">#7808</a>: autodoc: Warnings raised on variable and attribute type annotations</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7802"">#7802</a>: autodoc: EOFError is raised on parallel build</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7821"">#7821</a>: autodoc: TypeError is raised for overloaded C-ext function</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7805"">#7805</a>: autodoc: an object which descriptors returns is unexpectedly documented</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7807"">#7807</a>: autodoc: wrong signature is shown for the function using contextmanager</li>
+<li><a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7812"">#7812</a>: autosummary: generates broken stub files if the target code contains</li>
+</ul>
+<!-- raw HTML omitted -->
+</blockquote>
+</details>
+<details>
+<summary>Commits</summary>
+<ul>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/1cb5fa2f6a02ac4425e3db40c8c40bba7d831a9e""><code>1cb5fa2</code></a> Bump to 3.1.2 final</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/d83d5924eb66373e601bd24963ba46d1bfc50a45""><code>d83d592</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7878"">#7878</a> from mgeier/float-clearing</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/c40cb79461da8b7b1322fb8ed69c0c16f0191e9f""><code>c40cb79</code></a> Update CHANGES for PR <a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7878"">#7878</a></li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/3098aba3431eb8c40ea052d6b8fc90328802c389""><code>3098aba</code></a> basic CSS: apply &quot;clearfix&quot; to admonitions etc.</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/045fc6807820ba1a1976799a237cc01cfc8403c8""><code>045fc68</code></a> basic CSS: remove overflow-x from admonition/topic, allow more &quot;floating&quot;</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/3e643735143be400462438fadfde494b8caf014d""><code>3e64373</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7916"">#7916</a> from tk0miya/7650_signatures_for_decorator</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/9b74e6cd675937dc53745513167a8c93531374fe""><code>9b74e6c</code></a> autodoc: the signature of base function will be shown for decorated functions</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/cc4534d12fb875bc11d7b26f9a0553d42af4ad53""><code>cc4534d</code></a> Update CHANGES for PR <a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7852"">#7852</a></li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/2cc6264f2db6ba6c2e498a661ebcf88e820bc525""><code>2cc6264</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7852"">#7852</a> from mgeier/basic-css-simple-lists</li>
+<li><a href=""https://github.com/sphinx-doc/sphinx/commit/f743df6c20eb7895ff299fc8d8b43353f20d9116""><code>f743df6</code></a> Merge pull request <a href=""https://github-redirect.dependabot.com/sphinx-doc/sphinx/issues/7914"">#7914</a> from tk0miya/7812_autodoc_name_conflicts</li>
+<li>Additional commits viewable in <a href=""https://github.com/sphinx-doc/sphinx/compare/v0.1.61611...v3.1.2"">compare view</a></li>
+</ul>
+</details>
+<br />
+
+
+Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.
+
+[//]: # (dependabot-automerge-start)
+[//]: # (dependabot-automerge-end)
+
+---
+
+<details>
+<summary>Dependabot commands and options</summary>
+<br />
+
+You can trigger Dependabot actions by commenting on this PR:
+- `@dependabot rebase` will rebase this PR
+- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
+- `@dependabot merge` will merge this PR after your CI passes on it
+- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it
+- `@dependabot cancel merge` will cancel a previously requested merge and block automerging
+- `@dependabot reopen` will reopen this PR if it is closed
+- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
+- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
+- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
+
+
+</details>","[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1609?src=pr&el=h1) Report\n> Merging [#1609](https://codecov.io/gh/PyGithub/PyGithub/pull/1609?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/e272f1172178391f80e4c61b113fb7e1e2002962&el=desc) will **not change** coverage.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1609/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1609?src=pr&el=tree)\n\n```diff\n@@           Coverage Diff           @@\n##           master    #1609   +/-   ##\n=======================================\n  Coverage   98.49%   98.49%           \n=======================================\n  Files          47       47           \n  Lines        2259     2259           \n=======================================\n  Hits         2225     2225           \n  Misses         34       34           \n```\n\n\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1609?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1609?src=pr&el=footer). Last update [e272f11...b228595](https://codecov.io/gh/PyGithub/PyGithub/pull/1609?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}]",2020-07-16 13:58:06,658225530.0,"['dependencies', 'python']",1609.0,Update sphinx requirement from <3 to <4,,dependabot[bot],0.0
+60,,150.0,144.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00062848>,"- [x] Better workflow naming and job names
+- [x] Upload codecov reports for all Python versions
+- [x] Only build for `pull_request` event for PR and `push` event for master
+","[{'user': 'Codecov Comments Bot', 'user_id': 65553080, 'user_site_admin': False, 'body': '# [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=h1) Report\n> Merging [#1610](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=desc) into [master](https://codecov.io/gh/PyGithub/PyGithub/commit/e272f1172178391f80e4c61b113fb7e1e2002962&el=desc) will **increase** coverage by `0.14%`.\n> The diff coverage is `n/a`.\n\n[![Impacted file tree graph](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/graphs/tree.svg?width=650&height=150&src=pr&token=L86YLuWNGm)](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=tree)\n\n```diff\n@@            Coverage Diff             @@\n##           master    #1610      +/-   ##\n==========================================\n+ Coverage   98.49%   98.64%   +0.14%     \n==========================================\n  Files          47       47              \n  Lines        2259     2504     +245     \n==========================================\n+ Hits         2225     2470     +245     \n  Misses         34       34              \n```\n\n\n| [Impacted Files](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=tree) | Coverage Δ | |\n|---|---|---|\n| [github/Path.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL1BhdGgucHk=) | `100.00% <0.00%> (ø)` | |\n| [github/Plan.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL1BsYW4ucHk=) | `100.00% <0.00%> (ø)` | |\n| [github/Rate.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL1JhdGUucHk=) | `100.00% <0.00%> (ø)` | |\n| [github/View.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL1ZpZXcucHk=) | `100.00% <0.00%> (ø)` | |\n| [github/Clones.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL0Nsb25lcy5weQ==) | `100.00% <0.00%> (ø)` | |\n| [github/GistFile.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL0dpc3RGaWxlLnB5) | `100.00% <0.00%> (ø)` | |\n| [github/Referrer.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL1JlZmVycmVyLnB5) | `100.00% <0.00%> (ø)` | |\n| [github/GitAuthor.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL0dpdEF1dGhvci5weQ==) | `100.00% <0.00%> (ø)` | |\n| [github/GitObject.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL0dpdE9iamVjdC5weQ==) | `100.00% <0.00%> (ø)` | |\n| [github/RateLimit.py](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree#diff-Z2l0aHViL1JhdGVMaW1pdC5weQ==) | `100.00% <0.00%> (ø)` | |\n| ... and [35 more](https://codecov.io/gh/PyGithub/PyGithub/pull/1610/diff?src=pr&el=tree-more) | |\n\n------\n\n[Continue to review full report at Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=continue).\n> **Legend** - [Click here to learn more](https://docs.codecov.io/docs/codecov-delta)\n> `Δ = absolute <relative> (impact)`, `ø = not affected`, `? = missing data`\n> Powered by [Codecov](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=footer). Last update [e272f11...c9ceb97](https://codecov.io/gh/PyGithub/PyGithub/pull/1610?src=pr&el=lastupdated). Read the [comment docs](https://docs.codecov.io/docs/pull-request-comments).\n'}]",2020-07-16 14:03:38,658230265.0,[],1610.0,Github Action improvement,Liuyang Wan,sfdye,1804.0
+61,,0.0,0.0,,"This error happens to me when I try to upload a 10 mb string by the following command:
+
+```repo.create_file(""Example.json"", ""..."", fileContent, contents.sha)```
+
+or:
+
+```repo.update_file(""Example.json"", ""..."", fileContent, contents.sha)```
+
+--------------------------------------------------------
+
+My traceback:
+
+```
+Traceback (most recent call last):
+  File ""C:\Python38\lib\site-packages\urllib3\connectionpool.py"", line 665, in urlopen
+    httplib_response = self._make_request(
+  File ""C:\Python38\lib\site-packages\urllib3\connectionpool.py"", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File ""C:\Python38\lib\http\client.py"", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File ""C:\Python38\lib\http\client.py"", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File ""C:\Python38\lib\http\client.py"", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File ""C:\Python38\lib\http\client.py"", line 1043, in _send_output
+    self.send(chunk)
+  File ""C:\Python38\lib\http\client.py"", line 965, in send
+    self.sock.sendall(data)
+  File ""C:\Python38\lib\ssl.py"", line 1204, in sendall
+    v = self.send(byte_view[count:])
+  File ""C:\Python38\lib\ssl.py"", line 1173, in send
+    return self._sslobj.write(data)
+socket.timeout: The write operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""C:\Python38\lib\site-packages\requests\adapters.py"", line 439, in send
+    resp = conn.urlopen(
+  File ""C:\Python38\lib\site-packages\urllib3\connectionpool.py"", line 719, in urlopen
+    retries = retries.increment(
+  File ""C:\Python38\lib\site-packages\urllib3\util\retry.py"", line 400, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File ""C:\Python38\lib\site-packages\urllib3\packages\six.py"", line 734, in reraise
+    raise value.with_traceback(tb)
+  File ""C:\Python38\lib\site-packages\urllib3\connectionpool.py"", line 665, in urlopen
+    httplib_response = self._make_request(
+  File ""C:\Python38\lib\site-packages\urllib3\connectionpool.py"", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File ""C:\Python38\lib\http\client.py"", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File ""C:\Python38\lib\http\client.py"", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File ""C:\Python38\lib\http\client.py"", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File ""C:\Python38\lib\http\client.py"", line 1043, in _send_output
+    self.send(chunk)
+  File ""C:\Python38\lib\http\client.py"", line 965, in send
+    self.sock.sendall(data)
+  File ""C:\Python38\lib\ssl.py"", line 1204, in sendall
+    v = self.send(byte_view[count:])
+  File ""C:\Python38\lib\ssl.py"", line 1173, in send
+    return self._sslobj.write(data)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', timeout('The write operation timed out'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""c:\Users\Ragnarok\Desktop\HerokuPython\Test.py"", line 123, in <module>
+    repo.update_file(""Example.json"", ""..."", fileContent, contents.sha)
+  File ""C:\Python38\lib\site-packages\github\Repository.py"", line 2098, in update_file
+    headers, data = self._requester.requestJsonAndCheck(
+  File ""C:\Python38\lib\site-packages\github\Requester.py"", line 318, in requestJsonAndCheck
+    *self.requestJson(
+  File ""C:\Python38\lib\site-packages\github\Requester.py"", line 410, in requestJson
+    return self.__requestEncode(cnx, verb, url, parameters, headers, input, encode)
+  File ""C:\Python38\lib\site-packages\github\Requester.py"", line 471, in __requestEncode
+    status, responseHeaders, output = self.__requestRaw(
+  File ""C:\Python38\lib\site-packages\github\Requester.py"", line 498, in __requestRaw
+    response = cnx.getresponse()
+  File ""C:\Python38\lib\site-packages\github\Requester.py"", line 110, in getresponse
+    r = verb(
+  File ""C:\Python38\lib\site-packages\requests\sessions.py"", line 590, in put
+    return self.request('PUT', url, data=data, **kwargs)
+  File ""C:\Python38\lib\site-packages\requests\sessions.py"", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""C:\Python38\lib\site-packages\requests\sessions.py"", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File ""C:\Python38\lib\site-packages\requests\adapters.py"", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', timeout('The write operation timed out'))
+```
+
+As I've been researching it apparently does when it takes more than 15 seconds to upload. I don't know how to increase the timeout or if I can solve it by another way
+
+----------------------------------------------------------------
+
+pip3 freeze
+
+```
+beautifulsoup4==4.9.0
+bs4==0.0.1
+CacheControl==0.12.6
+cachetools==4.1.1
+certifi==2020.4.5.1
+cffi==1.14.0
+chardet==3.0.4
+crypto==1.4.1
+cryptography==2.9.2
+DateTime==4.3
+Deprecated==1.2.10
+firebase==3.0.1
+firebase-admin==4.3.0
+gcloud==0.18.3
+get==2019.4.13
+google-api-core==1.21.0
+google-api-python-client==1.9.3
+google-auth==1.18.0
+google-auth-httplib2==0.0.3
+google-cloud-core==1.3.0
+google-cloud-firestore==1.7.0
+google-cloud-storage==1.29.0
+google-resumable-media==0.5.1
+googleapis-common-protos==1.52.0
+grpcio==1.30.0
+gunicorn==20.0.4
+httplib2==0.18.1
+idna==2.9
+jwcrypto==0.7
+msgpack==1.0.0
+Naked==0.1.31
+numpy==1.19.0
+oauth2client==4.1.3
+pandas==1.0.5
+pickle-mixin==1.0.2
+post==2019.4.13
+pprint==0.1
+protobuf==3.12.2
+public==2019.4.13
+pushbullet.py==0.11.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycparser==2.20
+pycryptodome==3.4.3
+PyGithub==1.51
+PyJWT==1.7.1
+python-dateutil==2.8.1
+python-firebase==1.2
+python-jwt==3.2.6
+python-magic==0.4.18
+pytz==2020.1
+PyYAML==5.3.1
+query-string==2019.4.13
+request==2019.4.13
+requests==2.23.0
+requests-toolbelt==0.9.1
+rsa==4.6
+selenium==3.141.0
+shellescape==3.8.1
+six==1.15.0
+soupsieve==2.0
+sseclient==0.0.26
+uritemplate==3.0.1
+urllib3==1.25.8
+websocket-client==0.57.0
+wrapt==1.12.1
+zope.interface==5.1.0
+```
+-----------------------------------------------------------------------
+
+![image](https://user-images.githubusercontent.com/68295849/87751980-a6e1d180-c7d5-11ea-815a-b42d37345d9a.png)
+
+",[],2020-07-17 05:00:04,658862832.0,[],1611.0,"Trying to create / update big files → requests.exceptions.ConnectionError: ('Connection aborted.', timeout('The write operation timed out'))",,randomperson696,0.0
+62,,1.0,2.0,<github.IssuePullRequest.IssuePullRequest object at 0x0000024A00065F48>,Describes the code of conduct for this repo.,[],2020-07-18 16:36:39,660247122.0,[],1612.0,CODE_OF_CONDUCT.md,Subhankar Hotta,suvhotta,5.0
+63,,87.0,98.0,,"I would like both `body_html` and `body_text` of the issue body.
+
+Here is the GitHub doc:
+https://developer.github.com/v3/media/#comment-body-properties
+
+",[],2020-07-20 07:22:01,661474569.0,[],1613.0,Is support modify media types that accepted?,Ziqiang Li,liziwl,438.0
+64,,57.0,259.0,,"Accessing the `totalCount` attribute on a `PaginatedList` returned from the `get_repos` method throws a KeyError
+
+Trace
+```py
+repos = github_client.get_repos()
+
+repos.totalCount
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-42-68d28c2d7948> in <module>
+----> 1 repos.totalCount
+
+e:\software\python36\lib\site-packages\github\PaginatedList.py in totalCount(self)
+    164                 links = self.__parseLinkHeader(headers)
+    165                 lastUrl = links.get(""last"")
+--> 166                 self.__totalCount = int(parse_qs(lastUrl)[""page""][0])
+    167         return self.__totalCount
+    168 
+
+KeyError: 'page'
+```",[],2020-07-20 16:23:51,662010421.0,[],1614.0,KeyError while trying to fetch a PaginatedList's count ,Suyash Behera,Suyash458,924.0
+65,,12.0,8.0,,"I'm writing a script that interfaces with both ZenHub and GitHub (using PyGithub). ZenHub only identifies users by their user id (databaseId), so if I want to find the name of the user associated with an id, I have to query GitHub's API. There's an 
+[undocumented endpoint](https://stackoverflow.com/questions/11976393/get-github-username-by-id) for this (`/user/:id`). 
+
+A quick example. (My user id is 23219746.) I'm on `PyGithub==1.43.5` but I can see this is still the case on v1.51.
+
+```pycon
+>>> import github
+>>> g = github.Github(""6b4694cff445a5f6c879089eced2c03a52c776f0"")
+>>> g.get_user(g.get_user().id)
+Traceback (most recent call last):
+  File ""<stdin>"", line 1, in <module>
+  File ""/Users/natan/DataBiosphere/azul/.venv/lib/python3.8/site-packages/github/MainClass.py"", line 226, in get_user
+    assert login is github.GithubObject.NotSet or isinstance(login, str), login
+AssertionError: 23219746
+```
+
+Does PyGithub support undocumented endpoints? If so, it seems trivial to add support for this:
+
+```diff
+diff --git a/github/MainClass.py b/github/MainClass.py
+index cadd1ff5..b450492a 100644
+--- a/github/MainClass.py
++++ b/github/MainClass.py
+@@ -261,18 +261,25 @@ class Github(object):
+         :param login: string
+         :rtype: :class:`github.NamedUser.NamedUser` or :class:`github.AuthenticatedUser.AuthenticatedUser`
+         """"""
+-        assert login is github.GithubObject.NotSet or isinstance(login, str), login
++        assert login is github.GithubObject.NotSet or isinstance(login, str) or isinstance(login, int), login
+         if login is github.GithubObject.NotSet:
+             return AuthenticatedUser.AuthenticatedUser(
+                 self.__requester, {}, {""url"": ""/user""}, completed=False
+             )
+-        else:
++        elif isinstance(login, str):
+             headers, data = self.__requester.requestJsonAndCheck(
+                 ""GET"", ""/users/"" + login
+             )
+             return github.NamedUser.NamedUser(
+                 self.__requester, headers, data, completed=True
+             )
++        else:
++            headers, data = self.__requester.requestJsonAndCheck(
++                ""GET"", ""/user/"" + login
++            )
++            return github.NamedUser.NamedUser(
++                self.__requester, headers, data, completed=True
++            )
+ 
+     def get_users(self, since=github.GithubObject.NotSet):
+         """"""
+```",[],2020-07-20 19:22:54,662174607.0,[],1615.0,get_user does not support retrieving user information by ID,Natan Lao,natanlao,10.0
